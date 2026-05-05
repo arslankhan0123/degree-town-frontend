@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor in International Management - Degree Town</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-blue: #0000CC;
+            --dark-blue: #000066;
+            --footer-bg: #000066;
+            --bg-light: #F9FAFB;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --border-color: #E2E8F0;
+            --tag-bg: #E0E7FF;
+            --tag-text: #4F46E5;
+            --section-header-bg: #0000CC;
+            --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            padding: 0.8rem 0;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-circle {
+            background: var(--primary-blue);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-blue) !important;
+        }
+
+        .btn-signin {
+            border: 1px solid #e0e0e0;
+            color: #333;
+            padding: 8px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-right: 12px;
+            background: white;
+            transition: all 0.3s;
+        }
+
+        .btn-signup {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: #04016C;
+            padding: 80px 0 100px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.1"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>') no-repeat center;
+            background-size: contain;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .back-btn {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #04016C;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-3px);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .uni-logo-small {
+            width: 24px;
+            height: 24px;
+            background: #10B981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        .hero-pills {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .hero-pill {
+            background: black;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-info-bar {
+            background: black;
+            border-radius: 12px;
+            display: inline-flex;
+            padding: 15px 30px;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .info-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-image-container {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 45%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .hero-student-img {
+            height: 105%;
+            width: 100%;
+            object-fit: contain;
+            object-position: bottom right;
+        }
+
+        .hero-actions {
+            position: absolute;
+            right: 50px;
+            bottom: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .btn-share {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-save {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0;
+            position: sticky;
+            top: 100px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .sidebar-search {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .nav-item-side {
+            list-style: none;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .nav-item-side:last-child {
+            border-bottom: none;
+        }
+
+        .nav-link-side {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .nav-link-side:hover {
+            background: #f9fafb;
+            color: var(--primary-blue);
+        }
+
+        .nav-link-side.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .nav-link-side i {
+            font-size: 1rem;
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: var(--card-shadow);
+            padding-top: 20px;
+            /* Space for the overlapping badge */
+        }
+
+        .section-header {
+            background: var(--section-header-bg);
+            color: white;
+            padding: 10px 30px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            left: -10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .section-header::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-top: 10px solid #03014C;
+            border-left: 10px solid transparent;
+        }
+
+        .section-body {
+            padding: 60px 25px 25px;
+            /* Top padding increased to clear badge */
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .section-text {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Sub-navigation Tabs */
+        .sub-nav-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 0 5px;
+        }
+
+        .sub-nav-tabs {
+            display: flex;
+            gap: 12px;
+        }
+
+        .sub-nav-tab {
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid #E5E7EB;
+            background: white;
+            color: #6B7280;
+        }
+
+        .sub-nav-tab.active {
+            background: #04016C;
+            color: white;
+            border-color: #04016C;
+        }
+
+        .sub-nav-tab:hover:not(.active) {
+            background: #F9FAFB;
+            color: #04016C;
+        }
+
+        .secondary-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-secondary-action {
+            background: white;
+            border: 1px solid #E5E7EB;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary-action:hover {
+            background: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        /* Data Tables */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table tr {
+            border-bottom: 1px solid #C7D2FE;
+        }
+
+        .data-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .data-table td {
+            padding: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .data-label {
+            font-weight: 600;
+            color: #04016C;
+            width: 40%;
+        }
+
+        .data-value {
+            color: #2563EB;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .visit-link {
+            color: #2563EB;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        .text-blue {
+            color: var(--accent-blue) !important;
+        }
+
+        .hover-opacity-100:hover {
+            opacity: 1 !important;
+        }
+
+        .lang-test-header {
+            background-color: var(--primary-blue) !important;
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Requirements Grid */
+        .req-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .req-box {
+            background: #F8FAFC;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .req-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .req-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* Intake Cards */
+        .intake-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .intake-card {
+            flex: 1;
+            background: #F0F4FF;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .intake-title {
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .intake-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .intake-label {
+            color: var(--text-muted);
+        }
+
+        .intake-value {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Footer Styling */
+        .main-footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-logo {
+            background: white;
+            color: var(--primary-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-desc {
+            color: #eee;
+            line-height: 1.8;
+            font-size: 1rem;
+            max-width: 400px;
+        }
+
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+        }
+
+        .footer-links a {
+            color: #eee;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-image-container {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .sidebar-nav {
+                position: static;
+                margin-bottom: 30px;
+            }
+
+            .intake-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar (Preserved) -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Universities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Countries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Region</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-signin text-decoration-none">Sign In</a>
+                    <a href="#" class="btn btn-signup text-decoration-none">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <a href="course.html" class="back-btn">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+
+            <div class="hero-pills">
+                <span class="hero-pill">Business & Management</span>
+                <span class="hero-pill">Bachelor</span>
+                <span class="hero-pill">Private</span>
+            </div>
+
+            <h1 class="hero-title">Bachelor in International<br>Management</h1>
+
+            <div class="hero-subtitle">
+                <div class="uni-logo-small">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <span>Clermont School of Business in Clermont-Ferrand, France</span>
+            </div>
+
+            <div class="hero-info-bar">
+                <div class="info-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Clermont-Ferrand, France</span>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-clock"></i>
+                    <span>3 Years • Full-Time</span>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-globe"></i>
+                    <span>English & French</span>
+                </div>
+                <div class="info-item">
+                    <i class="bi bi-building"></i>
+                    <span>Private Institution</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="/assets/course/young-smiling-confident.png" alt="Student" class="hero-student-img">
+        </div>
+
+        <div class="hero-actions">
+            <button class="btn-share">
+                <i class="bi bi-share"></i>
+                Share Now
+            </button>
+            <button class="btn-save">
+                <i class="bi bi-bookmark"></i>
+                Save Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Sidebar Nav -->
+                <div class="col-lg-3">
+                    <div class="sidebar-nav">
+                        <div class="sidebar-search">
+                            <input type="text" placeholder="Search...">
+                        </div>
+                        <ul class="p-0 m-0">
+                            <li class="nav-item-side"><a href="#overview" class="nav-link-side active"><i
+                                        class="bi bi-info-circle"></i> Overview</a></li>
+                            <li class="nav-item-side"><a href="#program-overview" class="nav-link-side"><i
+                                        class="bi bi-journal-text"></i> Program Overview</a></li>
+                            <li class="nav-item-side"><a href="#course-overview" class="nav-link-side"><i
+                                        class="bi bi-list-check"></i> Course Overview</a></li>
+                            <li class="nav-item-side"><a href="#fees" class="nav-link-side"><i
+                                        class="bi bi-cash-stack"></i> Fees & Financials</a></li>
+                            <li class="nav-item-side"><a href="#admission" class="nav-link-side"><i
+                                        class="bi bi-person-check"></i> Admission Requirements</a></li>
+                            <li class="nav-item-side"><a href="#language" class="nav-link-side"><i
+                                        class="bi bi-translate"></i> Language Requirements</a></li>
+                            <li class="nav-item-side"><a href="#intakes" class="nav-link-side"><i
+                                        class="bi bi-calendar-event"></i> Intakes & Dates</a></li>
+                            <li class="nav-item-side"><a href="#scholarships" class="nav-link-side"><i
+                                        class="bi bi-award"></i> Scholarships</a></li>
+                            <li class="nav-item-side"><a href="#institution" class="nav-link-side"><i
+                                        class="bi bi-building"></i> Institution Details</a></li>
+                            <li class="nav-item-side"><a href="#visa" class="nav-link-side"><i
+                                        class="bi bi-passport"></i> Visa & Work Opportunities</a></li>
+                            <li class="nav-item-side"><a href="#outcomes" class="nav-link-side"><i
+                                        class="bi bi-graph-up-arrow"></i> Career Outcomes</a></li>
+                            <li class="nav-item-side"><a href="#faculty" class="nav-link-side"><i
+                                        class="bi bi-people"></i> Faculty</a></li>
+                            <li class="nav-item-side"><a href="#installment" class="nav-link-side"><i
+                                        class="bi bi-credit-card"></i> Installment Plan</a></li>
+                            <li class="nav-item-side"><a href="#contact" class="nav-link-side"><i
+                                        class="bi bi-telephone"></i> Admission Contact</a></li>
+                            <li class="nav-item-side"><a href="#additional" class="nav-link-side"><i
+                                        class="bi bi-plus-circle"></i> Additional Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Main Content -->
+                <div class="col-lg-9">
+
+                    <div class="sub-nav-row">
+                        <div class="sub-nav-tabs">
+                            <a href="#" class="sub-nav-tab active">Course</a>
+                            <a href="#" class="sub-nav-tab">University</a>
+                            <a href="#" class="sub-nav-tab">City</a>
+                            <a href="#" class="sub-nav-tab">Country</a>
+                        </div>
+                        <div class="secondary-actions">
+                            <a href="#" class="btn-secondary-action">
+                                <i class="bi bi-share"></i>
+                                Share Now
+                            </a>
+                            <a href="#" class="btn-secondary-action">
+                                <i class="bi bi-bookmark"></i>
+                                Save Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Overview Section -->
+                    <div class="content-section" id="overview">
+                        <div class="section-header">Overview</div>
+                        <div class="section-body">
+                            <p class="section-text m-0">
+                                The Bachelor of International Management provides students with a solid foundation in
+                                business management, marketing, and global operations. Students will develop leadership
+                                skills and gain a deep understanding of the global economy. This program is designed to
+                                prepare future leaders for the challenges of the international business world, focusing
+                                on practical skills and theoretical knowledge.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Program Overview -->
+                    <div class="content-section" id="program-overview">
+                        <div class="section-header">Program Overview</div>
+                        <div class="section-body">
+                            <table class="data-table">
+                                <tr>
+                                    <td class="data-label">Program</td>
+                                    <td class="data-value">Masters</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Level</td>
+                                    <td class="data-value text-blue">Bachelor in International Management</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Country</td>
+                                    <td class="data-value">France</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">City</td>
+                                    <td class="data-value">Clermont-Ferrand</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Campus</td>
+                                    <td class="data-value">Quillon</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Type</td>
+                                    <td class="data-value">Private</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Course Overview -->
+                    <div class="content-section" id="course-overview">
+                        <div class="section-header">Course Overview</div>
+                        <div class="section-body">
+                            <div class="mb-4">
+                                <h4 class="section-title">Program</h4>
+                                <p class="section-text m-0">This is a 3-year program consisting of 6 semesters with a
+                                    focus on international trade.</p>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="section-title">Program Description</h4>
+                                <p class="section-text m-0">The curriculum covers international marketing, finance,
+                                    human resource management, and more.</p>
+                            </div>
+                            <table class="data-table">
+                                <tr>
+                                    <td class="data-label">Degree Duration</td>
+                                    <td class="data-value">3 Years</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Semester</td>
+                                    <td class="data-value">6 Semesters</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Level</td>
+                                    <td class="data-value">Full Time, Bachelor</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Course Mode</td>
+                                    <td class="data-value">On Campus</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Languages</td>
+                                    <td class="data-value">English / French</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Fees & Financials -->
+                    <div class="content-section" id="fees">
+                        <div class="section-header">Fees & Financials</div>
+                        <div class="section-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Gross Tuition Fees / Year</span>
+                                        <span class="req-value">$12,000</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Currency</span>
+                                        <span class="req-value">USD</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Application Fee Requirement</span>
+                                        <span class="req-value">Fee Required ( $150 )</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Installment Plan Available</span>
+                                        <span class="req-value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">VAT / Tax Inclusive Tuition</span>
+                                        <span class="req-value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Cost of Life</span>
+                                        <span class="req-value">$800 / Month</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admission Requirements -->
+                    <div class="content-section" id="admission">
+                        <div class="section-header">Admission Requirements</div>
+                        <div class="section-body">
+                            <div class="mb-4 p-3 bg-light rounded border border-primary border-opacity-10">
+                                <h6 class="fw-bold mb-2">Admission Requirements</h6>
+                                <p class="small mb-0 text-muted">A high school diploma or equivalent is required.
+                                    Students must provide a motivation letter and two reference letters.</p>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="req-box">
+                                        <span class="req-label">GPA Required</span>
+                                        <span class="req-value">Minimum 3.0 / 4.0</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="req-box">
+                                        <span class="req-label">GMAT / GRE Test Required</span>
+                                        <span class="req-value">No</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Language Test Requirements -->
+                    <div class="content-section" id="language">
+                        <div class="section-header">Language Test Requirements</div>
+                        <div class="section-body">
+                            <div class="mb-4">
+                                <div class="lang-test-header rounded-top">English Language Score</div>
+                                <div class="border rounded-bottom p-3">
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">IELTS Score</span>
+                                                <span class="req-value">6.5</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">TOEFL</span>
+                                                <span class="req-value">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">Duolingo Test</span>
+                                                <span class="req-value">110</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="lang-test-header rounded-top">German Language Score</div>
+                                <div class="border rounded-bottom p-3">
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">IELTS Score</span>
+                                                <span class="req-value">6.5</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">TOEFL</span>
+                                                <span class="req-value">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="req-box border-0 bg-light">
+                                                <span class="req-label">Duolingo Test</span>
+                                                <span class="req-value">110</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intake & Dates -->
+                    <div class="content-section" id="intakes">
+                        <div class="section-header">Intake & Dates</div>
+                        <div class="section-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="intake-card"
+                                        style="background-color: #EFF6FF; padding: 25px; border-radius: 12px; border: 1px solid #DBEAFE;">
+                                        <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Fall Intake</div>
+                                        <table class="data-table">
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission End</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Course Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="intake-card"
+                                        style="background-color: #EFF6FF; padding: 25px; border-radius: 12px; border: 1px solid #DBEAFE;">
+                                        <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Spring Intake
+                                        </div>
+                                        <table class="data-table">
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission End</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Course Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scholarships -->
+                    <div class="content-section" id="scholarships">
+                        <div class="section-header">Scholarships</div>
+                        <div class="section-body">
+                            <table class="data-table">
+                                <tr>
+                                    <td class="data-label">Scholarship</td>
+                                    <td class="data-value">Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Scholar Details</td>
+                                    <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">More Details</td>
+                                    <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Institution Details -->
+                    <div class="content-section" id="institution">
+                        <div class="section-header">Institution Details</div>
+                        <div class="section-body">
+                            <div class="p-4 rounded-4" style="background-color: #EFF6FF; border: 1px solid #DBEAFE;">
+                                <table class="data-table">
+                                    <tr>
+                                        <td class="data-label">Type</td>
+                                        <td class="data-value">Private</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-label">Campus Locations</td>
+                                        <td class="data-value">Clermont-Ferrand, Paris, Lyon</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-label">Course Faculty Link</td>
+                                        <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                    class="bi bi-box-arrow-up-right"></i></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visa & Work Opportunities -->
+                    <div class="content-section" id="visa">
+                        <div class="section-header">Visa & Work Opportunities</div>
+                        <div class="section-body">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Post Study Visa Available</span>
+                                        <span class="req-value">Yes ( 2 Years )</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Work Permit Available</span>
+                                        <span class="req-value">Yes</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="req-box">
+                                        <span class="req-label">Part Time Job Allowed</span>
+                                        <span class="req-value">Yes ( 20 Hours / Week )</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Career Outcomes -->
+                    <div class="content-section" id="outcomes">
+                        <div class="section-header">Career Outcomes</div>
+                        <div class="section-body">
+                            <div class="mb-4">
+                                <h4 class="section-title small text-uppercase opacity-75">Employment Rate</h4>
+                                <p class="section-text m-0 fw-semibold" style="color: #1F2937;">95% of graduates find
+                                    employment within 6 months of graduation.</p>
+                            </div>
+                            <table class="data-table">
+                                <tr>
+                                    <td class="data-label">Average Starting Salary</td>
+                                    <td class="data-value">$45,000 - $55,000 / Year</td>
+                                </tr>
+                                <tr>
+                                    <td class="data-label">Top Career Paths</td>
+                                    <td class="data-value">International Manager, Marketing Director</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Faculty -->
+                    <div class="content-section" id="faculty">
+                        <div class="section-header">Faculty</div>
+                        <div class="section-body">
+                            <div class="p-4 rounded-4" style="background-color: #EFF6FF; border: 1px solid #DBEAFE;">
+                                <table class="data-table">
+                                    <tr>
+                                        <td class="data-label">Faculty Member</td>
+                                        <td class="data-value">Dr. Jean Dupont - International Trade</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="data-label">Faculty Member</td>
+                                        <td class="data-value">Prof. Marie Curie - Global Marketing</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Installment Plan -->
+                    <div class="content-section" id="installment">
+                        <div class="section-header">Installment Plan</div>
+                        <div class="section-body">
+                            <div class="p-4 rounded-4" style="background-color: #EFF6FF; border: 1px solid #DBEAFE;">
+                                <table class="data-table">
+                                    <tr>
+                                        <td class="data-label">Available</td>
+                                        <td class="data-value">Yes <i class="bi bi-check-circle-fill ms-2"></i></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admission Contact -->
+                    <div class="content-section" id="contact">
+                        <div class="section-header">Admission Contact</div>
+                        <div class="section-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="p-4 rounded-4"
+                                        style="background-color: #EFF6FF; border: 1px solid #DBEAFE;">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                            <span class="small fw-bold">Admission Office</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                            <span class="small">admissions@clermont.edu.fr</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-4 rounded-4"
+                                        style="background-color: #EFF6FF; border: 1px solid #DBEAFE;">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                            <span class="small fw-bold">Recruitment Office</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-telephone-fill text-primary me-2"></i>
+                                            <span class="small">+33 4 73 17 00 00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="content-section" id="additional">
+                        <div class="section-header">Additional Details</div>
+                        <div class="section-body">
+                            <div class="p-3 bg-light rounded border min-vh-10">
+                                <p class="small mb-0 text-muted">Please visit our official website for more detailed
+                                    information about the curriculum, accommodation, and campus life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Preserved) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <p class="footer-desc">
+                        Experience a modern learning environment that combines academic knowledge with practical
+                        application. Develop the confidence and skills to lead in your chosen field.
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">City</a></li>
+                        <li><a href="#">Course</a></li>
+                        <li><a href="#">Country</a></li>
+                        <li><a href="#">University</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="mb-0">2026 copyright all right reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.nav-link-side').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const offset = 100;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = targetElement.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
