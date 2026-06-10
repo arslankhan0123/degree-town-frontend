@@ -328,22 +328,26 @@
             margin-bottom: 40px;
             position: relative;
             box-shadow: var(--card-shadow);
-            padding-top: 20px; /* Space for the overlapping badge */
+            padding-top: 20px;
+            /* Space for the overlapping badge */
         }
 
         .section-header {
-            background: #000099; /* Deeper blue for ribbon as per screenshot */
+            background: #000099;
+            /* Deeper blue for ribbon as per screenshot */
             color: white;
             padding: 8px 25px;
-            font-size: 1.5rem; /* Larger font for header as per screenshot */
+            font-size: 1.5rem;
+            /* Larger font for header as per screenshot */
             font-weight: 700;
             display: inline-block;
             position: absolute;
             top: 20px;
             left: -10px;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
-            min-width: 200px; /* Wider ribbon as per screenshot */
+            min-width: 200px;
+            /* Wider ribbon as per screenshot */
         }
 
         .section-header::before {
@@ -353,12 +357,14 @@
             left: 0;
             width: 0;
             height: 0;
-            border-top: 12px solid #000066; /* Darker tail */
+            border-top: 12px solid #000066;
+            /* Darker tail */
             border-left: 12px solid transparent;
         }
 
         .section-body {
-            padding: 75px 40px 40px; /* More padding as per screenshot */
+            padding: 75px 40px 40px;
+            /* More padding as per screenshot */
         }
 
         .section-title {
@@ -443,11 +449,13 @@
         }
 
         .data-table tr {
-            border-bottom: 1px solid #0000CC; /* Solid blue line from screenshot */
+            border-bottom: 1px solid #0000CC;
+            /* Solid blue line from screenshot */
         }
 
         .data-table tr:last-child {
-            border-bottom: 1px solid #0000CC; /* Keep line on last item as per screenshot */
+            border-bottom: 1px solid #0000CC;
+            /* Keep line on last item as per screenshot */
         }
 
         .data-table td {
@@ -457,12 +465,14 @@
 
         .data-label {
             font-weight: 700;
-            color: #0000CC; /* Matching primary blue */
+            color: #0000CC;
+            /* Matching primary blue */
             width: 40%;
         }
 
         .data-value {
-            color: #0000CC; /* Values also blue in screenshot, slightly different shade maybe but blue is consistent */
+            color: #0000CC;
+            /* Values also blue in screenshot, slightly different shade maybe but blue is consistent */
             font-weight: 500;
             text-align: right;
         }
@@ -735,13 +745,16 @@
             .hero-image-container {
                 display: none;
             }
+
             .hero-title {
                 font-size: 2rem;
             }
+
             .sidebar-nav {
                 position: static;
                 margin-bottom: 30px;
             }
+
             .intake-row {
                 flex-direction: column;
             }
@@ -811,9 +824,9 @@
                 <span class="hero-pill">Bachelor</span>
                 <span class="hero-pill">Private</span>
             </div>
-            
+
             <h1 class="hero-title">Bachelor in International<br>Management</h1>
-            
+
             <div class="hero-subtitle">
                 <div class="uni-logo-small">
                     <i class="bi bi-mortarboard-fill"></i>
@@ -868,28 +881,43 @@
                             <input type="text" placeholder="Search...">
                         </div>
                         <ul class="p-0 m-0">
-                            <li class="nav-item-side"><a href="#overview" class="nav-link-side active"><i class="bi bi-info-circle"></i> Overview</a></li>
-                            <li class="nav-item-side"><a href="#program-overview" class="nav-link-side"><i class="bi bi-journal-text"></i> Program Overview</a></li>
-                            <li class="nav-item-side"><a href="#course-overview" class="nav-link-side"><i class="bi bi-list-check"></i> Course Overview</a></li>
-                            <li class="nav-item-side"><a href="#fees" class="nav-link-side"><i class="bi bi-cash-stack"></i> Fees & Financials</a></li>
-                            <li class="nav-item-side"><a href="#admission" class="nav-link-side"><i class="bi bi-person-check"></i> Admission Requirements</a></li>
-                            <li class="nav-item-side"><a href="#language" class="nav-link-side"><i class="bi bi-translate"></i> Language Requirements</a></li>
-                            <li class="nav-item-side"><a href="#intakes" class="nav-link-side"><i class="bi bi-calendar-event"></i> Intakes & Dates</a></li>
-                            <li class="nav-item-side"><a href="#scholarships" class="nav-link-side"><i class="bi bi-award"></i> Scholarships</a></li>
-                            <li class="nav-item-side"><a href="#institution" class="nav-link-side"><i class="bi bi-building"></i> Institution Details</a></li>
-                            <li class="nav-item-side"><a href="#visa" class="nav-link-side"><i class="bi bi-passport"></i> Visa & Work Opportunities</a></li>
-                            <li class="nav-item-side"><a href="#outcomes" class="nav-link-side"><i class="bi bi-graph-up-arrow"></i> Career Outcomes</a></li>
-                            <li class="nav-item-side"><a href="#faculty" class="nav-link-side"><i class="bi bi-people"></i> Faculty</a></li>
-                            <li class="nav-item-side"><a href="#installment" class="nav-link-side"><i class="bi bi-credit-card"></i> Installment Plan</a></li>
-                            <li class="nav-item-side"><a href="#contact" class="nav-link-side"><i class="bi bi-telephone"></i> Admission Contact</a></li>
-                            <li class="nav-item-side"><a href="#additional" class="nav-link-side"><i class="bi bi-plus-circle"></i> Additional Details</a></li>
+                            <li class="nav-item-side"><a href="#overview" class="nav-link-side active"><i
+                                        class="bi bi-info-circle"></i> Overview</a></li>
+                            <li class="nav-item-side"><a href="#program-overview" class="nav-link-side"><i
+                                        class="bi bi-journal-text"></i> Program Overview</a></li>
+                            <li class="nav-item-side"><a href="#course-overview" class="nav-link-side"><i
+                                        class="bi bi-list-check"></i> Course Overview</a></li>
+                            <li class="nav-item-side"><a href="#fees" class="nav-link-side"><i
+                                        class="bi bi-cash-stack"></i> Fees & Financials</a></li>
+                            <li class="nav-item-side"><a href="#admission" class="nav-link-side"><i
+                                        class="bi bi-person-check"></i> Admission Requirements</a></li>
+                            <li class="nav-item-side"><a href="#language" class="nav-link-side"><i
+                                        class="bi bi-translate"></i> Language Requirements</a></li>
+                            <li class="nav-item-side"><a href="#intakes" class="nav-link-side"><i
+                                        class="bi bi-calendar-event"></i> Intakes & Dates</a></li>
+                            <li class="nav-item-side"><a href="#scholarships" class="nav-link-side"><i
+                                        class="bi bi-award"></i> Scholarships</a></li>
+                            <li class="nav-item-side"><a href="#institution" class="nav-link-side"><i
+                                        class="bi bi-building"></i> Institution Details</a></li>
+                            <li class="nav-item-side"><a href="#visa" class="nav-link-side"><i
+                                        class="bi bi-passport"></i> Visa & Work Opportunities</a></li>
+                            <li class="nav-item-side"><a href="#outcomes" class="nav-link-side"><i
+                                        class="bi bi-graph-up-arrow"></i> Career Outcomes</a></li>
+                            <li class="nav-item-side"><a href="#faculty" class="nav-link-side"><i
+                                        class="bi bi-people"></i> Faculty</a></li>
+                            <li class="nav-item-side"><a href="#installment" class="nav-link-side"><i
+                                        class="bi bi-credit-card"></i> Installment Plan</a></li>
+                            <li class="nav-item-side"><a href="#contact" class="nav-link-side"><i
+                                        class="bi bi-telephone"></i> Admission Contact</a></li>
+                            <li class="nav-item-side"><a href="#additional" class="nav-link-side"><i
+                                        class="bi bi-plus-circle"></i> Additional Details</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Right Main Content -->
                 <div class="col-lg-9">
-                    
+
                     <div class="sub-nav-row">
                         <div class="sub-nav-tabs">
                             <a href="#" class="sub-nav-tab active">Course</a>
@@ -914,7 +942,11 @@
                         <div class="section-header">Overview</div>
                         <div class="section-body">
                             <p class="section-text m-0">
-                                The Bachelor in International Management at Clermont School of Business is a 3-year undergraduate program designed to build strong foundations in global business, management, marketing, and entrepreneurship. The program focuses on international exposure, practical learning, and cross-cultural business understanding, preparing students for global careers or further studies.
+                                The Bachelor in International Management at Clermont School of Business is a 3-year
+                                undergraduate program designed to build strong foundations in global business,
+                                management, marketing, and entrepreneurship. The program focuses on international
+                                exposure, practical learning, and cross-cultural business understanding, preparing
+                                students for global careers or further studies.
                             </p>
                         </div>
                     </div>
@@ -959,13 +991,15 @@
                             <div class="info-card-inner">
                                 <div class="underlined-field">
                                     <span class="field-label">Program</span>
-                                    <span class="field-value">Provide a comprehensive overview of the program, its objectives, and key highlights...</span>
+                                    <span class="field-value">Provide a comprehensive overview of the program, its
+                                        objectives, and key highlights...</span>
                                 </div>
                                 <div class="underlined-field">
                                     <span class="field-label">Programme/Course Structure</span>
-                                    <span class="field-value">Describe the course structure, modules, semester breakdown, and curriculum details...</span>
+                                    <span class="field-value">Describe the course structure, modules, semester
+                                        breakdown, and curriculum details...</span>
                                 </div>
-                                
+
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="underlined-field">
@@ -1029,7 +1063,8 @@
                                         <span class="fee-item-label">Full Fee (if applicable)</span>
                                         <div class="fee-item-box">
                                             <span class="currency-symbol">€</span>
-                                            <span class="fee-amount text-muted opacity-50">Enter total program fee</span>
+                                            <span class="fee-amount text-muted opacity-50">Enter total program
+                                                fee</span>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -1063,7 +1098,8 @@
                             <div class="info-card-inner">
                                 <div class="underlined-field">
                                     <span class="field-label">Admission Requirements</span>
-                                    <span class="field-value">List all admission requirements including documents, qualifications, prerequisites, etc..</span>
+                                    <span class="field-value">List all admission requirements including documents,
+                                        qualifications, prerequisites, etc..</span>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -1162,35 +1198,48 @@
                                         <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Fall Intake</div>
                                         <table class="data-table">
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Admission Start</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Admission End</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission End</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Course Start</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Course Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="info-card-inner">
-                                        <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Spring Intake</div>
+                                        <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Spring Intake
+                                        </div>
                                         <table class="data-table">
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Admission Start</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Admission End</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Admission End</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                             <tr>
-                                                <td class="data-label small" style="color: #374151; font-weight: 700;">Course Start</td>
-                                                <td class="data-value small" style="color: #4B5563;"><i class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
+                                                <td class="data-label small" style="color: #374151; font-weight: 700;">
+                                                    Course Start</td>
+                                                <td class="data-value small" style="color: #4B5563;"><i
+                                                        class="bi bi-calendar3 me-2"></i> 22 March 2026</td>
                                             </tr>
                                         </table>
                                     </div>
@@ -1210,11 +1259,13 @@
                                 </tr>
                                 <tr>
                                     <td class="data-label">Scholar Details</td>
-                                    <td class="data-value"><a href="#" class="visit-link">Visit <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a></td>
                                 </tr>
                                 <tr>
                                     <td class="data-label">More Details</td>
-                                    <td class="data-value"><a href="#" class="visit-link">Visit <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                    <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a></td>
                                 </tr>
                             </table>
                         </div>
@@ -1236,7 +1287,8 @@
                                     </tr>
                                     <tr>
                                         <td class="data-label">Course Faculty Link</td>
-                                        <td class="data-value"><a href="#" class="visit-link">Visit <i class="bi bi-box-arrow-up-right"></i></a></td>
+                                        <td class="data-value"><a href="#" class="visit-link">Visit <i
+                                                    class="bi bi-box-arrow-up-right"></i></a></td>
                                     </tr>
                                 </table>
                             </div>
@@ -1300,7 +1352,8 @@
                                     <div class="col-md-6">
                                         <div class="underlined-field mb-0">
                                             <span class="field-label">Mini - Maxi Salary Range</span>
-                                            <span class="field-value text-blue-bright"><span class="currency-symbol">€</span> 8500 - 10000</span>
+                                            <span class="field-value text-blue-bright"><span
+                                                    class="currency-symbol">€</span> 8500 - 10000</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1325,14 +1378,17 @@
                                 <div class="underlined-field">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span class="field-label mb-0">Faculty Link</span>
-                                        <a href="#" class="visit-link">Visit <i class="bi bi-box-arrow-up-right"></i></a>
+                                        <a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
-                                    <span class="field-value mt-2 d-block text-blue-bright fw-bold">University faculty</span>
+                                    <span class="field-value mt-2 d-block text-blue-bright fw-bold">University
+                                        faculty</span>
                                 </div>
                                 <div class="underlined-field mb-0">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span class="field-label mb-0">Faculty Link</span>
-                                        <a href="#" class="visit-link">Visit <i class="bi bi-box-arrow-up-right"></i></a>
+                                        <a href="#" class="visit-link">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                     <span class="field-value mt-2 d-block text-blue-bright fw-bold">More Details</span>
                                 </div>
@@ -1366,11 +1422,13 @@
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-envelope text-primary me-3"></i>
-                                            <span class="small"><span class="fw-bold">Email:</span> international@clermont-sb.fr</span>
+                                            <span class="small"><span class="fw-bold">Email:</span>
+                                                international@clermont-sb.fr</span>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-telephone text-primary me-3"></i>
-                                            <span class="small"><span class="fw-bold">Contact:</span> Check official website</span>
+                                            <span class="small"><span class="fw-bold">Contact:</span> Check official
+                                                website</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1382,11 +1440,13 @@
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="bi bi-envelope text-primary me-3"></i>
-                                            <span class="small"><span class="fw-bold">Email:</span> international@clermont-sb.fr</span>
+                                            <span class="small"><span class="fw-bold">Email:</span>
+                                                international@clermont-sb.fr</span>
                                         </div>
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-telephone text-primary me-3"></i>
-                                            <span class="small"><span class="fw-bold">Contact:</span> Check official website</span>
+                                            <span class="small"><span class="fw-bold">Contact:</span> Check official
+                                                website</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1400,7 +1460,8 @@
                         <div class="section-body">
                             <div class="info-card-inner">
                                 <div class="bg-white p-4 rounded-3 border border-light-subtle">
-                                    <p class="small mb-0 text-muted">Provide a comprehensive overview of the program, its objectives, and key highlights...</p>
+                                    <p class="small mb-0 text-muted">Provide a comprehensive overview of the program,
+                                        its objectives, and key highlights...</p>
                                 </div>
                             </div>
                         </div>
@@ -1462,7 +1523,7 @@
                 e.preventDefault();
                 document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 const offset = 100;
