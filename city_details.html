@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Paris - City Details | Degree Town</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-blue: #0000CC;
+            --dark-blue: #000066;
+            --footer-bg: #000066;
+            --bg-light: #F4F6F9;
+            --text-main: #1A202C;
+            --text-muted: #4A5568;
+            --border-color: #E2E8F0;
+            --accent-cyan: #00C3FF;
+            --accent-blue: #0A49F6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8FAFC;
+            /* Subtle grid background pattern matching target screenshot */
+            background-image: radial-gradient(#E2E8F0 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            color: var(--text-main);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            padding: 0.8rem 0;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-circle {
+            background: var(--primary-blue);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-blue) !important;
+        }
+
+        .btn-signin {
+            border: 1px solid #e0e0e0;
+            color: #333;
+            padding: 8px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-right: 12px;
+            background: white;
+        }
+
+        .btn-signup {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+        }
+
+        /* ===== HERO ===== */
+        .hero-section {
+            background: linear-gradient(rgba(4, 1, 108, 0.85), rgba(4, 1, 108, 0.85)), 
+                        url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 95px 0 135px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero-pills {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-pill {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Wave separator - Organic Curved Transition */
+        .hero-wave {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 6;
+        }
+
+        .hero-wave svg {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 50px;
+            fill: #F8FAFC;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .section-label-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            padding-left: 10px;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar-nav {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 0;
+            position: sticky;
+            top: 80px;
+            box-shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            z-index: 100;
+        }
+
+        .nav-item-side {
+            list-style: none;
+            padding: 2px 10px;
+        }
+
+        .nav-link-side {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-link-side:hover {
+            color: var(--primary-blue);
+            background: #F7FAFC;
+        }
+
+        .nav-link-side.active {
+            background: #0000CC;
+            color: white;
+        }
+
+        /* ===== TAB NAVIGATION ===== */
+        .sub-nav-tabs {
+            display: flex;
+            gap: 8px;
+            background: white;
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: inline-flex;
+        }
+
+        .sub-nav-tab {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #718096;
+            transition: all 0.2s;
+        }
+
+        .sub-nav-tab.active {
+            background: #0000CC;
+            color: white;
+        }
+
+        /* ===== SECTION HEADER STYLING ===== */
+        .content-section-wrapper {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1A202C;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Dark blue content blocks matching target screenshot */
+        .dark-blue-section-block {
+            background: #04016C;
+            color: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(4,1,108,0.15);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .dark-blue-section-block .section-title {
+            color: white;
+        }
+
+        /* Background decorative stripes */
+        .decor-stripe {
+            position: absolute;
+            transform: skewX(-20deg) rotate(-5deg);
+            border-radius: 4px;
+            z-index: 1;
+            opacity: 0.85;
+        }
+        .stripe-light-grey {
+            background: #EAF0F6;
+            width: 250px;
+            height: 40px;
+        }
+        .stripe-cyan {
+            background: var(--accent-cyan);
+            width: 320px;
+            height: 50px;
+        }
+        .stripe-dark-blue {
+            background: #0000B3;
+            width: 200px;
+            height: 55px;
+        }
+        .stripe-dark-blue-small {
+            background: var(--primary-blue);
+            width: 120px;
+            height: 20px;
+        }
+        .stripe-cyan-vertical {
+            background: var(--accent-cyan);
+            width: 45px;
+            height: 90px;
+        }
+
+        /* Table & Lists layout style */
+        .info-card-container {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row.clickable:hover {
+            background-color: #F8FAFC;
+        }
+
+        .info-row-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #4A5568;
+        }
+
+        .info-row-left i {
+            font-size: 1.15rem;
+            color: #A0AEC0;
+            width: 24px;
+            text-align: center;
+        }
+
+        .info-row-right {
+            font-weight: 500;
+            color: #2D3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chevron-icon {
+            color: #CBD5E0;
+            font-size: 0.9rem;
+        }
+
+        /* ====== QUICK INFO SECTION WITH BUBBLES ====== */
+        .quick-info-section {
+            position: relative;
+            background: linear-gradient(135deg, #f0f6ff 0%, #e8f4ff 50%, #f5f9ff 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            border: 1px solid rgba(0, 100, 255, 0.1);
+        }
+
+        /* Animated bubbles background */
+        .bubbles-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(100, 180, 255, 0.5), rgba(0, 100, 255, 0.15));
+            animation: floatBubble linear infinite;
+        }
+
+        .bubble:nth-child(1)  { width: 80px;  height: 80px;  left: 5%;   bottom: -80px;  animation-duration: 9s;  animation-delay: 0s; }
+        .bubble:nth-child(2)  { width: 50px;  height: 50px;  left: 12%;  bottom: -50px;  animation-duration: 12s; animation-delay: 2s; }
+        .bubble:nth-child(3)  { width: 110px; height: 110px; left: 22%;  bottom: -110px; animation-duration: 8s;  animation-delay: 1s; }
+        .bubble:nth-child(4)  { width: 40px;  height: 40px;  left: 35%;  bottom: -40px;  animation-duration: 11s; animation-delay: 3s; }
+        .bubble:nth-child(5)  { width: 70px;  height: 70px;  left: 50%;  bottom: -70px;  animation-duration: 10s; animation-delay: 0.5s; }
+        .bubble:nth-child(6)  { width: 90px;  height: 90px;  left: 62%;  bottom: -90px;  animation-duration: 7s;  animation-delay: 2.5s; }
+        .bubble:nth-child(7)  { width: 55px;  height: 55px;  left: 75%;  bottom: -55px;  animation-duration: 13s; animation-delay: 1.5s; }
+        .bubble:nth-child(8)  { width: 130px; height: 130px; left: 85%;  bottom: -130px; animation-duration: 9s;  animation-delay: 0s; }
+        .bubble:nth-child(9)  { width: 35px;  height: 35px;  left: 92%;  bottom: -35px;  animation-duration: 11s; animation-delay: 3.5s; }
+        .bubble:nth-child(10) { width: 60px;  height: 60px;  left: 45%;  bottom: -60px;  animation-duration: 14s; animation-delay: 1s; }
+
+        @keyframes floatBubble {
+            0%   { transform: translateY(0) scale(1);   opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 0.7; }
+            100% { transform: translateY(-600px) scale(1.1); opacity: 0; }
+        }
+
+        /* Quick Info layout */
+        .quick-info-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            min-height: 360px;
+        }
+
+        .quick-info-sidebar {
+            background: linear-gradient(180deg, #0000CC 0%, #0a1acc 100%);
+            padding: 30px 25px;
+            border-radius: 16px 0 0 16px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .quick-info-sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.85);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 12px;
+        }
+
+        .quick-info-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .quick-info-stat-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .quick-info-stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .quick-info-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .quick-info-right {
+            padding: 30px 30px 30px 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .quick-info-right .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        /* Media / City Gallery Section Specifics */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .media-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1.5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* City Gallery Blue Background */
+        .city-gallery-section {
+            background: linear-gradient(135deg, #0000CC 0%, #0a25d4 30%, #0540e8 70%, #0000AA 100%);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-gallery-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(0,195,255,0.12) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .city-gallery-section .section-title {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .city-gallery-section .media-grid {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .quick-info-inner {
+                grid-template-columns: 1fr;
+            }
+            .quick-info-sidebar {
+                border-radius: 16px 16px 0 0;
+            }
+        }
+
+        /* Map graphic circle outline */
+        .map-graphic-circle {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .map-graphic-circle::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 40% 40%, #00C3FF 10%, transparent 11%),
+                        radial-gradient(circle at 60% 70%, #0A49F6 8%, transparent 9%),
+                        linear-gradient(45deg, #CBD5E0 25%, transparent 25%),
+                        linear-gradient(-45deg, #CBD5E0 25%, transparent 25%);
+            background-size: 40px 40px, 40px 40px, 20px 20px, 20px 20px;
+            opacity: 0.45;
+        }
+
+        .map-marker-pin {
+            position: relative;
+            color: #FF0000;
+            font-size: 2.2rem;
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Cards in Accommodation */
+        .housing-stats-card {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .housing-stats-card.green {
+            background-color: #E6FFFA;
+            color: #319795;
+            border-color: #B2F5EA;
+        }
+
+        .housing-stats-card.red {
+            background-color: #FFF5F5;
+            color: #E53E3E;
+            border-color: #FEB2B2;
+        }
+
+        /* GRID BOXES FOR METRO / AIRPORTS */
+        .connective-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .connective-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            color: var(--text-main);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .connective-card-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2D3748;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .connective-card-val {
+            font-size: 0.9rem;
+            color: #4A5568;
+            line-height: 1.5;
+        }
+
+        /* Famous sites grid overlay style */
+        .site-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1.4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .site-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .site-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .site-card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            padding: 12px 15px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-logo {
+            background: white;
+            color: var(--primary-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-desc {
+            color: #eee;
+            line-height: 1.8;
+            font-size: 1rem;
+            max-width: 400px;
+        }
+
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+        }
+
+        .footer-links a {
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: rgba(255,255,255,0.35);
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.5rem; }
+            .sidebar-nav { position: static; margin-bottom: 30px; }
+            .media-grid { grid-template-columns: repeat(2, 1fr); }
+            .connective-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2rem; }
+            .media-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar (Preserved) -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/course.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Universities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Cities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Region</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-signin text-decoration-none">Sign In</a>
+                    <a href="#" class="btn btn-signup text-decoration-none">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1 class="hero-title">Discover Paris</h1>
+            <div class="hero-pills">
+                <div class="hero-pill">
+                    <i class="bi bi-cash-stack"></i> Avg Tuition Fee: €10k-€20k/yr
+                </div>
+                <div class="hero-pill">
+                    <i class="bi bi-houses"></i> Avg Living Expense: €1.2k-€1.8k/mo
+                </div>
+                <div class="hero-pill">
+                    <i class="bi bi-briefcase"></i> Avg Part Time Wage: €10-€15/hr
+                </div>
+                <div class="hero-pill">
+                    <i class="bi bi-file-earmark-check"></i> Post Study Visa: Yes
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,80C360,120,720,120,1080,80C1260,60,1380,50,1440,40L1440,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+
+                <!-- Left Sidebar Nav -->
+                <div class="col-lg-3">
+                    <div class="section-label-header">Sections</div>
+                    <div class="sidebar-nav">
+                        <ul class="p-0 m-0">
+                            <li class="nav-item-side">
+                                <a href="#overview" class="nav-link-side active">
+                                    <i class="bi bi-info-circle"></i> Overview
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#media" class="nav-link-side">
+                                    <i class="bi bi-image"></i> Media
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#universities" class="nav-link-side">
+                                    <i class="bi bi-mortarboard"></i> Popular Universities
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#sites" class="nav-link-side">
+                                    <i class="bi bi-compass"></i> Famous Sites
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#accommodation" class="nav-link-side">
+                                    <i class="bi bi-houses"></i> Accommodation &amp; Transportation
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#transport" class="nav-link-side">
+                                    <i class="bi bi-train-front"></i> Transport &amp; Connective
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#jobs" class="nav-link-side">
+                                    <i class="bi bi-briefcase"></i> Jobs &amp; Opportunities
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#leisure" class="nav-link-side">
+                                    <i class="bi bi-balloon"></i> Leisure &amp; Social Life
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#health" class="nav-link-side">
+                                    <i class="bi bi-heart-pulse"></i> Health &amp; Safety
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#costs" class="nav-link-side">
+                                    <i class="bi bi-wallet2"></i> Living Costs Summary
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#useful" class="nav-link-side">
+                                    <i class="bi bi-patch-question"></i> Other Useful Info
+                                </a>
+                            </li>
+                            <li class="nav-item-side">
+                                <a href="#comparison" class="nav-link-side">
+                                    <i class="bi bi-arrow-left-right"></i> City Comparison
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Main Content -->
+                <div class="col-lg-9">
+
+                    <!-- Tab Navigation Row -->
+                    <div class="mb-4">
+                        <div class="sub-nav-tabs">
+                            <a href="course_details.html" class="sub-nav-tab">Course</a>
+                            <a href="university_details.html" class="sub-nav-tab">University</a>
+                            <a href="city_details.blade.php" class="sub-nav-tab active">City</a>
+                            <a href="#" class="sub-nav-tab">Country</a>
+                        </div>
+                    </div>
+
+                    <!-- ====== QUICK INFORMATION / OVERVIEW ====== -->
+                    <div class="content-section-wrapper" id="overview">
+                        <div class="quick-info-section">
+                            <!-- Animated Bubbles Background -->
+                            <div class="bubbles-bg">
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                                <div class="bubble"></div>
+                            </div>
+
+                            <div class="quick-info-inner">
+                                <!-- LEFT SIDEBAR -->
+                                <div class="quick-info-sidebar">
+                                    <div class="quick-info-sidebar-title">Quick Facts</div>
+
+                                    <div class="quick-info-stat">
+                                        <div class="quick-info-stat-label">Country</div>
+                                        <div class="quick-info-stat-value">France 🇫🇷</div>
+                                    </div>
+                                    <div class="quick-info-divider"></div>
+                                    <div class="quick-info-stat">
+                                        <div class="quick-info-stat-label">Language</div>
+                                        <div class="quick-info-stat-value">French</div>
+                                    </div>
+                                    <div class="quick-info-divider"></div>
+                                    <div class="quick-info-stat">
+                                        <div class="quick-info-stat-label">Currency</div>
+                                        <div class="quick-info-stat-value">Euro (€)</div>
+                                    </div>
+                                    <div class="quick-info-divider"></div>
+                                    <div class="quick-info-stat">
+                                        <div class="quick-info-stat-label">Population</div>
+                                        <div class="quick-info-stat-value">2.16 Million</div>
+                                    </div>
+                                    <div class="quick-info-divider"></div>
+                                    <div class="quick-info-stat">
+                                        <div class="quick-info-stat-label">Time Zone</div>
+                                        <div class="quick-info-stat-value">CET (UTC+1)</div>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT CONTENT -->
+                                <div class="quick-info-right">
+                                    <div class="section-title">Quick Information</div>
+                                    <div class="info-card-container">
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-water"></i>
+                                                <span>Main River</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>Seine</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-mortarboard"></i>
+                                                <span>Academic Institutions</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>50+</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-airplane"></i>
+                                                <span>Main Airport</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>Charles de Gaulle</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-clock"></i>
+                                                <span>Time Zone</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>CET (UTC+1)</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-thermometer-half"></i>
+                                                <span>Climate</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>Temperate Oceanic</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-translate"></i>
+                                                <span>Official Language</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>French</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-geo-alt"></i>
+                                                <span>Area</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>105.4 km²</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-row-left">
+                                                <i class="bi bi-wifi"></i>
+                                                <span>Internet Speed (avg)</span>
+                                            </div>
+                                            <div class="info-row-right">
+                                                <span>~130 Mbps</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== CITY GALLERY / MEDIA ====== -->
+                    <div class="city-gallery-section" id="media">
+                        <div class="section-title">City Gallery</div>
+                        <div class="media-grid">
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600" alt="Paris Street">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1499856871958-5b9647a6406a?q=80&w=600" alt="Louvre">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=600" alt="Eiffel Tower Close">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600" alt="Seine Night">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1549146473-306177e58e4e?q=80&w=600" alt="Cafe in Paris">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1488866081812-4aefb69f688e?q=80&w=600" alt="Arc de Triomphe">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== POPULAR UNIVERSITIES ====== -->
+                    <div class="content-section-wrapper" id="universities">
+                        <div class="section-title">Popular Universities</div>
+                        <div class="row align-items-center">
+                            <div class="col-md-3 mb-4 mb-md-0 d-flex justify-content-center">
+                                <div class="map-graphic-circle">
+                                    <i class="bi bi-geo-alt-fill map-marker-pin"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="info-card-container">
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Total Universities</span></div>
+                                        <div class="info-row-right"><span>50+</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>QS Ranked</span></div>
+                                        <div class="info-row-right"><span>12</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Popular Campus locations</span></div>
+                                        <div class="info-row-right"><span>Sorbonne, Panthéon</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Student population</span></div>
+                                        <div class="info-row-right"><span>&gt; 350,000</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>International Student ratio</span></div>
+                                        <div class="info-row-right"><span>20%</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Major Study Fields</span></div>
+                                        <div class="info-row-right"><span>Arts, Sciences, Business</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Tuition Fee range</span></div>
+                                        <div class="info-row-right"><span>€170 - €15,000/yr</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Application Deadlines</span></div>
+                                        <div class="info-row-right"><span>Jan - April (varies)</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Scholarship Opportunities</span></div>
+                                        <div class="info-row-right"><span>Many (Merit &amp; Need based)</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== FAMOUS SITES ====== -->
+                    <div class="dark-blue-section-block" id="sites">
+                        <div class="section-title">Famous Sites</div>
+                        <div class="row g-3">
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1549146473-306177e58e4e?q=80&w=400" alt="Eiffel Tower">
+                                    <div class="site-card-title">Eiffel Tower</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1499856871958-5b9647a6406a?q=80&w=400" alt="Louvre Museum">
+                                    <div class="site-card-title">Louvre Museum</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?q=80&w=400" alt="Arc de Triomphe">
+                                    <div class="site-card-title">Arc de Triomphe</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1478866081812-4aefb69f688e?q=80&w=400" alt="Notre Dame">
+                                    <div class="site-card-title">Notre Dame</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=400" alt="Sacré-Cœur">
+                                    <div class="site-card-title">Sacré-Cœur</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="site-card">
+                                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=400" alt="Seine River">
+                                    <div class="site-card-title">Seine River</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== ACCOMMODATION & TRANSPORTATION ====== -->
+                    <div class="content-section-wrapper" id="accommodation">
+                        <div class="section-title">Accommodation &amp; Transportation</div>
+                        <div class="row">
+                            <div class="col-md-3 mb-4 mb-md-0 d-flex flex-column align-items-center gap-4">
+                                <div class="map-graphic-circle">
+                                    <i class="bi bi-geo-alt-fill map-marker-pin" style="color: #0A49F6;"></i>
+                                </div>
+                                <div class="w-100">
+                                    <div class="housing-stats-card green mb-3">
+                                        <div style="font-size: 0.8rem; text-transform: uppercase;">Average Rent</div>
+                                        <div style="font-size: 1.3rem; margin-top: 5px;">€650 - €1,200/mo</div>
+                                    </div>
+                                    <div class="housing-stats-card red">
+                                        <div style="font-size: 0.8rem; text-transform: uppercase;">Average Utility</div>
+                                        <div style="font-size: 1.3rem; margin-top: 5px;">€150 - €250/mo</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="info-card-container">
+                                    <!-- Accommodation Header -->
+                                    <div class="bg-light px-4 py-2 border-bottom fw-bold text-secondary text-uppercase" style="font-size: 0.8rem;">Accommodation Options</div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Student Residence (CROUS)</span></div>
+                                        <div class="info-row-right"><span>€250 - €600/mo</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Private Room/Studio</span></div>
+                                        <div class="info-row-right"><span>€800 - €1,500/mo</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Shared Apartment</span></div>
+                                        <div class="info-row-right"><span>€500 - €900/mo</span></div>
+                                    </div>
+
+                                    <!-- Transportation Header -->
+                                    <div class="bg-light px-4 py-2 border-bottom border-top fw-bold text-secondary text-uppercase" style="font-size: 0.8rem;">Transportation Modes</div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Metro (RATP)</span></div>
+                                        <div class="info-row-right"><span>€84/mo (Imagine R student pass)</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Bus / Tram</span></div>
+                                        <div class="info-row-right"><span>Included in travel pass</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Velib' (Bike share)</span></div>
+                                        <div class="info-row-right"><span>€3.10/mo</span></div>
+                                    </div>
+
+                                    <!-- Travel Time -->
+                                    <div class="bg-light px-4 py-2 border-bottom border-top fw-bold text-secondary text-uppercase" style="font-size: 0.8rem;">Travel Details</div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Avg commute</span></div>
+                                        <div class="info-row-right"><span>30 - 45 mins</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Safe neighborhoods</span></div>
+                                        <div class="info-row-right"><span>5th, 6th, 13th, 14th arr.</span></div>
+                                    </div>
+                                    <div class="info-row">
+                                        <div class="info-row-left"><span>Rent subsidy (CAF)</span></div>
+                                        <div class="info-row-right"><span style="color: #319795;">Up to €200 available</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== TRANSPORT & CONNECTIVE ====== -->
+                    <div class="dark-blue-section-block" id="transport">
+                        <div class="section-title">Transport &amp; Connective</div>
+                        <div class="connective-grid">
+                            <div class="connective-card">
+                                <div class="connective-card-title">
+                                    <i class="bi bi-train-front" style="color: var(--primary-blue);"></i> Metro system
+                                </div>
+                                <div class="connective-card-val">
+                                    Paris Metro covers 16 lines with 300+ stations. It is the quickest way to traverse the city, operating from 5:30 AM to 1:15 AM.
+                                </div>
+                            </div>
+                            <div class="connective-card">
+                                <div class="connective-card-title">
+                                    <i class="bi bi-train-lightrail" style="color: var(--primary-blue);"></i> Train networks
+                                </div>
+                                <div class="connective-card-val">
+                                    RER express trains connect Paris to suburbs like CDG airport, Versailles, and Disneyland. TGV high speed links reach other cities.
+                                </div>
+                            </div>
+                            <div class="connective-card">
+                                <div class="connective-card-title">
+                                    <i class="bi bi-bicycle" style="color: var(--primary-blue);"></i> Bike sharing
+                                </div>
+                                <div class="connective-card-val">
+                                    Vélib' Métropole is a massive bike rental scheme with 20,000+ docks. Student subscription discounts make it highly accessible.
+                                </div>
+                            </div>
+                            <div class="connective-card">
+                                <div class="connective-card-title">
+                                    <i class="bi bi-airplane" style="color: var(--primary-blue);"></i> Airports connectivity
+                                </div>
+                                <div class="connective-card-val">
+                                    Charles de Gaulle (CDG) and Orly (ORY) are the main hubs. Reached easily by RER B or airport shuttle lines from the city center.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== JOBS & OPPORTUNITIES ====== -->
+                    <div class="content-section-wrapper" id="jobs">
+                        <div class="section-title">Jobs &amp; Opportunities</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <span>Average Part Time Wage</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>€11.65/hr (SMIC minimum wage)</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <span>Key Job Industries</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>Tourism, Tech, Services, Fashion, Education</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <span>Work Hours Allowed</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>964 hours/year (approx. 20 hrs/week)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== LEISURE & SOCIAL LIFE ====== -->
+                    <div class="dark-blue-section-block" id="leisure">
+                        <div class="section-title">Leisure &amp; Social Life</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Cafes</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Countless street cafes; excellent for reading &amp; studying</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Parks</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Jardin du Luxembourg, Tuileries, Parc des Buttes-Chaumont</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Museums</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Louvre, Musée d'Orsay, Centre Pompidou</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Nightlife</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Vibrant districts like Bastille, Oberkampf, and Le Marais</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== HEALTH & SAFETY ====== -->
+                    <div class="content-section-wrapper" id="health">
+                        <div class="section-title">Health &amp; Safety</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left"><span>General Safety</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Safe overall; be aware of pickpockets in crowded tourist zones</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Emergency numbers</span></div>
+                                <div class="info-row-right"><span>112 (General), 15 (Medical), 17 (Police)</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Healthcare system</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>Student Social Security (CPAM) - free registration &amp; 70% reimbursement</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Local Hospitals</span></div>
+                                <div class="info-row-right" style="max-width: 60%; text-align: right;"><span>AP-HP public hospitals; English speaking services available</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== LIVING COSTS SUMMARY ====== -->
+                    <div class="dark-blue-section-block" id="costs">
+                        <div class="section-title">Living Costs Summary</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Groceries</span></div>
+                                <div class="info-row-right"><span>Average cost: €250 - €350/mo (Lidl, Carrefour)</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Dining out</span></div>
+                                <div class="info-row-right"><span>Lunch menu: €15 - €22, Coffee: €2.50 - €4.50</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Leisure</span></div>
+                                <div class="info-row-right"><span>Cinema ticket: €8 (student discount), Museum: Free for EU students &lt;26</span></div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left"><span>Insurance</span></div>
+                                <div class="info-row-right"><span>Student health insurance: Included, Private liability: €15 - €30/yr</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== OTHER USEFUL INFO ====== -->
+                    <div class="content-section-wrapper" id="useful">
+                        <div class="section-title">Other Useful Info</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="info-card-container p-4" style="height: 100%;">
+                                    <div class="contact-col-header">Local Help Desk</div>
+                                    <div class="contact-info-block">
+                                        <div class="contact-info-label">Organization</div>
+                                        <div class="contact-info-val">Cité Internationale Universitaire de Paris (CIUP)</div>
+                                    </div>
+                                    <div class="contact-info-block">
+                                        <div class="contact-info-label">Address</div>
+                                        <div class="contact-info-val">17 Boulevard Jourdan, 75014 Paris</div>
+                                    </div>
+                                    <div class="contact-info-block mb-0">
+                                        <div class="contact-info-label">Website</div>
+                                        <div class="contact-info-val"><a href="https://www.ciup.fr" target="_blank">www.ciup.fr</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card-container p-4" style="height: 100%;">
+                                    <div class="contact-col-header">International Student Desk</div>
+                                    <div class="contact-info-block">
+                                        <div class="contact-info-label">Organization</div>
+                                        <div class="contact-info-val">Campus France Paris Center</div>
+                                    </div>
+                                    <div class="contact-info-block">
+                                        <div class="contact-info-label">Address</div>
+                                        <div class="contact-info-val">28 Rue de la Grange aux Belles, 75010 Paris</div>
+                                    </div>
+                                    <div class="contact-info-block mb-0">
+                                        <div class="contact-info-label">Website</div>
+                                        <div class="contact-info-val"><a href="https://www.campusfrance.org" target="_blank">www.campusfrance.org</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== CITY COMPARISON ====== -->
+                    <div class="content-section-wrapper" id="comparison">
+                        <div class="section-title">City Comparison</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <span>Compare with London</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span style="color: #FF0000; font-weight: 600;">Paris is 12% cheaper overall</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <span>Compare with Berlin</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span style="color: #319795; font-weight: 600;">Paris is 18% more expensive overall</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end col-lg-9 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section>
+
+    <!-- Footer (Preserved) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <p class="footer-desc">
+                        Experience a modern learning environment that combines academic knowledge with practical
+                        application. Develop the confidence and skills to lead in your chosen field.
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">City</a></li>
+                        <li><a href="#">Course</a></li>
+                        <li><a href="#">Country</a></li>
+                        <li><a href="#">University</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="mb-0">2026 copyright all right reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.nav-link-side').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                const offset = 100;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = targetElement.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            });
+        });
+
+        // Highlight sidebar link on scroll
+        const sections = document.querySelectorAll('.content-section-wrapper');
+        const navLinks = document.querySelectorAll('.nav-link-side');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = '#' + section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
