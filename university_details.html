@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clermont School of Business - University Details | Degree Town</title>
+    <title>Clermont Auvergne University - University Details | Degree Town</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -16,11 +16,12 @@
             --primary-blue: #0000CC;
             --dark-blue: #000066;
             --footer-bg: #000066;
-            --bg-light: #F9FAFB;
-            --text-main: #2D3748;
-            --text-muted: #718096;
+            --bg-light: #F4F6F9;
+            --text-main: #1A202C;
+            --text-muted: #4A5568;
             --border-color: #E2E8F0;
-            --card-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+            --accent-cyan: #00C3FF;
+            --accent-blue: #0A49F6;
         }
 
         body {
@@ -83,471 +84,467 @@
 
         /* ===== HERO ===== */
         .hero-section {
-            background: #04016C;
-            padding: 80px 0 100px;
+            background: linear-gradient(rgba(4, 1, 108, 0.85), rgba(4, 1, 108, 0.85)), 
+                        url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 140px;
             color: white;
             position: relative;
             overflow: hidden;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
         }
 
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px; height: 600px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>') no-repeat center;
-            background-size: contain;
-            z-index: 1;
+        .hero-content {
+            position: relative;
+            z-index: 5;
         }
-
-        .hero-content { position: relative; z-index: 5; }
-
-        .back-btn {
-            width: 36px; height: 36px;
-            background: white;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #04016C;
-            text-decoration: none;
-            margin-bottom: 30px;
-            transition: transform 0.2s;
-        }
-        .back-btn:hover { transform: translateX(-3px); }
 
         .hero-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.1;
             letter-spacing: -0.02em;
         }
 
-        .hero-subtitle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .hero-description {
             font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 40px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 800px;
+            opacity: 0.95;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 20px;
         }
 
-        .uni-logo-small {
-            width: 24px; height: 24px;
-            background: #10B981;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.7rem;
-        }
-
-        .hero-pills { display: flex; gap: 12px; margin-bottom: 25px; flex-wrap: wrap; }
-
-        .hero-pill {
-            background: black;
-            color: white;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .hero-info-bar {
-            background: black;
-            border-radius: 12px;
-            display: inline-flex;
-            padding: 15px 30px;
-            gap: 30px;
-            margin-top: 20px;
+        .hero-pills {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
-        .info-item {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 0.9rem; font-weight: 500;
+        .hero-pill {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Wave separator */
+        .hero-wave {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+            z-index: 6;
+        }
+
+        .hero-wave svg {
             position: relative;
-        }
-        .info-item:not(:last-child)::after {
-            content: "";
-            position: absolute; right: -15px; top: 50%;
-            transform: translateY(-50%);
-            height: 20px; width: 1px;
-            background: rgba(255,255,255,0.3);
+            display: block;
+            width: 100%;
+            height: 60px;
+            fill: var(--bg-light);
         }
 
-        .hero-image-container {
-            position: absolute; right: 0; bottom: 0;
-            height: 100%; width: 45%;
-            z-index: 3; pointer-events: none;
-        }
-        .hero-student-img {
-            height: 105%; width: 100%;
-            object-fit: contain; object-position: bottom right;
-        }
-
-        .hero-actions {
-            position: absolute; right: 50px; bottom: 40px;
-            display: flex; gap: 15px; z-index: 10;
-        }
-
-        .btn-share {
-            background: white; color: black; border: none;
-            padding: 10px 25px; border-radius: 8px;
-            font-weight: 600; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
-            cursor: pointer;
-        }
-
-        .btn-save {
-            background: rgba(255,255,255,0.1); color: white;
-            border: 1px solid rgba(255,255,255,0.5);
-            padding: 10px 25px; border-radius: 8px;
-            font-weight: 600; font-size: 0.9rem;
-            display: flex; align-items: center; gap: 8px;
-            backdrop-filter: blur(10px); cursor: pointer;
+        /* ===== MAIN LAYOUT ===== */
+        .section-label-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+            padding-left: 10px;
         }
 
         /* ===== SIDEBAR ===== */
         .sidebar-nav {
             background: white;
             border: 1px solid var(--border-color);
-            border-radius: 8px; padding: 0;
-            position: sticky; top: 100px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-
-        .sidebar-search {
-            padding: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .sidebar-search input {
-            width: 100%; padding: 8px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px; font-size: 0.85rem;
-            font-family: 'Inter', sans-serif;
-            outline: none;
+            border-radius: 12px;
+            padding: 10px 0;
+            position: sticky;
+            top: 100px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .nav-item-side {
             list-style: none;
-            border-bottom: 1px solid #f3f4f6;
         }
-        .nav-item-side:last-child { border-bottom: none; }
 
         .nav-link-side {
-            display: flex; align-items: center; gap: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
             padding: 12px 20px;
             color: var(--text-main);
             text-decoration: none;
-            font-size: 0.85rem; font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             transition: all 0.2s;
         }
-        .nav-link-side:hover { background: #f9fafb; color: var(--primary-blue); }
-        .nav-link-side.active { background: var(--primary-blue); color: white; }
-        .nav-link-side i { font-size: 1rem; }
 
-        /* ===== CONTENT SECTIONS ===== */
+        .nav-link-side:hover {
+            color: var(--primary-blue);
+            background: #F7FAFC;
+        }
+
+        .nav-link-side.active {
+            background: #0000CC;
+            color: white;
+        }
+
+        /* ===== TAB NAVIGATION ===== */
+        .sub-nav-tabs {
+            display: flex;
+            gap: 8px;
+            background: white;
+            padding: 6px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: inline-flex;
+        }
+
+        .sub-nav-tab {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #718096;
+            transition: all 0.2s;
+        }
+
+        .sub-nav-tab.active {
+            background: #0000CC;
+            color: white;
+        }
+
+        /* ===== RIGHT CONTENT SECTIONS ===== */
         .content-section {
             background: white;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             position: relative;
-            box-shadow: var(--card-shadow);
-            padding-top: 20px;
+            overflow: hidden;
         }
 
-        .section-header {
-            background: #000099;
-            color: white;
-            padding: 8px 25px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            display: inline-block;
-            position: absolute; top: 20px; left: -10px;
-            box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
-            z-index: 10; min-width: 200px;
-        }
-        .section-header::before {
-            content: "";
-            position: absolute; top: 100%; left: 0;
-            width: 0; height: 0;
-            border-top: 12px solid #000066;
-            border-left: 12px solid transparent;
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1A202C;
+            margin-bottom: 25px;
         }
 
-        .section-body { padding: 75px 40px 40px; }
-
-        .section-text { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
-
-        /* ===== SUB NAV ===== */
-        .sub-nav-row {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 25px; padding: 0 5px;
-            flex-wrap: wrap; gap: 15px;
+        /* Background decorative stripes */
+        .decor-stripe {
+            position: absolute;
+            transform: skewX(-20deg) rotate(-5deg);
+            border-radius: 4px;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .stripe-light-grey {
+            background: #F0F4F8;
+            width: 250px;
+            height: 40px;
+        }
+        .stripe-cyan {
+            background: var(--accent-cyan);
+            width: 320px;
+            height: 50px;
+        }
+        .stripe-dark-blue {
+            background: var(--accent-blue);
+            width: 200px;
+            height: 55px;
+        }
+        .stripe-dark-blue-small {
+            background: var(--primary-blue);
+            width: 120px;
+            height: 20px;
+        }
+        .stripe-cyan-vertical {
+            background: var(--accent-cyan);
+            width: 45px;
+            height: 90px;
         }
 
-        .sub-nav-tabs { display: flex; gap: 12px; flex-wrap: wrap; }
-
-        .sub-nav-tab {
-            padding: 10px 25px; border-radius: 8px;
-            font-size: 0.9rem; font-weight: 600;
-            text-decoration: none; transition: all 0.2s;
-            border: 1px solid #E5E7EB;
-            background: white; color: #6B7280;
+        /* Table & Lists layout style */
+        .info-card-container {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
         }
-        .sub-nav-tab.active { background: #04016C; color: white; border-color: #04016C; }
-        .sub-nav-tab:hover:not(.active) { background: #F9FAFB; color: #04016C; }
 
-        .secondary-actions { display: flex; gap: 12px; }
-
-        .btn-secondary-action {
-            background: white; border: 1px solid #E5E7EB;
-            padding: 10px 20px; border-radius: 8px;
-            font-size: 0.9rem; font-weight: 600; color: #374151;
-            display: flex; align-items: center; gap: 8px;
-            text-decoration: none; transition: all 0.2s;
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            text-decoration: none;
+            color: inherit;
         }
-        .btn-secondary-action:hover { background: #F9FAFB; border-color: #D1D5DB; }
 
-        /* ===== STATS GRID ===== */
-        .stats-grid {
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row.clickable:hover {
+            background-color: #F8FAFC;
+        }
+
+        .info-row-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #2D3748;
+        }
+
+        .info-row-left i {
+            font-size: 1.2rem;
+            color: #718096;
+            width: 24px;
+            text-align: center;
+        }
+
+        .info-row-right {
+            font-weight: 500;
+            color: #4A5568;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chevron-icon {
+            color: #A0AEC0;
+            font-size: 0.9rem;
+        }
+
+        /* Media Section Specifics */
+        .media-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin-bottom: 30px;
         }
 
-        .stat-card {
-            background: white; border: 1px solid #E5E7EB;
-            border-radius: 12px; padding: 20px; text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.8rem; font-weight: 800; color: #04016C;
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.75rem; color: #6B7280;
-            font-weight: 500; margin-top: 5px; display: block;
-        }
-
-        /* ===== DATA TABLE ===== */
-        .data-table { width: 100%; border-collapse: collapse; }
-
-        .data-table tr { border-bottom: 1px solid #0000CC; }
-        .data-table tr:last-child { border-bottom: 1px solid #0000CC; }
-
-        .data-table td { padding: 12px 0; font-size: 0.95rem; }
-
-        .data-label { font-weight: 700; color: #0000CC; width: 40%; }
-
-        .data-value { color: #0000CC; font-weight: 500; text-align: right; }
-
-        .text-blue-bright { color: #2563EB !important; }
-
-        /* ===== INFO CARD ===== */
-        .info-card-inner {
-            background-color: #F0F7FF;
-            border-radius: 12px; padding: 30px;
-        }
-
-        .underlined-field {
-            border-bottom: 2px solid #C7D2FE;
-            padding-bottom: 8px; margin-bottom: 20px;
-        }
-
-        .field-label {
-            display: block; font-weight: 700; color: #000099;
-            font-size: 1rem; margin-bottom: 12px;
-        }
-
-        .field-value { font-size: 0.9rem; color: #6B7280; }
-
-        /* ===== ACCREDITATION BADGES ===== */
-        .accred-grid { display: flex; flex-wrap: wrap; gap: 15px; }
-
-        .accred-badge {
-            background: #EFF6FF; border: 1px solid #BFDBFE;
-            border-radius: 8px; padding: 10px 20px;
-            display: flex; align-items: center; gap: 8px;
-            font-weight: 700; font-size: 0.9rem; color: #1D4ED8;
-        }
-        .accred-badge i { color: #2563EB; }
-
-        /* ===== PROGRAM CARDS ===== */
-        .program-card {
-            background: white; border: 1px solid #E5E7EB;
-            border-radius: 12px; padding: 20px;
-            display: flex; align-items: center; gap: 15px;
-            margin-bottom: 15px; transition: all 0.2s;
-        }
-        .program-card:hover { border-color: #04016C; box-shadow: 0 4px 12px rgba(4,1,108,0.1); }
-
-        .program-icon {
-            width: 48px; height: 48px; background: #E0E7FF;
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            color: #04016C; font-size: 1.3rem; flex-shrink: 0;
-        }
-
-        .program-info { flex: 1; }
-        .program-name { font-weight: 700; color: #1F2937; font-size: 0.95rem; margin-bottom: 4px; }
-        .program-meta { font-size: 0.8rem; color: #6B7280; }
-
-        .program-badge {
-            background: #F0F4FF; color: #04016C;
-            padding: 4px 12px; border-radius: 20px;
-            font-size: 0.75rem; font-weight: 600; white-space: nowrap;
-        }
-
-        /* ===== FEE SECTION ===== */
-        .fee-card-inner {
-            background-color: #F9FAFB; border: 1px solid #E5E7EB;
-            border-radius: 12px; padding: 30px;
-        }
-
-        .fee-item-label {
-            font-weight: 700; font-size: 0.8rem; color: #1F2937;
-            margin-bottom: 8px; display: block;
-        }
-
-        .fee-item-box {
-            background: white; border: 1px solid #E5E7EB;
-            border-radius: 10px; padding: 12px 15px;
-            display: flex; align-items: center; gap: 10px;
-            min-height: 48px; margin-bottom: 20px;
-        }
-
-        .currency-symbol { color: #2563EB; font-weight: 700; }
-        .fee-amount { color: #4B5563; font-size: 0.85rem; }
-
-        /* ===== SCHOLARSHIPS ===== */
-        .scholarship-row {
-            display: flex; align-items: flex-start; gap: 15px;
-            padding: 20px 0; border-bottom: 1px solid #E5E7EB;
-        }
-        .scholarship-row:last-child { border-bottom: none; }
-
-        .scholarship-icon {
-            width: 40px; height: 40px; background: #DBEAFE;
+        .media-item {
+            position: relative;
             border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            color: #1D4ED8; flex-shrink: 0;
+            overflow: hidden;
+            aspect-ratio: 1.5;
         }
 
-        .scholarship-title { font-weight: 700; color: #1F2937; font-size: 0.95rem; margin-bottom: 5px; }
-        .scholarship-desc { font-size: 0.85rem; color: #6B7280; }
-
-        .scholarship-amount {
-            margin-left: auto; background: #04016C; color: white;
-            padding: 5px 15px; border-radius: 20px;
-            font-size: 0.8rem; font-weight: 600;
-            white-space: nowrap; display: flex; align-items: center;
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
         }
 
-        /* ===== CAREER STATS ===== */
-        .career-stat {
-            background: white; border: 1px solid #E5E7EB;
-            border-radius: 12px; padding: 25px;
-            text-align: center; height: 100%;
+        .media-item:hover img {
+            transform: scale(1.05);
         }
 
-        .career-stat-number {
-            font-size: 2.5rem; font-weight: 800; color: #04016C;
-            display: block; line-height: 1;
+        .sub-accent-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2D3748;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-cyan);
+            display: inline-block;
+            padding-bottom: 4px;
         }
 
-        .career-stat-label {
-            font-size: 0.85rem; color: #6B7280;
-            margin-top: 8px; display: block;
-        }
-
-        /* ===== CONTACT CARDS ===== */
-        .contact-card {
-            background: #F0F7FF; border-radius: 12px;
-            padding: 25px; height: 100%;
-        }
-
-        .contact-card-title {
-            font-weight: 700; color: #04016C; margin-bottom: 15px;
-            font-size: 1rem;
-            display: flex; align-items: center; gap: 10px;
-        }
-
-        .contact-row {
-            display: flex; align-items: flex-start; gap: 10px;
-            margin-bottom: 10px; font-size: 0.9rem; color: #374151;
-        }
-        .contact-row i { color: #2563EB; min-width: 18px; margin-top: 2px; }
-
-        .visit-link {
-            color: #2563EB; text-decoration: none;
+        .video-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
             font-weight: 600;
-            display: inline-flex; align-items: center; gap: 5px;
+            color: #718096;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .video-box:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background: white;
+        }
+
+        /* Links block styling */
+        .link-item {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: #2D3748;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .link-item:last-child {
+            border-bottom: none;
+        }
+
+        .link-item:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Contact Details Specifics */
+        .contact-col-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1A202C;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 8px;
+        }
+
+        .contact-info-block {
+            margin-bottom: 20px;
+        }
+
+        .contact-info-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .contact-info-val {
+            font-size: 0.95rem;
+            color: #2D3748;
+            font-weight: 500;
+        }
+
+        .contact-info-val a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .contact-info-val a:hover {
+            text-decoration: underline;
         }
 
         /* ===== FOOTER ===== */
         .main-footer {
             background-color: var(--footer-bg);
-            color: white; padding: 80px 0 30px; margin-top: 80px;
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 80px;
         }
 
         .footer-logo {
-            background: white; color: var(--primary-blue);
-            width: 45px; height: 45px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 25px;
+            background: white;
+            color: var(--primary-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
         }
 
-        .footer-desc { color: #eee; line-height: 1.8; font-size: 1rem; max-width: 400px; }
+        .footer-desc {
+            color: #eee;
+            line-height: 1.8;
+            font-size: 1rem;
+            max-width: 400px;
+        }
 
-        .footer-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 30px; }
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
 
         .footer-links {
-            list-style: none; padding: 0;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px 20px;
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
         }
-        .footer-links a { color: #eee; text-decoration: none; font-weight: 500; }
-        .footer-links a:hover { color: white; }
 
-        .social-icons { display: flex; gap: 15px; }
+        .footer-links a {
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
 
         .social-icon {
-            width: 40px; height: 40px;
-            background: rgba(255,255,255,0.2); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: white; text-decoration: none;
-            transition: background 0.3s; font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 1.2rem;
         }
-        .social-icon:hover { background: rgba(255,255,255,0.35); color: white; }
+
+        .social-icon:hover {
+            background: rgba(255,255,255,0.35);
+            color: white;
+        }
 
         .footer-bottom {
-            margin-top: 60px; padding-top: 30px;
+            margin-top: 60px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.15);
-            font-size: 0.9rem; color: #ccc;
+            font-size: 0.9rem;
+            color: #ccc;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .hero-image-container { display: none; }
-            .hero-title { font-size: 2.2rem; }
+            .hero-title { font-size: 2.5rem; }
             .sidebar-nav { position: static; margin-bottom: 30px; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-info-bar { gap: 15px; }
-            .hero-actions { right: 20px; bottom: 20px; }
+            .media-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 576px) {
-            .hero-title { font-size: 1.8rem; }
-            .hero-actions { display: none; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .section-body { padding: 70px 20px 30px; }
+            .hero-title { font-size: 2rem; }
+            .media-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -589,58 +586,27 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container hero-content">
-            <a href="course.html" class="back-btn">
-                <i class="bi bi-arrow-left"></i>
-            </a>
-
+            <h1 class="hero-title">Clermont Auvergne University</h1>
+            <p class="hero-description">
+                Founded in 1810, Clermont Auvergne University is a prominent public research university in central France. It was formed by the merger of Blaise Pascal University and University of Auvergne.
+            </p>
             <div class="hero-pills">
-                <span class="hero-pill">Business &amp; Management</span>
-                <span class="hero-pill">Private School</span>
-                <span class="hero-pill">Estd. 1919</span>
-            </div>
-
-            <h1 class="hero-title">Clermont School of<br>Business</h1>
-
-            <div class="hero-subtitle">
-                <div class="uni-logo-small">
-                    <i class="bi bi-mortarboard-fill"></i>
+                <div class="hero-pill">
+                    <i class="bi bi-calendar3"></i> Established 1810
                 </div>
-                <span>Clermont-Ferrand, France</span>
-            </div>
-
-            <div class="hero-info-bar">
-                <div class="info-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>Clermont-Ferrand, France</span>
+                <div class="hero-pill">
+                    <i class="bi bi-building"></i> Vibrant Campus Life
                 </div>
-                <div class="info-item">
-                    <i class="bi bi-building"></i>
-                    <span>Private Institution</span>
-                </div>
-                <div class="info-item">
-                    <i class="bi bi-award"></i>
-                    <span>AACSB Accredited</span>
-                </div>
-                <div class="info-item">
-                    <i class="bi bi-people"></i>
-                    <span>2,000+ Students</span>
+                <div class="hero-pill">
+                    <i class="bi bi-flask"></i> Research
                 </div>
             </div>
         </div>
 
-        <div class="hero-image-container">
-            <img src="/assets/course/young-smiling-confident.png" alt="Student" class="hero-student-img">
-        </div>
-
-        <div class="hero-actions">
-            <button class="btn-share">
-                <i class="bi bi-share"></i>
-                Share Now
-            </button>
-            <button class="btn-save">
-                <i class="bi bi-bookmark"></i>
-                Save Now
-            </button>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,96C288,128,576,128,864,96C1152,64,1440,64,1440,64L1440,120L0,120Z"></path>
+            </svg>
         </div>
     </section>
 
@@ -651,54 +617,52 @@
 
                 <!-- Left Sidebar Nav -->
                 <div class="col-lg-3">
+                    <div class="section-label-header">Sections</div>
                     <div class="sidebar-nav">
-                        <div class="sidebar-search">
-                            <input type="text" placeholder="Search sections...">
-                        </div>
                         <ul class="p-0 m-0">
                             <li class="nav-item-side">
-                                <a href="#overview" class="nav-link-side active">
-                                    <i class="bi bi-info-circle"></i> Overview
+                                <a href="#location" class="nav-link-side active">
+                                    <i class="bi bi-geo-alt"></i> Location
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#institution" class="nav-link-side">
-                                    <i class="bi bi-building"></i> Institution Profile
+                                <a href="#media" class="nav-link-side">
+                                    <i class="bi bi-image"></i> Media
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#campuses" class="nav-link-side">
-                                    <i class="bi bi-geo-alt"></i> Campuses &amp; Locations
+                                <a href="#academic" class="nav-link-side">
+                                    <i class="bi bi-journal-bookmark"></i> Academic Information
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#ranking" class="nav-link-side">
-                                    <i class="bi bi-award"></i> Rankings &amp; Accreditations
+                                <a href="#rankings" class="nav-link-side">
+                                    <i class="bi bi-award"></i> Rankings &amp; Reviews
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#programs" class="nav-link-side">
-                                    <i class="bi bi-journal-text"></i> Popular Programs
+                                <a href="#partnerships" class="nav-link-side">
+                                    <i class="bi bi-link-45deg"></i> Partnerships &amp; Global Links
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#fees" class="nav-link-side">
-                                    <i class="bi bi-cash-stack"></i> Tuition Fees
+                                <a href="#accreditation" class="nav-link-side">
+                                    <i class="bi bi-patch-check"></i> Accreditation
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#admission" class="nav-link-side">
-                                    <i class="bi bi-person-check"></i> General Admission
+                                <a href="#facilities" class="nav-link-side">
+                                    <i class="bi bi-houses"></i> Facilities &amp; Campus Life
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#scholarships" class="nav-link-side">
-                                    <i class="bi bi-gift"></i> Scholarships
+                                <a href="#community" class="nav-link-side">
+                                    <i class="bi bi-people"></i> Community &amp; Social
                                 </a>
                             </li>
                             <li class="nav-item-side">
-                                <a href="#careers" class="nav-link-side">
-                                    <i class="bi bi-graph-up-arrow"></i> Career Outcomes
+                                <a href="#scholarship" class="nav-link-side">
+                                    <i class="bi bi-gift"></i> Scholarship &amp; Exchange
                                 </a>
                             </li>
                             <li class="nav-item-side">
@@ -714,472 +678,579 @@
                 <div class="col-lg-9">
 
                     <!-- Tab Navigation Row -->
-                    <div class="sub-nav-row">
+                    <div class="mb-4">
                         <div class="sub-nav-tabs">
                             <a href="course_details.html" class="sub-nav-tab">Course</a>
                             <a href="university_details.html" class="sub-nav-tab active">University</a>
                             <a href="#" class="sub-nav-tab">City</a>
                             <a href="#" class="sub-nav-tab">Country</a>
                         </div>
-                        <div class="secondary-actions">
-                            <a href="#" class="btn-secondary-action" id="share-btn">
-                                <i class="bi bi-share"></i> Share Now
+                    </div>
+
+                    <!-- ====== LOCATION ====== -->
+                    <div class="content-section" id="location">
+                        <div class="section-title">Location</div>
+                        <div class="info-card-container">
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <i class="bi bi-calendar-event"></i>
+                                    <span>Founding Year</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>1810</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <i class="bi bi-globe"></i>
+                                    <span>Country</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>France</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <span>Main City</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>Clermont-Ferrand</span>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <div class="info-row-left">
+                                    <i class="bi bi-building"></i>
+                                    <span>Campuses</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span>Polytech Clermont, Clermont Auvergne University</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== MEDIA ====== -->
+                    <div class="content-section" id="media">
+                        <div class="section-title">Media</div>
+                        <div class="media-grid">
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000" alt="Library Hall">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000" alt="Books">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000" alt="Modern Hall">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1000" alt="Lecture Hall">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000" alt="Graduation">
+                            </div>
+                            <div class="media-item">
+                                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?q=80&w=1000" alt="Studying">
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="sub-accent-title">University YouTube Video Links</div>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="video-box">
+                                        <i class="bi bi-play-btn me-2"></i> Video 1
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="video-box">
+                                        <i class="bi bi-play-btn me-2"></i> Video 2
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="video-box">
+                                        <i class="bi bi-play-btn me-2"></i> Video 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== ACADEMIC INFORMATION ====== -->
+                    <div class="academic-section-wrapper position-relative" id="academic" style="margin-bottom: 40px; padding: 10px 0;">
+                        <!-- Background diagonal decorative stripes -->
+                        <!-- Left side stripes -->
+                        <div class="decor-stripe stripe-light-grey" style="top: 35%; left: -120px; width: 280px; height: 50px;"></div>
+                        <div class="decor-stripe stripe-cyan" style="bottom: 12%; left: -100px; width: 300px; height: 50px;"></div>
+                        
+                        <!-- Right side stripes -->
+                        <div class="decor-stripe stripe-light-grey" style="top: -15%; right: -60px; width: 250px; height: 45px;"></div>
+                        <div class="decor-stripe stripe-dark-blue" style="top: 25%; right: -90px; width: 220px; height: 60px; background: #0000B3;"></div>
+                        <div class="decor-stripe stripe-dark-blue-small" style="top: 48%; right: 50px; width: 100px; height: 18px; background: #000088;"></div>
+                        <div class="decor-stripe stripe-cyan-vertical" style="bottom: 10%; right: -40px; width: 40px; height: 85px; background: #00C3FF;"></div>
+
+                        <div class="section-title" style="position: relative; z-index: 2;">Academic Information</div>
+                        
+                        <div class="info-card-container mb-4" style="position: relative; z-index: 2; background: white; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                            <div class="info-row" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Foundation Year</span>
+                                </div>
+                                <div class="info-row-right" style="color: #2D3748; font-weight: 500; font-size: 0.9rem;">
+                                    <span>Bachelor / Masters / PHD / Doctoral / Executive Education</span>
+                                </div>
+                            </div>
+                            <div class="info-row" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Double Degree</span>
+                                </div>
+                                <div class="info-row-right" style="color: #2D3748; font-weight: 500;">
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                            <div class="info-row" style="padding: 18px 24px; display: flex; justify-content: space-between;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Exchange Programs</span>
+                                </div>
+                                <div class="info-row-right" style="color: #2D3748; font-weight: 500;">
+                                    <span>Yes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4" style="position: relative; z-index: 2;">
+                            <div class="sub-accent-title-clean" style="font-size: 1.3rem; font-weight: 700; color: #1A202C; margin-bottom: 20px;">University Faculty Links</div>
+                            <div class="info-card-container" style="background: white; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                                <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                    <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                        <span>Faculty of Sciences &amp; Technolog</span>
+                                    </div>
+                                    <div class="info-row-right" style="color: #0000CC; font-weight: 600;">
+                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right" style="font-size: 0.85rem;"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="info-row clickable" style="padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                    <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                        <span>Faculty of Business &amp; Economics</span>
+                                    </div>
+                                    <div class="info-row-right" style="color: #0000CC; font-weight: 600;">
+                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right" style="font-size: 0.85rem;"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== RANKINGS & REVIEWS ====== -->
+                    <div class="content-section" id="rankings">
+                        <div class="section-title">Rankings &amp; Reviews</div>
+                        <div class="info-card-container">
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-graph-up"></i>
+                                    <span>Global University Rankings</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
                             </a>
-                            <a href="#" class="btn-secondary-action" id="save-btn">
-                                <i class="bi bi-bookmark"></i> Save Now
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-trophy"></i>
+                                    <span>National University Rankings</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
                             </a>
                         </div>
                     </div>
 
-                    <!-- ====== OVERVIEW ====== -->
-                    <div class="content-section" id="overview">
-                        <div class="section-header">Overview</div>
-                        <div class="section-body">
-                            <div class="stats-grid">
-                                <div class="stat-card">
-                                    <span class="stat-number">1919</span>
-                                    <span class="stat-label">Year Established</span>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-number">2,000+</span>
-                                    <span class="stat-label">Students Enrolled</span>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-number">30%</span>
-                                    <span class="stat-label">International Students</span>
-                                </div>
-                                <div class="stat-card">
-                                    <span class="stat-number">50+</span>
-                                    <span class="stat-label">Partner Universities</span>
-                                </div>
-                            </div>
-                            <p class="section-text m-0">
-                                Founded in 1919, Clermont School of Business (École de Management de Clermont) is a leading French Grande École offering highly ranked business programs. The school is renowned for its international focus, close links with corporate partners, and strong commitment to student employability and entrepreneurial development. With campuses in Clermont-Ferrand and Paris, and a global network of 50+ partner universities, it offers students a truly global education experience.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- ====== INSTITUTION PROFILE ====== -->
-                    <div class="content-section" id="institution">
-                        <div class="section-header">Institution Profile</div>
-                        <div class="section-body">
-                            <table class="data-table">
-                                <tr>
-                                    <td class="data-label">Institution Type</td>
-                                    <td class="data-value text-blue-bright">Private, Grande École</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Year Established</td>
-                                    <td class="data-value text-blue-bright">1919</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Main Campus Location</td>
-                                    <td class="data-value text-blue-bright">Clermont-Ferrand, France</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Total Student Enrollment</td>
-                                    <td class="data-value text-blue-bright">2,000+</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">International Student Ratio</td>
-                                    <td class="data-value text-blue-bright">30%</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Faculty Members</td>
-                                    <td class="data-value text-blue-bright">120+ Professors</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Language of Instruction</td>
-                                    <td class="data-value text-blue-bright">French &amp; English</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">Official Website</td>
-                                    <td class="data-value">
-                                        <a href="https://www.clermont-sb.fr" target="_blank" class="visit-link">
-                                            Visit Website <i class="bi bi-box-arrow-up-right"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- ====== CAMPUSES & LOCATIONS ====== -->
-                    <div class="content-section" id="campuses">
-                        <div class="section-header">Campuses &amp; Locations</div>
-                        <div class="section-body">
-                            <div class="info-card-inner">
-                                <div class="underlined-field">
-                                    <span class="field-label">
-                                        <i class="bi bi-geo-alt me-2"></i>Clermont-Ferrand (Main Campus)
-                                    </span>
-                                    <span class="field-value">
-                                        Located in the heart of Clermont-Ferrand, a vibrant and student-friendly city in central France, surrounded by the stunning Auvergne volcanoes. The campus offers modern learning facilities, student co-working spaces, innovation incubators, and dedicated international student support. Close to major transport links with direct TGV trains to Paris (3 hours).
-                                    </span>
-                                </div>
-                                <div class="underlined-field mb-0">
-                                    <span class="field-label">
-                                        <i class="bi bi-geo-alt me-2"></i>Paris Campus
-                                    </span>
-                                    <span class="field-value">
-                                        The school maintains a Parisian base specifically tailored for advanced postgraduate programs, work-study tracks, and networking events with major multinational corporations. Strategically located near La Défense business district, providing students direct access to a vast employer and alumni network.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ====== RANKINGS & ACCREDITATIONS ====== -->
-                    <div class="content-section" id="ranking">
-                        <div class="section-header">Rankings &amp; Accreditations</div>
-                        <div class="section-body">
-                            <div class="accred-grid mb-4">
-                                <div class="accred-badge">
-                                    <i class="bi bi-patch-check-fill"></i> AACSB Accredited
-                                </div>
-                                <div class="accred-badge">
-                                    <i class="bi bi-patch-check-fill"></i> EFMD / EPAS
-                                </div>
-                                <div class="accred-badge">
-                                    <i class="bi bi-patch-check-fill"></i> AMBA Accredited
-                                </div>
-                                <div class="accred-badge">
-                                    <i class="bi bi-patch-check-fill"></i> CGE Member
-                                </div>
-                            </div>
-                            <table class="data-table">
-                                <tr>
-                                    <td class="data-label">AACSB Accreditation</td>
-                                    <td class="data-value text-blue-bright">Yes (Triple Crown School Candidate)</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">EFMD Accredited (EPAS)</td>
-                                    <td class="data-value text-blue-bright">Yes</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">AMBA Accreditation</td>
-                                    <td class="data-value text-blue-bright">Yes</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">FT Global Ranking (MiM)</td>
-                                    <td class="data-value text-blue-bright">Top 100 Masters in Management Globally</td>
-                                </tr>
-                                <tr>
-                                    <td class="data-label">French Ministry Recognition</td>
-                                    <td class="data-value text-blue-bright">Visa Conférence des Grandes Écoles</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <!-- ====== POPULAR PROGRAMS ====== -->
-                    <div class="content-section" id="programs">
-                        <div class="section-header">Popular Programs</div>
-                        <div class="section-body">
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="bi bi-globe2"></i>
-                                </div>
-                                <div class="program-info">
-                                    <div class="program-name">Bachelor in International Management</div>
-                                    <div class="program-meta">3 Years &bull; Undergraduate &bull; English / French</div>
-                                </div>
-                                <span class="program-badge">Undergraduate</span>
-                            </div>
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="bi bi-briefcase"></i>
-                                </div>
-                                <div class="program-info">
-                                    <div class="program-name">Master in Management (Grande École)</div>
-                                    <div class="program-meta">2 Years &bull; Postgraduate &bull; French / English</div>
-                                </div>
-                                <span class="program-badge">Postgraduate</span>
-                            </div>
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="bi bi-bar-chart-line"></i>
-                                </div>
-                                <div class="program-info">
-                                    <div class="program-name">MSc in Business Intelligence &amp; Analytics</div>
-                                    <div class="program-meta">1.5 Years &bull; Postgraduate &bull; English</div>
-                                </div>
-                                <span class="program-badge">MSc</span>
-                            </div>
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="bi bi-currency-euro"></i>
-                                </div>
-                                <div class="program-info">
-                                    <div class="program-name">MSc in Corporate Finance &amp; Investment Banking</div>
-                                    <div class="program-meta">1.5 Years &bull; Postgraduate &bull; English</div>
-                                </div>
-                                <span class="program-badge">MSc</span>
-                            </div>
-                            <div class="program-card">
-                                <div class="program-icon">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div class="program-info">
-                                    <div class="program-name">MBA – Executive Management</div>
-                                    <div class="program-meta">1 Year &bull; MBA &bull; French / English</div>
-                                </div>
-                                <span class="program-badge">MBA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ====== TUITION FEES ====== -->
-                    <div class="content-section" id="fees">
-                        <div class="section-header">Tuition Fees</div>
-                        <div class="section-body">
-                            <div class="fee-card-inner">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">Average Undergraduate Fee / Year</span>
-                                        <div class="fee-item-box">
-                                            <span class="currency-symbol">€</span>
-                                            <span class="fee-amount">8,500 - 9,500</span>
+                    <!-- ====== PARTNERSHIPS & GLOBAL LINKS ====== -->
+                    <div class="content-section" id="partnerships">
+                        <div class="section-title">Partnerships &amp; Global Links</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="sub-accent-title">Partnered Universities</div>
+                                <div class="info-card-container">
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-link-45deg"></i>
+                                            <span>Partner University 1</span>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">Average Postgraduate Fee / Year</span>
-                                        <div class="fee-item-box">
-                                            <span class="currency-symbol">€</span>
-                                            <span class="fee-amount">11,500 - 13,000</span>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">MBA Program Fee (Total)</span>
-                                        <div class="fee-item-box">
-                                            <span class="currency-symbol">€</span>
-                                            <span class="fee-amount">18,000 - 22,000</span>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-link-45deg"></i>
+                                            <span>Partner University 2</span>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">Application Fee</span>
-                                        <div class="fee-item-box">
-                                            <span class="currency-symbol">€</span>
-                                            <span class="fee-amount">50</span>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">Estimated Living Costs / Month</span>
-                                        <div class="fee-item-box">
-                                            <span class="currency-symbol">€</span>
-                                            <span class="fee-amount">700 - 1,000 (Clermont-Ferrand)</span>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-link-45deg"></i>
+                                            <span>Partner University 3</span>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="fee-item-label">Installment Plan Available</span>
-                                        <div class="fee-item-box">
-                                            <span class="fee-amount">Yes (Up to 3-4 Installments)</span>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ====== GENERAL ADMISSION ====== -->
-                    <div class="content-section" id="admission">
-                        <div class="section-header">General Admission</div>
-                        <div class="section-body">
-                            <div class="info-card-inner">
-                                <div class="underlined-field">
-                                    <span class="field-label">Required Academic Credentials</span>
-                                    <span class="field-value">High school diploma or equivalent (Baccalaureate) for undergraduate admission; Bachelor's degree from an accredited university for graduate admission. Minimum GPA of 3.0 recommended for MSc and MBA programs.</span>
-                                </div>
-                                <div class="underlined-field">
-                                    <span class="field-label">Language Proficiency Required</span>
-                                    <span class="field-value">
-                                        <strong>English Programs:</strong> IELTS 6.0+ / TOEFL iBT 80+ / Duolingo 105+<br>
-                                        <strong>French Programs:</strong> DELF B2 / TCF B2 or equivalent French certification
-                                    </span>
-                                </div>
-                                <div class="underlined-field">
-                                    <span class="field-label">Required Application Documents</span>
-                                    <span class="field-value">Academic transcripts (original &amp; translated), updated CV/Resume, statement of motivation (500-800 words), two letters of recommendation, copy of passport, and proof of language proficiency.</span>
-                                </div>
-                                <div class="underlined-field mb-0">
-                                    <span class="field-label">Selection Process</span>
-                                    <span class="field-value">File evaluation followed by an online admissions interview. Decisions are typically communicated within 2-4 weeks of application completion. Rolling admissions — apply early for best scholarship consideration.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ====== SCHOLARSHIPS ====== -->
-                    <div class="content-section" id="scholarships">
-                        <div class="section-header">Scholarships</div>
-                        <div class="section-body">
-                            <div class="scholarship-row">
-                                <div class="scholarship-icon">
-                                    <i class="bi bi-star-fill"></i>
-                                </div>
-                                <div>
-                                    <div class="scholarship-title">Early Bird Discount</div>
-                                    <div class="scholarship-desc">Available for students who apply and confirm enrollment before the early application deadline. Automatically applied to tuition invoice.</div>
-                                </div>
-                                <div class="scholarship-amount">10% Off Tuition</div>
-                            </div>
-                            <div class="scholarship-row">
-                                <div class="scholarship-icon">
-                                    <i class="bi bi-trophy-fill"></i>
-                                </div>
-                                <div>
-                                    <div class="scholarship-title">Academic Merit Scholarship</div>
-                                    <div class="scholarship-desc">Awarded based on outstanding academic performance (GPA 3.5+) and exceptional admissions interview scores. Renewable each academic year based on performance.</div>
-                                </div>
-                                <div class="scholarship-amount">Up to €2,000</div>
-                            </div>
-                            <div class="scholarship-row">
-                                <div class="scholarship-icon">
-                                    <i class="bi bi-globe2"></i>
-                                </div>
-                                <div>
-                                    <div class="scholarship-title">Eiffel Excellence Scholarship</div>
-                                    <div class="scholarship-desc">French government-funded scholarship for outstanding international students. Covers tuition, living expenses, and health insurance. Highly competitive — apply early.</div>
-                                </div>
-                                <div class="scholarship-amount">
-                                    <a href="https://www.campusfrance.org/en/eiffel" target="_blank" style="color: white; text-decoration: none;">
-                                        Apply Now <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-link-45deg"></i>
+                                            <span>Partner University 4</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
-                            <div class="scholarship-row">
-                                <div class="scholarship-icon">
-                                    <i class="bi bi-heart-fill"></i>
+                            <div class="col-md-6">
+                                <div class="sub-accent-title">Partner Companies List</div>
+                                <div class="info-card-container">
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-briefcase"></i>
+                                            <span>Partner Company List</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-briefcase"></i>
+                                            <span>Partner Company List</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-briefcase"></i>
+                                            <span>Partner Company List</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-briefcase"></i>
+                                            <span>Partner Company List</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-box-arrow-up-right chevron-icon"></i>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div>
-                                    <div class="scholarship-title">Diversity &amp; Inclusion Grant</div>
-                                    <div class="scholarship-desc">Dedicated support for students from underrepresented regions and backgrounds to promote diversity within our student community.</div>
-                                </div>
-                                <div class="scholarship-amount">Up to €1,500</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ====== CAREER OUTCOMES ====== -->
-                    <div class="content-section" id="careers">
-                        <div class="section-header">Career Outcomes</div>
-                        <div class="section-body">
-                            <div class="row g-4 mb-4">
-                                <div class="col-md-3 col-6">
-                                    <div class="career-stat">
-                                        <span class="career-stat-number">94%</span>
-                                        <span class="career-stat-label">Employed within 6 months of graduation</span>
-                                    </div>
+                    <!-- ====== ACCREDITATION ====== -->
+                    <div class="content-section" id="accreditation">
+                        <div class="section-title">Accreditation</div>
+                        <div class="info-card-container">
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-patch-check"></i>
+                                    <span>Accreditation / Recognition / Certificates</span>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="career-stat">
-                                        <span class="career-stat-number">€42K</span>
-                                        <span class="career-stat-label">Average starting salary per year</span>
-                                    </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="career-stat">
-                                        <span class="career-stat-number">60+</span>
-                                        <span class="career-stat-label">Corporate recruitment partners</span>
-                                    </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ====== FACILITIES & CAMPUS LIFE ====== -->
+                    <div class="content-section" id="facilities">
+                        <div class="section-title">Facilities &amp; Campus Life</div>
+                        <div class="info-card-container">
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-book-half"></i>
+                                    <span>University Library</span>
                                 </div>
-                                <div class="col-md-3 col-6">
-                                    <div class="career-stat">
-                                        <span class="career-stat-number">45%</span>
-                                        <span class="career-stat-label">Graduates working internationally</span>
-                                    </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-activity"></i>
+                                    <span>Laboratory &amp; Research</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-pc-display-horizontal"></i>
+                                    <span>University Computer Labs</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-door-closed"></i>
+                                    <span>University Hostel</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable">
+                                <div class="info-row-left">
+                                    <i class="bi bi-dribbble"></i>
+                                    <span>University Sports Center</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <span class="text-primary me-2 font-weight-bold" style="font-size: 0.85rem;">Show more sports facilities</span>
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ====== COMMUNITY & SOCIAL ====== -->
+                    <div class="content-section" id="community">
+                        <div class="section-title">Community &amp; Social</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="sub-accent-title">Alumni Services</div>
+                                <div class="info-card-container">
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-mortarboard"></i>
+                                            <span>Link 1</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-mortarboard"></i>
+                                            <span>Link 2</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-mortarboard"></i>
+                                            <span>Link 3</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="info-card-inner">
-                                <div class="underlined-field">
-                                    <span class="field-label">Top Recruiting Companies</span>
-                                    <span class="field-value">Michelin, Schneider Electric, L'Oréal, BNP Paribas, Deloitte, Accenture, PwC, Société Générale, Airbus, and various multinational firms across Europe.</span>
-                                </div>
-                                <div class="underlined-field mb-0">
-                                    <span class="field-label">Career Support Services</span>
-                                    <span class="field-value">Dedicated career center with professional CV coaching, interview preparation workshops, job fairs, alumni mentoring program, and an extensive global alumni network of 10,000+ graduates.</span>
+                            <div class="col-md-6 mb-4">
+                                <div class="sub-accent-title">Community Services</div>
+                                <div class="info-card-container">
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-heart"></i>
+                                            <span>Link 1</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-heart"></i>
+                                            <span>Link 2</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="info-row clickable">
+                                        <div class="info-row-left">
+                                            <i class="bi bi-heart"></i>
+                                            <span>Link 3</span>
+                                        </div>
+                                        <div class="info-row-right">
+                                            <i class="bi bi-chevron-right chevron-icon"></i>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="mt-2">
+                            <div class="sub-accent-title">Social Media</div>
+                            <div class="info-card-container">
+                                <a href="#" class="info-row clickable">
+                                    <div class="info-row-left">
+                                        <i class="bi bi-linkedin" style="color: #0077b5;"></i>
+                                        <span>LinkedIn</span>
+                                    </div>
+                                    <div class="info-row-right">
+                                        <i class="bi bi-chevron-right chevron-icon"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="info-row clickable">
+                                    <div class="info-row-left">
+                                        <i class="bi bi-facebook" style="color: #1877f2;"></i>
+                                        <span>Facebook</span>
+                                    </div>
+                                    <div class="info-row-right">
+                                        <i class="bi bi-chevron-right chevron-icon"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="info-row clickable">
+                                    <div class="info-row-left">
+                                        <i class="bi bi-instagram" style="color: #e1306c;"></i>
+                                        <span>Instagram</span>
+                                    </div>
+                                    <div class="info-row-right">
+                                        <i class="bi bi-chevron-right chevron-icon"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="info-row clickable">
+                                    <div class="info-row-left">
+                                        <i class="bi bi-twitter-x" style="color: #000000;"></i>
+                                        <span>Twitter</span>
+                                    </div>
+                                    <div class="info-row-right">
+                                        <i class="bi bi-chevron-right chevron-icon"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ====== SCHOLARSHIP & EXCHANGE ====== -->
+                    <div class="scholarship-section-wrapper position-relative" id="scholarship" style="margin-bottom: 40px; padding: 10px 0;">
+                        <!-- Background diagonal decorative stripes -->
+                        <!-- Left side stripes -->
+                        <div class="decor-stripe stripe-light-grey" style="top: 35%; left: -120px; width: 280px; height: 50px;"></div>
+                        <div class="decor-stripe stripe-cyan" style="bottom: 12%; left: -100px; width: 300px; height: 50px;"></div>
+                        
+                        <!-- Right side stripes -->
+                        <div class="decor-stripe stripe-light-grey" style="top: -15%; right: -60px; width: 250px; height: 45px;"></div>
+                        <div class="decor-stripe stripe-dark-blue" style="top: 25%; right: -90px; width: 220px; height: 60px; background: #0000B3;"></div>
+                        <div class="decor-stripe stripe-dark-blue-small" style="top: 48%; right: 50px; width: 100px; height: 18px; background: #000088;"></div>
+                        <div class="decor-stripe stripe-cyan-vertical" style="bottom: 10%; right: -40px; width: 40px; height: 85px; background: #00C3FF;"></div>
+
+                        <div class="section-title" style="position: relative; z-index: 2;">Scholarship &amp; Exchange</div>
+                        <div class="info-card-container" style="position: relative; z-index: 2; background: white; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Exchange Programs</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Scholarships / Financial Aid Options</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Accredited Institutions</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>International Students Ratio</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Research Association</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="border-bottom: 1px solid #E2E8F0; padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Industrial Links</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="info-row clickable" style="padding: 18px 24px; display: flex; justify-content: space-between; text-decoration: none;">
+                                <div class="info-row-left" style="font-weight: 500; color: #4A5568;">
+                                    <span>Funding Agency</span>
+                                </div>
+                                <div class="info-row-right">
+                                    <i class="bi bi-chevron-right chevron-icon"></i>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
                     <!-- ====== CONTACT DETAILS ====== -->
                     <div class="content-section" id="contact">
-                        <div class="section-header">Contact Details</div>
-                        <div class="section-body">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <div class="contact-card">
-                                        <div class="contact-card-title">
-                                            <i class="bi bi-envelope-fill"></i>
-                                            Admissions Office
-                                        </div>
-                                        <div class="contact-row">
-                                            <i class="bi bi-envelope"></i>
-                                            <span>international@clermont-sb.fr</span>
-                                        </div>
-                                        <div class="contact-row">
-                                            <i class="bi bi-telephone"></i>
-                                            <span>+33 (0)4 73 98 24 24</span>
-                                        </div>
-                                        <div class="contact-row">
-                                            <i class="bi bi-clock"></i>
-                                            <span>Mon–Fri, 9:00 AM – 5:30 PM (CET)</span>
-                                        </div>
-                                        <div class="contact-row">
-                                            <i class="bi bi-globe"></i>
-                                            <a href="https://www.clermont-sb.fr" target="_blank" class="visit-link">
-                                                www.clermont-sb.fr <i class="bi bi-box-arrow-up-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
+                        <div class="section-title">Contact Details</div>
+                        <div class="row">
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <div class="contact-col-header">Local Admission Office</div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Phone</div>
+                                    <div class="contact-info-val">+33 (0)4 73 40 70 07</div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="contact-card">
-                                        <div class="contact-card-title">
-                                            <i class="bi bi-geo-alt-fill"></i>
-                                            Campus Addresses
-                                        </div>
-                                        <div class="contact-row">
-                                            <i class="bi bi-building"></i>
-                                            <div>
-                                                <strong>Main Campus:</strong><br>
-                                                <span>4 Boulevard Trudaine, 63000 Clermont-Ferrand, France</span>
-                                            </div>
-                                        </div>
-                                        <div class="contact-row mt-3">
-                                            <i class="bi bi-building"></i>
-                                            <div>
-                                                <strong>Paris Campus:</strong><br>
-                                                <span>12 Rue Nationale, 75013 Paris, France</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Email</div>
+                                    <div class="contact-info-val"><a href="mailto:admission@uca.fr">admission@uca.fr</a></div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="contact-card">
-                                        <div class="contact-card-title">
-                                            <i class="bi bi-share-fill"></i>
-                                            Follow &amp; Connect
-                                        </div>
-                                        <div class="d-flex gap-3 flex-wrap">
-                                            <a href="#" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
-                                                <i class="bi bi-linkedin"></i> LinkedIn
-                                            </a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
-                                                <i class="bi bi-facebook"></i> Facebook
-                                            </a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
-                                                <i class="bi bi-instagram"></i> Instagram
-                                            </a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
-                                                <i class="bi bi-twitter-x"></i> Twitter / X
-                                            </a>
-                                            <a href="#" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
-                                                <i class="bi bi-youtube"></i> YouTube
-                                            </a>
-                                        </div>
-                                    </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Address</div>
+                                    <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000 Clermont-Ferrand, France</div>
+                                </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Website</div>
+                                    <div class="contact-info-val"><a href="https://www.uca.fr" target="_blank">www.uca.fr</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="contact-col-header">International Admission Office</div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Phone</div>
+                                    <div class="contact-info-val">+33 (0)4 73 40 70 08</div>
+                                </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Email</div>
+                                    <div class="contact-info-val"><a href="mailto:international@uca.fr">international@uca.fr</a></div>
+                                </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Address</div>
+                                    <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000 Clermont-Ferrand, France</div>
+                                </div>
+                                <div class="contact-info-block">
+                                    <div class="contact-info-label">Website</div>
+                                    <div class="contact-info-val"><a href="https://www.uca.fr/international" target="_blank">www.uca.fr/international</a></div>
                                 </div>
                             </div>
                         </div>
