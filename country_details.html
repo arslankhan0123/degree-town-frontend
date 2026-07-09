@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover France - Country Details | Degree Town</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0000CC;
+            --dark-blue: #000066;
+            --footer-bg: #000066;
+            --bg-light: #F4F6F9;
+            --text-main: #1A202C;
+            --text-muted: #4A5568;
+            --border-color: #E2E8F0;
+            --accent-cyan: #00C3FF;
+            --accent-blue: #0A49F6;
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .font-liv {
+            font-family: "Livvic", sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            padding: 5 0;
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo-circle {
+            background: var(--primary-blue);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            gap: 24px;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #4A5565;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            transition: color 0.3s;
+            padding: 0;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link:hover,
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            color: #0504AA;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            font-weight: 700;
+        }
+
+        .btn-signin {
+            border: 1px solid #e0e0e0;
+            color: #0A0A0A;
+            padding: 7px 15px;
+            border-radius: 8px;
+            font-weight: 400;
+            margin-right: 12px;
+            background: transparent;
+            transition: all 0.3s;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signin:hover {
+            border-color: #e0e0e0;
+        }
+
+        .btn-signup {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 26px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--dark-blue);
+            color: white;
+        }
+
+        /* ===== HERO ===== */
+        .hero-section {
+            background:
+                url('/assets/country/country-bg.png');
+            background-size: cover;
+            background-position: center 60%;
+            padding: 95px 0 115px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-title-box {
+            padding: 25px 60px;
+            margin: 0 auto 50px auto;
+            max-width: 960px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            max-width: 1032px;
+        }
+
+
+        /* Brush stroke effect for France */
+        .brush-bg {
+            position: absolute;
+            width: 100%;
+            height: 332px;
+            z-index: -1;
+            background-image: url('/assets/country/country-hero-shape.svg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: center;
+        }
+
+        .hero-title {
+            font-size: 140px;
+            font-weight: 700;
+            margin: 0;
+            color: #061264;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px) saturate(100%);
+            -webkit-backdrop-filter: blur(10px) saturate(100%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+            padding: 16px 30px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .hero-stat-card:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+        }
+
+        .hero-stat-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .page-content-wrapper {
+            background-color: #F2F5FF;
+        }
+
+        .country-gallery {
+            background: url('/assets/country/galler-bg.svg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: bottom left;
+            padding-top: 60px;
+            padding-bottom: 50px;
+        }
+
+        .section-label-header {
+            color: #101828;
+            font-size: 18px;
+            line-height: 27px;
+            font-weight: 700;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar-nav {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            position: sticky;
+            top: 80px;
+            box-shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item-side {
+            list-style: none;
+            padding: 0px;
+        }
+
+        .nav-link-side {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            color: #101828;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s;
+            border-radius: 8px;
+        }
+
+        .nav-link-side.active,
+        .nav-link-side:hover {
+            background: #06146A;
+            color: white;
+        }
+
+        /* ===== TAB NAVIGATION ===== */
+        .sub-nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .sub-nav-tab {
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            background-color: #fff;
+            color: #555555;
+            border-radius: 5px;
+            padding: 8px 24px;
+            font-size: 16px;
+        }
+
+        .sub-nav-tab.active,
+        .sub-nav-tab:hover {
+            background: #06146A;
+            color: #FFF;
+        }
+
+        /* ===== SECTION HEADER STYLING ===== */
+        .content-section-wrapper {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #1A202C;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Dark blue content blocks */
+        .dark-blue-section-block {
+            background: #04016C;
+            color: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(4, 1, 108, 0.15);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .dark-blue-section-block .section-title {
+            color: white;
+        }
+
+        /* Table & Lists layout style */
+        .info-card-container {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row.clickable:hover {
+            background-color: #F8FAFC;
+        }
+
+        .info-row-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 600;
+            color: #4A5568;
+        }
+
+        .info-row-left i {
+            font-size: 1.15rem;
+            color: #A0AEC0;
+            width: 24px;
+            text-align: center;
+        }
+
+        .info-row-right {
+            font-weight: 500;
+            color: #2D3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quick-info-row {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .sections-sidebar-col {
+            width: 387px;
+            flex-shrink: 0;
+        }
+
+        .quick-info-content-col {
+            flex: 1;
+        }
+
+        /* Media Grid */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .media-grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .media-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 1.5;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        .main-footer {
+            background: #0504AA;
+            background: linear-gradient(90deg, rgba(5, 4, 170, 1) 0%, rgba(4, 18, 115, 1) 100%);
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 21px;
+        }
+
+        .footer-desc {
+            color: #eee;
+            line-height: 32px;
+            max-width: 400px;
+            font-size: 18px;
+        }
+
+        .footer-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+        }
+
+        .footer-links a {
+            color: #eee;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Specific modifications for this page layout */
+        .white-bg-container {}
+
+        .overview {
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 24px;
+            padding: 32px 24px;
+            margin-bottom: 24px;
+        }
+
+        .overview h2 {
+            font-size: 40px;
+            color: #101828;
+            font-weight: 700;
+        }
+
+        .overview-footer {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+            color: #111722;
+            border-bottom: 1px solid #111722;
+            padding: 20px 0;
+        }
+
+        .overview-gallery h2 {
+            color: #fff;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .overview-gallery__country {
+            display: grid;
+            gap: 24px;
+        }
+
+        .overview-gallery__city {
+            column-gap: 16px;
+        }
+
+        .overview-gallery__country .image-card {
+            height: 412px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            border-radius: 8px;
+            border: 4px solid #fff;
+        }
+
+        .overview-gallery__city .image-card {
+            height: 273px;
+        }
+
+        .overview-gallery__country .image-card img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .overview-gallery__country .card-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .overview-gallery__city .card-overlay {
+            text-align: center;
+        }
+
+        .section-blue-title {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p.text-content {
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .univ-rank-pill {
+            background: #EBF8FF;
+            color: #3182CE;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 992px) {
+            .quick-info-row {
+                flex-direction: column;
+            }
+
+            .sections-sidebar-col {
+                width: 100%;
+            }
+
+            .sidebar-nav {
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-circle">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/course.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Universities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Countries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Region</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="btn btn-signin text-decoration-none">Sign In</a>
+                    <a href="#" class="btn btn-signup text-decoration-none">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-title-box">
+                <div class="brush-bg"></div>
+                <h1 class="hero-title font-liv">France</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area Wrapper -->
+    <div class="page-content-wrapper">
+        <div class="country-gallery">
+            <div class="container">
+
+                <div class="quick-info-row content-section-wrapper" id="overview">
+
+                    <!-- LEFT: Sections Sidebar -->
+                    <div class="sections-sidebar-col">
+                        <div class="sidebar-nav">
+                            <div class="section-label-header">Sections</div>
+                            <ul class="p-0 m-0">
+                                <li class="nav-item-side">
+                                    <a href="#overview" class="nav-link-side active">
+                                        <img src="/assets/country/icons/overview.svg" alt="" /> Overview
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#facts" class="nav-link-side">
+                                        <i class="bi bi-card-list"></i> Key Indicators
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#why-study" class="nav-link-side">
+                                        <i class="bi bi-check-circle"></i>Education system
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#education" class="nav-link-side">
+                                        <i class="bi bi-book"></i> Cost of Study & Living
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#universities" class="nav-link-side">
+                                        <i class="bi bi-building"></i> Scholarships & Funding
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#courses" class="nav-link-side">
+                                        <i class="bi bi-journal-text"></i> Student Visa
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#scholarships" class="nav-link-side">
+                                        <i class="bi bi-award"></i> Admission Requirements
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#cost" class="nav-link-side">
+                                        <i class="bi bi-cash-coin"></i>Work Opportunities
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#visa" class="nav-link-side">
+                                        <i class="bi bi-passport"></i> Post study work
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> PR (Permanent Residency)
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> Language
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> International Student Life
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> Safety & Quality Of Life
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> Healthcare
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i> Transport & Connectivity
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i>Weather & Climate
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i>Food & Lifestyle
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i>Common Challenges
+                                    </a>
+                                </li>
+                                <li class="nav-item-side">
+                                    <a href="#faq" class="nav-link-side">
+                                        <i class="bi bi-question-circle"></i>Country Quick Check
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Main Content Columns -->
+                    <div class="quick-info-content-col">
+                        <!-- Tab Navigation Row -->
+                        <div class="sub-nav-tabs">
+                            <a href="#" class="sub-nav-tab">Course</a>
+                            <a href="#" class="sub-nav-tab">University</a>
+                            <a href="#" class="sub-nav-tab">City</a>
+                            <a href="#" class="sub-nav-tab active">Country</a>
+                        </div>
+
+                        <!-- OVERVIEW SECTION -->
+                        <div class="white-bg-container" id="overview-content">
+                            <div class="card border-0 shadow-sm overview">
+                                <h4 class="h4 fw-bold mb-3">Overview</h4>
+                                <div class="overview-footer">
+                                    <p class="mb-0">Language Barrier</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 overview-gallery">
+                                <h2>Country Galley</h2>
+                                <div class="overview-gallery__country grid-cols-2">
+                                    <!-- Notre-Dame -->
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800"
+                                            alt="Notre-Dame">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Notre-Dame</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Arc de Triomphe -->
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 overview-gallery">
+                                <h2>Famous Cities</h2>
+                                <div class="overview-gallery__city overview-gallery__country grid-cols-3">
+                                    <!-- Notre-Dame -->
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800"
+                                            alt="Notre-Dame">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Notre-Dame</h5>
+                                        </div>
+                                    </div>
+                                    <!-- Arc de Triomphe -->
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="image-card">
+                                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=800"
+                                            alt="Arc de Triomphe">
+                                        <div class="card-overlay">
+                                            <h5 class="m-0 fw-bold">Arc de Triomphe</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SCHOLARSHIPS -->
+
+                    </div>
+                </div>
+
+            </div><!-- end container -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="footer-logo">
+                        <img src="/assets/images/logos/footer-logo.svg" alt="" width="40" height="40" />
+                    </div>
+                    <p class="footer-desc">
+                        Experience a modern learning environment that combines academic knowledge with practical
+                        application. Develop the confidence and skills to lead in your chosen field.
+                    </p>
+                </div>
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">City</a></li>
+                        <li><a href="#">Course</a></li>
+                        <li><a href="#">Country</a></li>
+                        <li><a href="#">University</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Social Media</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="mb-0">2026 copyright all right reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.nav-link-side').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+
+                const offset = 100;
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = targetElement.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            });
+        });
+
+        // Highlight sidebar link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.white-bg-container');
+            const navLinks = document.querySelectorAll('.nav-link-side');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                    // Special case for overview content vs overview wrapper
+                    if (current === 'overview-content') current = 'overview';
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
