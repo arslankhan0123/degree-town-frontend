@@ -247,14 +247,14 @@
         }
 
         .country-card:nth-child(odd) {
-            background: url('/assets/country/galler-bg.svg');
+            background: url('/assets/country/gallery.svg');
             background-repeat: no-repeat;
             background-size: 100% auto;
             background-position: bottom left;
         }
 
         .pb-213 {
-            padding-bottom: 213px;
+            padding-bottom: 213px !important;
         }
 
         .section-label-header {
@@ -689,6 +689,12 @@
             line-height: 16px;
         }
 
+        .key-indicator-value--bigger-grey {
+            color: #6A7282;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
         .second-card-section {
             padding: 24px;
             border-bottom: 1px solid #E2E8F0;
@@ -730,9 +736,52 @@
             color: #101828;
         }
 
+        .univ-visit i {
+            font-size: 8px;
+        }
+
         .univ-visit:hover {
             text-decoration: underline;
         }
+
+        .country-card {
+            min-height: 260px;
+            border-radius: 10px;
+            padding: 22px 24px;
+            /* background: #fff; */
+        }
+
+        .country-card-success {
+            border: 1px solid #A4F4CF;
+            background: #ECFDF5;
+        }
+
+        .country-card-danger {
+            border: 1px solid #FFCCD3;
+            background: #FFF1F2;
+        }
+
+        .country-title {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 2.64px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .country-text {
+            font-size: 14px;
+            line-height: 22.8px;
+            color: #0B121A;
+            margin-bottom: 0;
+        }
+
+        .action-card {
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 234px;
+        }
+
 
         @media (max-width: 992px) {
             .quick-info-row {
@@ -1024,7 +1073,7 @@
         </div>
 
         <!-- KEY INDICATORS SECTION -->
-        <div class="country-card country-table-context pt-3">
+        <div class="country-card country-table-context pt-3 pb-5">
             <div class="container">
                 <div class="quick-info-row content-section-wrapper" id="facts">
                     <div class="quick-info-content-col right-col">
@@ -1177,7 +1226,7 @@
                             </div>
 
                             <!-- Second Card -->
-                            <div class="key-indicators-card mb-5">
+                            <div class="key-indicators-card mb-4">
                                 <div class="key-indicator-row p-0 border-0">
                                     <div class="indicator-section-title">Time Zone(s)</div>
                                 </div>
@@ -1231,98 +1280,1117 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <div class="footer-logo">
-                        <img src="/assets/images/logos/footer-logo.svg" alt="" width="40" height="40" />
-                    </div>
-                    <p class="footer-desc">
-                        Experience a modern learning environment that combines academic knowledge with practical
-                        application. Develop the confidence and skills to lead in your chosen field.
-                    </p>
-                </div>
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h5 class="footer-title">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">City</a></li>
-                        <li><a href="#">Course</a></li>
-                        <li><a href="#">Country</a></li>
-                        <li><a href="#">University</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="footer-title">Social Media</h5>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="mb-0">2026 copyright all right reserved</p>
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">EDUCATION SYSTEM</h2>
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Academic Year Start</div>
+                                    <div class="key-indicator-value">January/September</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Academic Year Ends</div>
+                                    <div class="key-indicator-value">July/December</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Intakes</div>
+                                    <div class="key-indicator-value">Summer/Winter</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Degree Levels Available</div>
+                                    <div class="key-indicator-value">Masters/PHD/Bachelor/Doctorate</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Language of Instructionn</div>
+                                    <div class="key-indicator-value">English/French</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Other Languages</div>
+                                    <div class="key-indicator-value">Chinese/Arabic/Hindi</div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Type of Education System</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Market Division</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Accreditation Bodies</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Smooth scrolling for sidebar links
-        document.querySelectorAll('.nav-link-side').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+        <div class="country-card country-table-context pt-3 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">COST OF STUDY & LIVING </h2>
 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (!targetElement) return;
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Top 5 Cities for Students</div>
+                                    <div class="key-indicator-value">Lyon/Paris/Lille</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">University Dormitory Availability</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Dormitory Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Private Room Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Apartment,Studio Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Housing Difficulty</div>
+                                    <div class="key-indicator-value">Easy</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Transport Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Utilities Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Mobile Phone Plan Cost/Month</div>
+                                    <div class="key-indicator-value">USD 1200-USD1300</div>
+                                </div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Airbnb</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
 
-                const offset = 100;
-                const bodyRect = document.body.getBoundingClientRect().top;
-                const elementRect = targetElement.getBoundingClientRect().top;
-                const elementPosition = elementRect - bodyRect;
-                const offsetPosition = elementPosition - offset;
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Housing Apps</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Leboncoin</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">SeLoger</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
 
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">TUITION FEE</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Tuition for International Students/Year</div>
+                                    <div class="key-indicator-value">
+                                        USD 1200-USD1300
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Tuition for Local Students/Year</div>
+                                    <div class="key-indicator-value">
+                                        USD 1200-USD1300
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Currency of Fee</div>
+                                    <div class="key-indicator-value">
+                                        Euro
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Cheapest Degree Fields</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Most Expensive Degree Fields</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">SCHOLARSHIPS & FUNDING</h2>
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">University Level Scholarships Available</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Private Scholarships Available</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">External Scholarships</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-3 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">STUDENT VISA</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Where to Apply</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Lyon/Paris/Lille
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Visa Duration</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">1 Year</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Dependents Allowed (spouse, children)</div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Visa Application Process</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Visa Cost</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Visa Renewal Process</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+
+                            <h2 class="">ADMISSION REQUIREMENTS </h2>
+                            <div class="key-indicators-card 4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Bachelor Requirement</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Masters/MBA/MSC</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">PHD/Doctoral</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">English Language Test Requirements</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Standardised Test Requirements (SAT, GRE, GMAT)
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">WORK OPPORTUNITIES</h2>
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Work Allowed</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Work Hours/Week</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">12hrs</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Student Work Pay/Hour</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">11USD-12USD</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Job availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Full-time Job availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Work Permit Required</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">No, student visa
+                                        only</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Graduate Salary</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">USD 1200-USD1300
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Unemployment Rate</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+                                <div class="key-indicator-row pb-0 border-0">
+                                    <div class="indicator-section-title">Job Platforms</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Upwork</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Fiverr</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Indeed</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">LinkedIn Jobs</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Popular Student Jobs</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row pb-0 border-0">
+                                    <div class="indicator-section-title">Path from Student Visa to Work visa</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row pb-0 border-0">
+                                    <div class="indicator-section-title">Top Industries</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-3 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">POST-STUDY WORK </h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Post-study Work Visa</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Duration</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">2 years</div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Requirements (job, salary etc.)</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+
+                            <h2 class="">PR (PERMANENT RESIDENCY) </h2>
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">PR Path Available</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Time Required</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">3–5 years</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">PR Difficulty</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Easy</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Citizenship Eligibility Timeline</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">2–5 years</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Dual Citizenship Allowed</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                            </div>
+
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">PR Requirements (language, job, etc.)</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">LANGUAGE</h2>
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Official Language(s)</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">English</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">English-taught Programs Availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Language of Instruction</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">French/Arabic
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">English Proficiency Requirement</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+                            </div>
+
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Language Requirements for Admission</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-3 mb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">INTERNATIONAL STUDENT LIFE</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">International Student</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">20%</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Diversity Level</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">English Friendliness</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Cultural Openness</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Top Student Nationalities</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Indian/Chinese
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">National Holidays and Festivals</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+
+                            <div class="key-indicators-card">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">UNIVERSITY ADMISSION PROCESS</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">SAFETY & QUALITY OF LIFE</h2>
+
+                            <div class="row g-4 mb-4">
+
+                                <!-- Police -->
+                                <div class="col-md-4">
+                                    <div class="emergency-card key-indicators-card" style="border: 2px solid #8EC5FF">
+                                        <img src="/assets/country/police.png" alt="" />
+                                        <h5 class="mt-3 mb-4">Police</h5>
+                                        <div class="card-line"
+                                            style="background-color: #155DFC; width: 32px;height: 2px;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Ambulance -->
+                                <div class="col-md-4">
+                                    <div class="emergency-card key-indicators-card" style="border: 2px solid #FFA2A2">
+                                        <img src="/assets/country/ambulance.png" alt="" />
+                                        <h5 class="mt-3 mb-4">Ambulance</h5>
+                                        <div class="card-line"
+                                            style="background-color: #E7000B; width: 32px;height: 2px;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Fire Department -->
+                                <div class="col-md-4">
+                                    <div class="emergency-card key-indicators-card" style="border: 2px solid #FFB86A">
+                                        <img src="/assets/country/fire.png" alt="" />
+                                        <h5 class="mt-3 mb-4">Fire Department</h5>
+                                        <div class="card-line"
+                                            style="background-color: #FFB86A; width: 32px;height: 2px;"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Safety Level</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Crime Rate</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Quality of Life</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Good</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Global Peace Index Ranking</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">20–30</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Natural Disaster Risk</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Political Stability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">LGBTQ+ Safety</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Solo Female Student Safety</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-3 mb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">HEALTHCARE</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Health Insurance Requirement</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Cost of Healthcare</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Public Healthcare System Availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                            </div>
+
+                            <h2 class="">TRANSPORT & CONNECTIVITY</h2>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Public Transport Quality</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Types of Transport Available</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Metro/Bus/Train
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Student Transport Discounts</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Monthly Transport Cost</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">USD 1200-USD1300
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Uber / Ride Share Availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">International Driving Licence Recognition</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Train Connections to Neighbouring Countries</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Bus Connection to Neighbouring Countries</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-5 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="why-study">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">WEATHER & CLIMATE</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Temperatures</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">same as city</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Worst Weather Months</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">April/June/July
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Best Weather Months</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">May/June</div>
+                                </div>
+                            </div>
+
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">What to pack / clothing advice by season</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country-card country-table-context pt-3 pb-5">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">FOOD & LIFESTYLE</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Local Cuisine Name</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">
+                                        Tikka/Biryani/LAAOS STAY</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Availability of International Food</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Halal Food</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Food Delivery Services Available</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row pb-0 border-0">
+                                    <div class="indicator-section-title">Job Platforms</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Grocery 1</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Grocery 2</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Grocery 3</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="">COMMON CHALLENGES</h2>
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+
+                            <h2 class="">COUNTRY QUICK Check</h2>
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Work Allowed</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Work Hours/Week</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">20hrs</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Student Work Pay/Hour</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">12-18 EUR</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part-time Job Availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Full-time Job Availability</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Visa Success Rate</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Vegan Friendly</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Halal Food</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Post-Study Work Visa</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Post Study Visa Duration</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">2 years</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">PR</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">PR Difficulty</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Easy</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Dependents Allowed (spouse, children)</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Yes</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">English Friendliness</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Cultural Openness</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">International Friendliness</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">LGBTQ+ Safety</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Solo Female Student Safety</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Low</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Housing</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">Easy</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Safety</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Education Quality</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Living Cost</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Tuition Fee</div>
+                                    <div class="key-indicator-value key-indicator-value--bigger-grey">High</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4" style="">
+                                <div class="row g-4">
+
+                                    <!-- Why This Country -->
+                                    <div class="col-lg-6">
+                                        <div class="action-card country-card-success">
+                                            <h4 class="country-title text-success">
+                                                ✅ WHY THIS COUNTRY
+                                            </h4>
+
+                                            <p class="country-text">
+                                                Add paragraph.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Why Not This Country -->
+                                    <div class="col-lg-6">
+                                        <div class="action-card country-card-danger">
+                                            <h4 class="country-title text-danger">
+                                                ❌ WHY NOT THIS COUNTRY
+                                            </h4>
+
+                                            <p class="country-text">
+                                                Add paragraph.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 mb-5 mb-lg-0">
+                        <div class="footer-logo">
+                            <img src="/assets/images/logos/footer-logo.svg" alt="" width="40" height="40" />
+                        </div>
+                        <p class="footer-desc">
+                            Experience a modern learning environment that combines academic knowledge with practical
+                            application. Develop the confidence and skills to lead in your chosen field.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">City</a></li>
+                            <li><a href="#">Course</a></li>
+                            <li><a href="#">Country</a></li>
+                            <li><a href="#">University</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h5 class="footer-title">Social Media</h5>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="mb-0">2026 copyright all right reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Smooth scrolling for sidebar links
+            document.querySelectorAll('.nav-link-side').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-link-side').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (!targetElement) return;
+
+                    const offset = 100;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = targetElement.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                });
             });
-        });
 
-        // Highlight sidebar link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('.white-bg-container');
-            const navLinks = document.querySelectorAll('.nav-link-side');
+            // Highlight sidebar link on scroll
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const sections = document.querySelectorAll('.white-bg-container');
+                const navLinks = document.querySelectorAll('.nav-link-side');
 
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                    // Special case for overview content vs overview wrapper
-                    if (current === 'overview-content') current = 'overview';
-                }
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                        // Special case for overview content vs overview wrapper
+                        if (current === 'overview-content') current = 'overview';
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
             });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+        </script>
 </body>
 
 </html>

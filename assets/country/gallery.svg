@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1770" fill="none" style="width: 100%; height: auto;"
+    preserveAspectRatio="none">
+    <g clip-path="url(#clip0_381_1412)">
+        <rect width="1600" height="1928" fill="url(#paint0_linear_381_1412)" />
+        <mask id="mask0_381_1412" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1440"
+            height="1930">
+            <rect width="1440" height="1930" fill="white" />
+        </mask>
+        <g mask="url(#mask0_381_1412)">
+            <circle opacity="0.0361096" cx="-304.5" cy="-157.5" r="575.5" fill="white" />
+            <ellipse opacity="0.0458287" cx="-314.5" cy="-177.5" rx="822.5" ry="822" fill="white" />
+            <ellipse opacity="0.050665" cx="-345.5" cy="-197" rx="1121.5" ry="1121" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0 1672.44C0 1672.44 203.75 1754.04 342.946 1747.44C482.143 1740.84 565.528 1713.62 718.478 1727.23C871.428 1740.84 1315.06 1706.5 1440 1612V1771H0V1672.44Z"
+                fill="#F2F5FF" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_381_1412" x1="804.757" y1="-952.535" x2="-1088.12" y2="608.974"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1234FF" />
+            <stop offset="0.394106" stop-color="#1D38D9" />
+            <stop offset="1" stop-color="#06146A" />
+        </linearGradient>
+        <clipPath id="clip0_381_1412">
+            <rect width="1440" height="1770" fill="white" />
+        </clipPath>
+    </defs>
+</svg>
