@@ -49,6 +49,13 @@
             height: auto;
         }
 
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
+            font-size: inherit;
+        }
+
         .font-liv {
             font-family: "Livvic", sans-serif;
         }
@@ -235,13 +242,19 @@
             background-color: #F2F5FF;
         }
 
-        .country-gallery {
+        .country-card {
+            padding-top: 60px;
+        }
+
+        .country-card:nth-child(odd) {
             background: url('/assets/country/galler-bg.svg');
             background-repeat: no-repeat;
             background-size: 100% auto;
             background-position: bottom left;
-            padding-top: 60px;
-            padding-bottom: 50px;
+        }
+
+        .pb-213 {
+            padding-bottom: 213px;
         }
 
         .section-label-header {
@@ -323,7 +336,6 @@
 
         /* ===== SECTION HEADER STYLING ===== */
         .content-section-wrapper {
-            margin-bottom: 50px;
             position: relative;
         }
 
@@ -556,11 +568,15 @@
             padding: 20px 0;
         }
 
-        .overview-gallery h2 {
+        .page-content-wrapper h2 {
             color: #fff;
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 24px;
+        }
+
+        .page-content-wrapper .country-card:nth-child(even) h2 {
+            color: #0B1621
         }
 
         .overview-gallery__country {
@@ -633,6 +649,89 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 700;
+        }
+
+        .right-col {
+            width: calc(100% - 387px);
+            margin: 0 0 0 auto;
+            flex: none;
+        }
+
+        .key-indicators-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #DFE1EC;
+        }
+
+        .key-indicator-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20.5px 0px;
+            border-bottom: 1px solid #06146A;
+        }
+
+        .key-indicator-key {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+            color: #111722;
+            font-weight: 500;
+        }
+
+        .key-indicator-value {
+            font-size: 14px;
+            color: #06146A;
+            font-weight: 500;
+            text-align: right;
+            line-height: 16px;
+        }
+
+        .second-card-section {
+            padding: 24px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .second-card-section:last-child {
+            border-bottom: none;
+        }
+
+        .indicator-section-title {
+            font-size: 24px;
+            color: #0505A6;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 32px;
+            letter-spacing: -0.48px;
+        }
+
+        .indicator-add-details {
+            font-size: 12px;
+            color: #4A5568;
+        }
+
+        .univ-list-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .univ-list-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .univ-name {
+            font-size: 12px;
+            color: #101828;
+        }
+
+        .univ-visit:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 992px) {
@@ -714,7 +813,7 @@
 
     <!-- Main Content Area Wrapper -->
     <div class="page-content-wrapper">
-        <div class="country-gallery">
+        <div class="country-card pb-213">
             <div class="container">
 
                 <div class="quick-info-row content-section-wrapper" id="overview">
@@ -918,13 +1017,219 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- SCHOLARSHIPS -->
-
                     </div>
                 </div>
 
             </div><!-- end container -->
+        </div>
+
+        <!-- KEY INDICATORS SECTION -->
+        <div class="country-card country-table-context pt-3">
+            <div class="container">
+                <div class="quick-info-row content-section-wrapper" id="facts">
+                    <div class="quick-info-content-col right-col">
+                        <div class="white-bg-container facts-content">
+                            <h2 class="">Key Indicators</h2>
+
+                            <!-- First Card -->
+                            <div class="key-indicators-card mb-4">
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Official Language(s)</div>
+                                    <div class="key-indicator-value">English</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Other Spoken Languages</div>
+                                    <div class="key-indicator-value">French, Arabic</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Population</div>
+                                    <div class="key-indicator-value">20000</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Country Size (km²)</div>
+                                    <div class="key-indicator-value">15000km</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Geographic Location /Region</div>
+                                    <div class="key-indicator-value">EU</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Currency</div>
+                                    <div class="key-indicator-value">Euro</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Official Religion</div>
+                                    <div class="key-indicator-value">Islam</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">International Dialing code</div>
+                                    <div class="key-indicator-value">+23</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Crime Rate</div>
+                                    <div class="key-indicator-value">High</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Number of Universities</div>
+                                    <div class="key-indicator-value">34</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Country World Ranking</div>
+                                    <div class="key-indicator-value">20-30</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Top International Nationalities</div>
+                                    <div class="key-indicator-value">Indian/Nigerian/Chinese</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Academic Year Start Months</div>
+                                    <div class="key-indicator-value">January/September</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Academic Year End Months</div>
+                                    <div class="key-indicator-value">July/December</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Recognition of Degrees Internationally</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Average Tuition Fee</div>
+                                    <div class="key-indicator-value">12000 USD - 17000 USD</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Student Monthly Living Cost</div>
+                                    <div class="key-indicator-value">12000 USD - 17000 USD</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Government Scholarships for International Students
+                                    </div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Government Scholarships for Local Students</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Work Study Programs</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Student Visa Type</div>
+                                    <div class="key-indicator-value">Temporary Visa</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Scholarship Availability</div>
+                                    <div class="key-indicator-value">High</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">PR</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Visa Processing Time</div>
+                                    <div class="key-indicator-value">2-3 months</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Visa Cost</div>
+                                    <div class="key-indicator-value">1200 USD - 1500 USD</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Visa Success Rate</div>
+                                    <div class="key-indicator-value">High</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Part Time Job</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Bank Statement for Visa</div>
+                                    <div class="key-indicator-value">20000 USD - 30000 USD</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Post-Study Work Visa</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Post Study Visa Duration</div>
+                                    <div class="key-indicator-value">1-2 Years</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Cities with High International Community</div>
+                                    <div class="key-indicator-value">Paris/Lyon/London</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Cities with Low International Community</div>
+                                    <div class="key-indicator-value">Lyon/Lille</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Availability of International Food</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Vegan Friendly</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Halal Food</div>
+                                    <div class="key-indicator-value">Yes</div>
+                                </div>
+                            </div>
+
+                            <!-- Second Card -->
+                            <div class="key-indicators-card mb-5">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="indicator-section-title">Time Zone(s)</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Top Universities</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Universities 1</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Universities 2</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Universities 3</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Academic Year Structure</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+
+                                <div class="key-indicator-row border-0 pb-0">
+                                    <div class="indicator-section-title">Academic Year Structure</div>
+                                </div>
+                                <div class="key-indicator-row">
+                                    <div class="key-indicator-key">Add details.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
