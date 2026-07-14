@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Degree Town - The Right Search Leads to the Right Degree</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -25,7 +30,10 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
             margin: 0;
             padding: 0;
             background-color: white;
@@ -34,8 +42,8 @@
 
         /* Navbar Styling (Preserved) */
         .navbar {
-            padding: 0.8rem 0;
-            background: white;
+            padding: 5 0;
+            background: #fff;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
         }
 
@@ -51,43 +59,65 @@
             font-size: 1.5rem;
         }
 
-        .nav-link {
-            color: #333;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 0 10px;
-            transition: color 0.3s;
+        .navbar-expand-lg .navbar-nav {
+            gap: 24px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-blue) !important;
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #4A5565;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            transition: color 0.3s;
+            padding: 0;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link:hover,
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            color: #0504AA;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            font-weight: 700;
         }
 
         .btn-signin {
             border: 1px solid #e0e0e0;
-            color: #333;
-            padding: 8px 25px;
+            color: #0A0A0A;
+            padding: 7px 15px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 400;
             margin-right: 12px;
-            background: white;
+            background: transparent;
             transition: all 0.3s;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signin:hover {
+            border-color: #e0e0e0;
         }
 
         .btn-signup {
             background-color: var(--primary-blue);
             color: white;
-            padding: 8px 30px;
+            padding: 8px 26px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s;
             border: none;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--dark-blue);
+            color: white;
         }
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            background: linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
                 url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -102,18 +132,18 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 52px;
             font-weight: 700;
             margin-bottom: 2rem;
-            letter-spacing: -1px;
+            text-shadow: 1px 3px #000;
         }
 
         .hero-search-container {
             width: 100%;
             max-width: 800px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(3px);
+            border-radius: 4px;
             padding: 8px;
             display: flex;
             align-items: center;
@@ -131,8 +161,10 @@
             border: none;
             outline: none;
             flex-grow: 1;
-            font-size: 1rem;
+            font-size: 16px;
+            font-weight: 700;
             color: white;
+            line-height: 26px;
         }
 
         .hero-search-container input::placeholder {
@@ -152,10 +184,9 @@
         /* Sidebar Styling Refined */
         .filter-sidebar {
             background: white;
-            border: 1px solid #EDF2F7;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #B8C1FF;
+            border-radius: 10px;
+            padding: 30px;
         }
 
         .sidebar-search-wrapper {
@@ -516,28 +547,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .results-header h4 {
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 20px;
             margin: 0;
+            color: #000;
         }
 
         .results-count {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 20px;
+            line-height: 26px;
         }
 
         .course-card {
             background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
+            border: 1px solid #B8C1FF;
+            border-radius: 10px;
+            padding: 24px 32px;
+            margin-bottom: 24px;
             position: relative;
         }
 
@@ -548,14 +579,15 @@
         }
 
         .course-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 28px;
+            line-height: 42px;
+            font-weight: 600;
+            margin-bottom: 8px;
             color: var(--text-main);
         }
 
         .post-study-visa {
-            font-size: 0.85rem;
+            font-size: 18px;
             font-weight: 600;
             color: var(--text-main);
         }
@@ -572,24 +604,25 @@
 
         .tag-container {
             display: flex;
-            gap: 8px;
+            gap: 12px;
             margin-bottom: 20px;
         }
 
         .tag-pill {
-            background: var(--tag-bg);
-            color: var(--tag-text);
-            padding: 3px 12px;
+            background: rgba(6, 18, 100, .21);
+            color: #0504AA;
+            padding: 5.5px 18px;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 500;
         }
 
         .university-info {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .uni-logo {
@@ -619,8 +652,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
             margin-bottom: 0;
         }
 
@@ -693,7 +724,7 @@
         }
 
         .pagination .page-link {
-            border: none;
+            border: 1px solid #EAEAEA;
             color: var(--text-main);
             font-weight: 600;
             margin: 0 5px;
@@ -710,32 +741,30 @@
             color: white;
         }
 
+        .page-item:first-child .page-link,
+        .page-item:last-child .page-link {
+            border-radius: 50%;
+        }
+
         /* Footer Styling (Preserved) */
         .main-footer {
-            background-color: var(--footer-bg);
-            color: white;
+            background: #0504AA;
+            background: linear-gradient(90deg, rgba(5, 4, 170, 1) 0%, rgba(4, 18, 115, 1) 100%);
+            color: #fff;
             padding: 80px 0 30px;
-            margin-top: 80px;
         }
 
         .footer-logo {
-            background: white;
-            color: var(--primary-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            margin-bottom: 21px;
         }
 
         .footer-desc {
             color: #eee;
-            line-height: 1.8;
-            font-size: 1rem;
+            line-height: 32px;
             max-width: 400px;
+            font-size: 18px;
         }
 
         .footer-title {
@@ -759,6 +788,11 @@
             font-weight: 500;
         }
 
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
         .social-icons {
             display: flex;
             gap: 15px;
@@ -776,6 +810,11 @@
             text-decoration: none;
             transition: background 0.3s;
             font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: var(--primary-blue);
+            color: white;
         }
 
         .footer-bottom {
@@ -827,10 +866,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
+                        <a class="nav-link active" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/course.html">Courses</a>
+                        <a class="nav-link" href="/course.html">Courses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Universities</a>
@@ -851,7 +890,7 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                <div class="d-flex align-items-center">
                     <a href="#" class="btn btn-signin text-decoration-none">Sign In</a>
                     <a href="#" class="btn btn-signup text-decoration-none">Sign Up</a>
                 </div>
@@ -924,7 +963,8 @@
                                                             <span class="discipline-count">850</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Engineering & Technology -->
@@ -1013,7 +1053,8 @@
                                                             <span class="discipline-count">1.4k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Medicine & Health -->
@@ -1036,7 +1077,8 @@
                                                             <span class="discipline-count">3.2k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Natural Sciences & Mathematics -->
@@ -1060,7 +1102,8 @@
                                                             <span class="discipline-count">2.5k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Applied Sciences & Professions -->
@@ -1083,7 +1126,8 @@
                                                             <span class="discipline-count">1.2k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Social Sciences -->
@@ -1105,7 +1149,8 @@
                                                             <span class="discipline-count">2.8k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Business & Management -->
@@ -1128,7 +1173,8 @@
                                                             <span class="discipline-count">4.1k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <!-- Hidden Parent Items -->
@@ -1142,8 +1188,10 @@
                                                         <div class="selection-circle"></div>
                                                     </div>
                                                     <ul class="sub-discipline-list">
-                                                        <li class="sub-discipline-item" data-name="Software Engineering">
-                                                            <span class="sub-discipline-name">Software Engineering</span>
+                                                        <li class="sub-discipline-item"
+                                                            data-name="Software Engineering">
+                                                            <span class="sub-discipline-name">Software
+                                                                Engineering</span>
                                                             <span class="discipline-count">4.2k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
@@ -1152,7 +1200,8 @@
                                                             <span class="discipline-count">2.1k</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                                 <li class="discipline-item hidden-item"
@@ -1174,7 +1223,8 @@
                                                             <span class="discipline-count">420</span>
                                                             <div class="selection-circle"></div>
                                                         </li>
-                                                        <button class="show-toggle-btn show-more-subs">Show all (2)</button>
+                                                        <button class="show-toggle-btn show-more-subs">Show all
+                                                            (2)</button>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -1511,7 +1561,13 @@
                     <div class="course-card">
                         <div class="card-header-flex">
                             <h3 class="course-title">Forestry Science</h3>
-                            <div class="post-study-visa">Post Study Visa: Yes</div>
+                            <div class="post-study-visa">
+                                <div class="d-flex align-items-center gap-3 justify-content-end">
+                                    <img src="/assets/country/icons/share.svg" alt="" />
+                                    <img src="/assets/country/icons/bookmark.svg" alt="" />
+                                </div>
+                                <div>Post Study Visa: Yes</div>
+                            </div>
                         </div>
                         <!-- <div class="card-actions-top">
                             <i class="bi bi-share"></i>
@@ -1562,7 +1618,13 @@
                     <div class="course-card">
                         <div class="card-header-flex">
                             <h3 class="course-title">Forestry Science</h3>
-                            <div class="post-study-visa">Post Study Visa: Yes</div>
+                            <div class="post-study-visa">
+                                <div class="d-flex align-items-center gap-3 justify-content-end">
+                                    <img src="/assets/country/icons/share.svg" alt="" />
+                                    <img src="/assets/country/icons/bookmark.svg" alt="" />
+                                </div>
+                                <div>Post Study Visa: Yes</div>
+                            </div>
                         </div>
                         <div class="tag-container">
                             <span class="tag-pill">Masters</span>
@@ -1605,7 +1667,13 @@
                     <div class="course-card">
                         <div class="card-header-flex">
                             <h3 class="course-title">Forestry Science</h3>
-                            <div class="post-study-visa">Post Study Visa: Yes</div>
+                            <div class="post-study-visa">
+                                <div class="d-flex align-items-center gap-3 justify-content-end">
+                                    <img src="/assets/country/icons/share.svg" alt="" />
+                                    <img src="/assets/country/icons/bookmark.svg" alt="" />
+                                </div>
+                                <div>Post Study Visa: Yes</div>
+                            </div>
                         </div>
                         <div class="tag-container">
                             <span class="tag-pill">Masters</span>
@@ -1669,7 +1737,7 @@
             <div class="row">
                 <div class="col-lg-5 mb-5 mb-lg-0">
                     <div class="footer-logo">
-                        <i class="bi bi-mortarboard-fill"></i>
+                        <img src="/assets/images/logos/footer-logo.svg" alt="" width="40" height="40" />
                     </div>
                     <p class="footer-desc">
                         Experience a modern learning environment that combines academic knowledge with practical

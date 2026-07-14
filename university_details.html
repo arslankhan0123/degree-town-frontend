@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clermont Auvergne University - University Details | Degree Town</title>
     <!-- Bootstrap 5 CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,23 +30,22 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
             margin: 0;
             padding: 0;
             background-color: #F8FAFC;
-            /* Subtle grid background pattern matching target screenshot */
-            background-image: radial-gradient(#E2E8F0 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
             color: var(--text-main);
+            overflow-x: hidden;
         }
 
         /* ===== NAVBAR ===== */
         .navbar {
-            padding: 0.8rem 0;
-            background: white;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            position: relative;
-            z-index: 10;
+            padding: 5 0;
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
         }
 
         .logo-circle {
@@ -56,35 +60,60 @@
             font-size: 1.5rem;
         }
 
-        .nav-link {
-            color: #333;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 0 10px;
-            transition: color 0.3s;
+        .navbar-expand-lg .navbar-nav {
+            gap: 24px;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-blue) !important;
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #4A5565;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            transition: color 0.3s;
+            padding: 0;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link:hover,
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            color: #0504AA;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            font-weight: 700;
         }
 
         .btn-signin {
             border: 1px solid #e0e0e0;
-            color: #333;
-            padding: 8px 25px;
+            color: #0A0A0A;
+            padding: 7px 15px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 400;
             margin-right: 12px;
-            background: white;
+            background: transparent;
+            transition: all 0.3s;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signin:hover {
+            border-color: #e0e0e0;
         }
 
         .btn-signup {
             background-color: var(--primary-blue);
             color: white;
-            padding: 8px 30px;
+            padding: 8px 26px;
             border-radius: 8px;
             font-weight: 600;
+            transition: all 0.3s;
             border: none;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--dark-blue);
+            color: white;
         }
 
         /* ===== HERO ===== */
@@ -104,7 +133,7 @@
             z-index: 5;
         }
 
-        .hero-title {
+       .hero-title {
             font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 20px;
@@ -122,6 +151,23 @@
             padding-left: 20px;
         }
 
+        .tag-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 21px;
+        }
+
+        .tag-pill {
+            background-color: #000;
+            border-radius: 16px;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+            color: #fff;
+            padding: 5.5px 14px;
+        }
+
         .hero-pills {
             display: flex;
             gap: 15px;
@@ -129,7 +175,7 @@
             flex-wrap: wrap;
         }
 
-        .hero-pill {
+       .hero-pill {
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
@@ -141,7 +187,7 @@
             align-items: center;
             gap: 8px;
             backdrop-filter: blur(5px);
-        }
+       }
 
         /* Wave separator - Organic Curved Transition */
         .hero-wave {
@@ -163,30 +209,54 @@
 
         /* ===== MAIN LAYOUT ===== */
         .section-label-header {
-            font-size: 0.85rem;
+            color: #101828;
+            font-size: 18px;
+            line-height: 27px;
             font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-            padding-left: 10px;
         }
 
         /* ===== SIDEBAR ===== */
+        .content-section-wrapper {
+            position: relative;
+        }
+
+        .quick-info-row {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .sections-sidebar-col {
+            width: 387px;
+            flex-shrink: 0;
+        }
+
+        .quick-info-content-col {
+            flex: 1;
+        }
+
         .sidebar-nav {
             background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 10px 0;
+            border-radius: 16px;
+            padding: 25px;
             position: sticky;
-            top: 100px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
-            z-index: 8;
+            top: 80px;
+            box-shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .nav-item-side {
             list-style: none;
-            padding: 2px 10px;
+            padding: 0px;
         }
 
         .nav-link-side {
@@ -194,48 +264,45 @@
             align-items: center;
             gap: 12px;
             padding: 10px 15px;
-            color: var(--text-main);
+            color: #101828;
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 16px;
+            line-height: 20px;
             font-weight: 600;
             border-radius: 8px;
             transition: all 0.2s;
+            border-radius: 8px;
         }
 
+        .nav-link-side.active,
         .nav-link-side:hover {
-            color: var(--primary-blue);
-            background: #F7FAFC;
-        }
-
-        .nav-link-side.active {
-            background: #0000CC;
+            background: #0504AA;
             color: white;
         }
 
         /* ===== TAB NAVIGATION ===== */
         .sub-nav-tabs {
             display: flex;
-            gap: 8px;
-            background: white;
-            padding: 6px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            display: inline-flex;
+            gap: 10px;
+            margin-bottom: 32px;
         }
 
         .sub-nav-tab {
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
-            color: #718096;
             transition: all 0.2s;
+            color: #555555;
+            border-radius: 5px;
+            padding: 8px 24px;
+            font-size: 16px;
+            border: 1px solid #E5E7EB;
         }
 
-        .sub-nav-tab.active {
-            background: #0000CC;
-            color: white;
+        .sub-nav-tab.active,
+        .sub-nav-tab:hover {
+            background: #0504AA;
+            color: #FFF;
+            border-color: #0504AA;
         }
 
         /* ===== SECTION HEADER STYLING ===== */
@@ -261,26 +328,31 @@
             z-index: 1;
             opacity: 0.85;
         }
+
         .stripe-light-grey {
             background: #EAF0F6;
             width: 250px;
             height: 40px;
         }
+
         .stripe-cyan {
             background: var(--accent-cyan);
             width: 320px;
             height: 50px;
         }
+
         .stripe-dark-blue {
             background: #0000B3;
             width: 200px;
             height: 55px;
         }
+
         .stripe-dark-blue-small {
             background: var(--primary-blue);
             width: 120px;
             height: 20px;
         }
+
         .stripe-cyan-vertical {
             background: var(--accent-cyan);
             width: 45px;
@@ -394,7 +466,7 @@
             text-align: center;
             font-weight: 600;
             color: #718096;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
             transition: all 0.2s;
             cursor: pointer;
             position: relative;
@@ -446,30 +518,23 @@
 
         /* ===== FOOTER ===== */
         .main-footer {
-            background-color: var(--footer-bg);
-            color: white;
+            background: #0504AA;
+            background: linear-gradient(90deg, rgba(5, 4, 170, 1) 0%, rgba(4, 18, 115, 1) 100%);
+            color: #fff;
             padding: 80px 0 30px;
-            margin-top: 80px;
         }
 
         .footer-logo {
-            background: white;
-            color: var(--primary-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            margin-bottom: 21px;
         }
 
         .footer-desc {
             color: #eee;
-            line-height: 1.8;
-            font-size: 1rem;
+            line-height: 32px;
             max-width: 400px;
+            font-size: 18px;
         }
 
         .footer-title {
@@ -489,6 +554,7 @@
         .footer-links a {
             color: #eee;
             text-decoration: none;
+            transition: color 0.3s;
             font-weight: 500;
         }
 
@@ -505,7 +571,7 @@
         .social-icon {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -517,28 +583,50 @@
         }
 
         .social-icon:hover {
-            background: rgba(255,255,255,0.35);
+            background: var(--primary-blue);
             color: white;
         }
 
         .footer-bottom {
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             font-size: 0.9rem;
             color: #ccc;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .hero-title { font-size: 2.5rem; }
-            .sidebar-nav { position: static; margin-bottom: 30px; }
-            .media-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sections-sidebar-col {
+                width: 100%;
+            }
+
+            .quick-info-row {
+                flex-direction: column;
+            }
+
+            .sidebar-nav {
+                position: static;
+                margin-bottom: 20px;
+            }
         }
 
         @media (max-width: 576px) {
-            .hero-title { font-size: 2rem; }
-            .media-grid { grid-template-columns: 1fr; }
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -607,12 +695,11 @@
     <!-- Main Content Area -->
     <section class="py-5">
         <div class="container">
-            <div class="row">
 
-                <!-- Left Sidebar Nav -->
-                <div class="col-lg-3">
-                    <div class="section-label-header">Sections</div>
+            <div class="quick-info-row content-section-wrapper">
+                <div class="sections-sidebar-col">
                     <div class="sidebar-nav">
+                        <div class="section-label-header">Sections</div>
                         <ul class="p-0 m-0">
                             <li class="nav-item-side">
                                 <a href="#location" class="nav-link-side active">
@@ -669,7 +756,7 @@
                 </div>
 
                 <!-- Right Main Content -->
-                <div class="col-lg-9">
+                <div class="quick-info-content-col">
 
                     <!-- Tab Navigation Row -->
                     <div class="mb-4">
@@ -729,22 +816,28 @@
                         <div class="section-title">Media</div>
                         <div class="media-grid">
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000" alt="Library Hall">
+                                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1000"
+                                    alt="Library Hall">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000" alt="Books">
+                                <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1000"
+                                    alt="Books">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000" alt="Modern Hall">
+                                <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000"
+                                    alt="Modern Hall">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1000" alt="Lecture Hall">
+                                <img src="https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1000"
+                                    alt="Lecture Hall">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000" alt="Graduation">
+                                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000"
+                                    alt="Graduation">
                             </div>
                             <div class="media-item">
-                                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?q=80&w=1000" alt="Studying">
+                                <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5c?q=80&w=1000"
+                                    alt="Studying">
                             </div>
                         </div>
 
@@ -774,17 +867,24 @@
                     <div class="content-section-wrapper" id="academic" style="padding: 10px 0;">
                         <!-- Background diagonal decorative stripes -->
                         <!-- Left side stripes -->
-                        <div class="decor-stripe stripe-light-grey" style="top: 35%; left: -140px; width: 280px; height: 50px;"></div>
-                        <div class="decor-stripe stripe-cyan" style="bottom: 12%; left: -120px; width: 300px; height: 50px;"></div>
-                        
+                        <div class="decor-stripe stripe-light-grey"
+                            style="top: 35%; left: -140px; width: 280px; height: 50px;"></div>
+                        <div class="decor-stripe stripe-cyan"
+                            style="bottom: 12%; left: -120px; width: 300px; height: 50px;"></div>
+
                         <!-- Right side stripes -->
-                        <div class="decor-stripe stripe-light-grey" style="top: -15%; right: -80px; width: 250px; height: 45px;"></div>
-                        <div class="decor-stripe stripe-dark-blue" style="top: 25%; right: -110px; width: 220px; height: 60px; background: #0000B3;"></div>
-                        <div class="decor-stripe stripe-dark-blue-small" style="top: 48%; right: 30px; width: 100px; height: 18px; background: #000088;"></div>
-                        <div class="decor-stripe stripe-cyan-vertical" style="bottom: 10%; right: -60px; width: 40px; height: 85px; background: #00C3FF;"></div>
+                        <div class="decor-stripe stripe-light-grey"
+                            style="top: -15%; right: -80px; width: 250px; height: 45px;"></div>
+                        <div class="decor-stripe stripe-dark-blue"
+                            style="top: 25%; right: -110px; width: 220px; height: 60px; background: #0000B3;"></div>
+                        <div class="decor-stripe stripe-dark-blue-small"
+                            style="top: 48%; right: 30px; width: 100px; height: 18px; background: #000088;"></div>
+                        <div class="decor-stripe stripe-cyan-vertical"
+                            style="bottom: 10%; right: -60px; width: 40px; height: 85px; background: #00C3FF;">
+                        </div>
 
                         <div class="section-title">Academic Information</div>
-                        
+
                         <div class="info-card-container mb-4">
                             <div class="info-row">
                                 <div class="info-row-left">
@@ -820,7 +920,8 @@
                                         <span>Faculty of Sciences &amp; Technolog</span>
                                     </div>
                                     <div class="info-row-right" style="color: #0000CC; font-weight: 600;">
-                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right" style="font-size: 0.85rem;"></i>
+                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right"
+                                            style="font-size: 0.85rem;"></i>
                                     </div>
                                 </a>
                                 <a href="#" class="info-row clickable">
@@ -828,7 +929,8 @@
                                         <span>Faculty of Business &amp; Economics</span>
                                     </div>
                                     <div class="info-row-right" style="color: #0000CC; font-weight: 600;">
-                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right" style="font-size: 0.85rem;"></i>
+                                        <span class="me-1">Visit</span> <i class="bi bi-box-arrow-up-right"
+                                            style="font-size: 0.85rem;"></i>
                                     </div>
                                 </a>
                             </div>
@@ -1011,7 +1113,8 @@
                                     <span>University Sports Center</span>
                                 </div>
                                 <div class="info-row-right">
-                                    <span class="text-primary me-2 font-weight-bold" style="font-size: 0.85rem;">Show more sports facilities</span>
+                                    <span class="text-primary me-2 font-weight-bold" style="font-size: 0.85rem;">Show
+                                        more sports facilities</span>
                                     <i class="bi bi-chevron-right chevron-icon"></i>
                                 </div>
                             </a>
@@ -1135,14 +1238,21 @@
                     <div class="content-section-wrapper" id="scholarship" style="padding: 10px 0;">
                         <!-- Background diagonal decorative stripes -->
                         <!-- Left side stripes -->
-                        <div class="decor-stripe stripe-light-grey" style="top: 35%; left: -140px; width: 280px; height: 50px;"></div>
-                        <div class="decor-stripe stripe-cyan" style="bottom: 12%; left: -120px; width: 300px; height: 50px;"></div>
-                        
+                        <div class="decor-stripe stripe-light-grey"
+                            style="top: 35%; left: -140px; width: 280px; height: 50px;"></div>
+                        <div class="decor-stripe stripe-cyan"
+                            style="bottom: 12%; left: -120px; width: 300px; height: 50px;"></div>
+
                         <!-- Right side stripes -->
-                        <div class="decor-stripe stripe-light-grey" style="top: -15%; right: -80px; width: 250px; height: 45px;"></div>
-                        <div class="decor-stripe stripe-dark-blue" style="top: 25%; right: -110px; width: 220px; height: 60px; background: #0000B3;"></div>
-                        <div class="decor-stripe stripe-dark-blue-small" style="top: 48%; right: 30px; width: 100px; height: 18px; background: #000088;"></div>
-                        <div class="decor-stripe stripe-cyan-vertical" style="bottom: 10%; right: -60px; width: 40px; height: 85px; background: #00C3FF;"></div>
+                        <div class="decor-stripe stripe-light-grey"
+                            style="top: -15%; right: -80px; width: 250px; height: 45px;"></div>
+                        <div class="decor-stripe stripe-dark-blue"
+                            style="top: 25%; right: -110px; width: 220px; height: 60px; background: #0000B3;"></div>
+                        <div class="decor-stripe stripe-dark-blue-small"
+                            style="top: 48%; right: 30px; width: 100px; height: 18px; background: #000088;"></div>
+                        <div class="decor-stripe stripe-cyan-vertical"
+                            style="bottom: 10%; right: -60px; width: 40px; height: 85px; background: #00C3FF;">
+                        </div>
 
                         <div class="section-title">Scholarship &amp; Exchange</div>
                         <div class="info-card-container">
@@ -1218,15 +1328,18 @@
                                     </div>
                                     <div class="contact-info-block">
                                         <div class="contact-info-label">Email</div>
-                                        <div class="contact-info-val"><a href="mailto:admission@uca.fr">admission@uca.fr</a></div>
+                                        <div class="contact-info-val"><a
+                                                href="mailto:admission@uca.fr">admission@uca.fr</a></div>
                                     </div>
                                     <div class="contact-info-block">
                                         <div class="contact-info-label">Address</div>
-                                        <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000 Clermont-Ferrand, France</div>
+                                        <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000
+                                            Clermont-Ferrand, France</div>
                                     </div>
                                     <div class="contact-info-block mb-0">
                                         <div class="contact-info-label">Website</div>
-                                        <div class="contact-info-val"><a href="https://www.uca.fr" target="_blank">www.uca.fr</a></div>
+                                        <div class="contact-info-val"><a href="https://www.uca.fr"
+                                                target="_blank">www.uca.fr</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -1239,23 +1352,26 @@
                                     </div>
                                     <div class="contact-info-block">
                                         <div class="contact-info-label">Email</div>
-                                        <div class="contact-info-val"><a href="mailto:international@uca.fr">international@uca.fr</a></div>
+                                        <div class="contact-info-val"><a
+                                                href="mailto:international@uca.fr">international@uca.fr</a></div>
                                     </div>
                                     <div class="contact-info-block">
                                         <div class="contact-info-label">Address</div>
-                                        <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000 Clermont-Ferrand, France</div>
+                                        <div class="contact-info-val">49 Boulevard François-Mitterrand, 63000
+                                            Clermont-Ferrand, France</div>
                                     </div>
                                     <div class="contact-info-block mb-0">
                                         <div class="contact-info-label">Website</div>
-                                        <div class="contact-info-val"><a href="https://www.uca.fr/international" target="_blank">www.uca.fr/international</a></div>
+                                        <div class="contact-info-val"><a href="https://www.uca.fr/international"
+                                                target="_blank">www.uca.fr/international</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div><!-- end col-lg-9 -->
-            </div><!-- end row -->
+                </div>
+            </div>
         </div><!-- end container -->
     </section>
 
