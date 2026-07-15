@@ -391,8 +391,10 @@
         /* Sub-navigation Tabs */
         .sub-nav-row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
             margin-bottom: 25px;
             padding: 0 5px;
         }
@@ -400,6 +402,7 @@
         .sub-nav-tabs {
             display: flex;
             gap: 12px;
+            flex-wrap: wrap;
         }
 
         .sub-nav-tab {
@@ -748,6 +751,12 @@
             color: #ccc;
         }
 
+        @media (max-width: 1321px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero-image-container {
@@ -760,11 +769,84 @@
 
             .sidebar-nav {
                 position: static;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
 
             .intake-row {
                 flex-direction: column;
+            }
+
+            .section-body {
+                padding: 75px 24px 24px;
+            }
+
+            .content-section,
+            .fee-item-box,
+            .underlined-field,
+            .lang-test-box {
+                margin-bottom: 16px;
+            }
+
+            .info-card-inner,
+            .fee-card-inner {
+                padding: 16px;
+            }
+
+            .field-label {
+                margin-bottom: 8px;
+            }
+
+            .main-footer {
+                margin-top: 0;
+            }
+
+            .hero-info-bar {
+                display: flex;
+                flex-direction: column;
+                max-width: fit-content;
+            }
+
+            .info-item:not(:last-child) {
+                position: relative;
+            }
+
+            .info-item:not(:last-child)::after {
+                right: unset;
+                bottom: 0px;
+                width: 100%;
+                height: 1px;
+                left: 0;
+                transform: unset;
+                top: unset;
+            }
+
+            .hero-info-bar {
+                padding: 0;
+                gap: 0;
+            }
+
+            .info-item {
+                padding: 12px 16px;
+            }
+
+            .hero-actions {
+                right: unset;
+                left: calc(10% - 12px);
+            }
+
+            .hero-subtitle {
+                margin-bottom: 32px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-pills {
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .back-btn {
+                margin-bottom: 16px;
             }
         }
     </style>
@@ -883,7 +965,7 @@
         <div class="container">
             <div class="row">
                 <!-- Left Sidebar Nav -->
-                <div class="col-lg-3">
+                <div class="col-lg-4 col-xl-3">
                     <div class="sidebar-nav">
                         <div class="sidebar-search">
                             <input type="text" placeholder="Search...">
@@ -924,7 +1006,7 @@
                 </div>
 
                 <!-- Right Main Content -->
-                <div class="col-lg-9">
+                <div class="col-lg-8 col-xl-9">
 
                     <div class="sub-nav-row">
                         <div class="sub-nav-tabs">
@@ -1009,19 +1091,19 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <div class="underlined-field">
                                             <span class="field-label">Degree Duration</span>
                                             <span class="field-value">2 Years</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <div class="underlined-field">
                                             <span class="field-label">Beginning (Intake)</span>
                                             <span class="field-value">Fall Intake / Spring Intake</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <div class="underlined-field">
                                             <span class="field-label">Format</span>
                                             <span class="field-value">Full Time / Part Time</span>
@@ -1030,13 +1112,13 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-4 mb-3 mb-lg-0">
                                         <div class="underlined-field mb-0">
                                             <span class="field-label">Course Mode</span>
                                             <span class="field-value">Online</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8">
                                         <div class="underlined-field mb-0">
                                             <span class="field-label">Available Study Languages</span>
                                             <span class="field-value">English / Franch</span>
@@ -1053,21 +1135,21 @@
                         <div class="section-body">
                             <div class="fee-card-inner">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Local Candidate Fee/Year</span>
                                         <div class="fee-item-box">
                                             <span class="currency-symbol">€</span>
                                             <span class="fee-amount">8500</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">International Candidate Fee</span>
                                         <div class="fee-item-box">
                                             <span class="currency-symbol">€</span>
                                             <span class="fee-amount">8500</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Full Fee (if applicable)</span>
                                         <div class="fee-item-box">
                                             <span class="currency-symbol">€</span>
@@ -1075,20 +1157,20 @@
                                                 fee</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Application Fee Required</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Application Fee Amount</span>
                                         <div class="fee-item-box">
                                             <span class="currency-symbol">€</span>
                                             <span class="fee-amount">8500</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Installment Plan</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
@@ -1110,13 +1192,13 @@
                                         qualifications, prerequisites, etc..</span>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-lg-6 mb-3 mb-lg-0">
                                         <div class="underlined-field mb-0">
                                             <span class="field-label">GPA Required</span>
                                             <span class="field-value">Select minimum GPA</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-lg-6">
                                         <div class="underlined-field mb-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span class="field-label mb-0">GMAT/GRE Test Required</span>
@@ -1137,27 +1219,27 @@
                             <div class="lang-category-header">English Language Tests</div>
                             <div class="info-card-inner mb-4">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">IELTS Academic</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">TOEFL</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Duolingo English</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">TOEIC</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Cambridge English</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Other English Tests</span>
                                         <div class="lang-test-box"></div>
                                     </div>
@@ -1167,27 +1249,27 @@
                             <div class="lang-category-header">French Language Tests</div>
                             <div class="info-card-inner">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">IELTS Academic</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">TOEFL</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Duolingo English</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">TOEIC</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Cambridge English</span>
                                         <div class="lang-test-box"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="lang-label">Other English Tests</span>
                                         <div class="lang-test-box"></div>
                                     </div>
@@ -1201,7 +1283,7 @@
                         <div class="section-header">Intake & Dates</div>
                         <div class="section-body">
                             <div class="row g-4">
-                                <div class="col-md-6">
+                                <div class="col-xl-6">
                                     <div class="info-card-inner">
                                         <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Fall Intake</div>
                                         <table class="data-table">
@@ -1226,7 +1308,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-xl-6">
                                     <div class="info-card-inner">
                                         <div class="intake-title fw-bold mb-3" style="color: #1F2937;">Spring Intake
                                         </div>
@@ -1309,37 +1391,37 @@
                         <div class="section-body">
                             <div class="info-card-inner">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Post Study Work Visa Available</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Post Study Visa Duration</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount text-muted opacity-50">Select duration</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">PR Path Available</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">PR Available After</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">5 Years</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Part Time Job Allowed</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-lg-6 col-xl-4">
                                         <span class="fee-item-label">Part-time work hours/week</span>
                                         <div class="fee-item-box">
                                             <span class="fee-amount">Yes</span>
@@ -1357,14 +1439,14 @@
                             <span class="fee-item-label mb-3">Salary After Graduation/Year</span>
                             <div class="info-card-inner">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-xl-6 mb-3 m-xl-0">
                                         <div class="underlined-field mb-0">
                                             <span class="field-label">Mini - Maxi Salary Range</span>
                                             <span class="field-value text-blue-bright"><span
                                                     class="currency-symbol">€</span> 8500 - 10000</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-xl-6">
                                         <div class="underlined-field mb-0">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <span class="field-label mb-0">Dual Degree Option Available</span>
@@ -1422,7 +1504,7 @@
                         <div class="section-header">Admission Contact</div>
                         <div class="section-body">
                             <div class="row g-4">
-                                <div class="col-md-6">
+                                <div class="col-xl-6">
                                     <div class="info-card-inner">
                                         <div class="d-flex align-items-center mb-3">
                                             <i class="bi bi-globe text-primary me-3"></i>
@@ -1440,7 +1522,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-xl-6">
                                     <div class="info-card-inner">
                                         <div class="d-flex align-items-center mb-3">
                                             <i class="bi bi-globe text-primary me-3"></i>

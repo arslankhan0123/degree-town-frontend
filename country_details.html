@@ -313,6 +313,7 @@
         /* ===== TAB NAVIGATION ===== */
         .sub-nav-tabs {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 60px;
         }
@@ -582,10 +583,12 @@
         .overview-gallery__country {
             display: grid;
             gap: 24px;
+            grid-template-columns: 1fr 1fr;
         }
 
         .overview-gallery__city {
             column-gap: 16px;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
         .overview-gallery__country .image-card {
@@ -782,6 +785,43 @@
             min-height: 234px;
         }
 
+        @media (max-width: 1321px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .overview-gallery__country {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .overview-gallery__city {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .quick-info-row {
+                gap: 24px;
+            }
+
+            .sub-nav-tabs {
+                margin-bottom: 32px;
+            }
+
+            .page-content-wrapper h2 {
+                font-size: 40px;
+            }
+
+            .right-col {
+                width: 100%;
+            }
+
+            .hero-title {
+                font-size: 100px;
+            }
+        }
+
 
         @media (max-width: 992px) {
             .quick-info-row {
@@ -794,7 +834,73 @@
 
             .sidebar-nav {
                 position: static;
-                margin-bottom: 20px;
+            }
+
+            .sub-nav-tabs,
+            .overview,
+            .page-content-wrapper h2 {
+                margin-bottom: 16px;
+            }
+
+            .page-content-wrapper h2 {
+                font-size: 32px;
+            }
+
+            .pb-213 {
+                padding-bottom: 180px !important;
+            }
+
+            .container {
+                max-width: calc(90% + (24px * 2))
+            }
+
+            .overview {
+                padding: 25px 16px;
+            }
+
+            .sidebar-nav {
+                border-radius: 16px;
+                padding: 25px 16px;
+            }
+
+            .nav-link-side {
+                padding: 10px;
+            }
+
+            .key-indicator-value--bigger-grey {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 60px;
+            }
+
+            .overview-gallery__city {
+                grid-template-columns: 1fr;
+            }
+
+            .pb-213 {
+                padding-bottom: 120px !important;
+            }
+
+            .indicator-section-title {
+                font-size: 20px;
+            }
+
+            .key-indicator-key,
+            .key-indicator-value--bigger-grey {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .key-indicator-row {
+                padding: 16px 0px;
+            }
+
+            .page-content-wrapper h2 {
+                font-size: 24px;
             }
         }
     </style>
@@ -992,7 +1098,7 @@
 
                             <div class="mb-3 overview-gallery">
                                 <h2>Country Galley</h2>
-                                <div class="overview-gallery__country grid-cols-2">
+                                <div class="overview-gallery__country">
                                     <!-- Notre-Dame -->
                                     <div class="image-card">
                                         <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800"
@@ -1014,7 +1120,7 @@
 
                             <div class="mb-3 overview-gallery">
                                 <h2>Famous Cities</h2>
-                                <div class="overview-gallery__city overview-gallery__country grid-cols-3">
+                                <div class="overview-gallery__city overview-gallery__country">
                                     <!-- Notre-Dame -->
                                     <div class="image-card">
                                         <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800"
