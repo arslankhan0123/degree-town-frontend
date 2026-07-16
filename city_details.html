@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Paris - City Details | Degree Town</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts: Inter -->
@@ -25,24 +30,39 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
             margin: 0;
             padding: 0;
             background-color: #F8FAFC;
             /* Subtle grid background pattern matching target screenshot */
-            background-image: radial-gradient(#E2E8F0 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
             color: var(--text-main);
             overflow-x: hidden;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        .univ-visit i {
+            font-size: 8px;
+        }
+
         /* ===== NAVBAR ===== */
         .navbar {
-            padding: 0.8rem 0;
-            background: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            z-index: 10;
+            padding: 5 0;
+            background: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
         }
 
         .logo-circle {
@@ -57,37 +77,60 @@
             font-size: 1.5rem;
         }
 
-        .nav-link {
-            color: #333;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 0 10px;
-            transition: color 0.3s;
+        .navbar-expand-lg .navbar-nav {
+            gap: 24px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary-blue) !important;
+        .navbar-expand-lg .navbar-nav .nav-link {
+            color: #4A5565;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            transition: color 0.3s;
+            padding: 0;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link:hover,
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            color: #0504AA;
+        }
+
+        .navbar-expand-lg .navbar-nav .nav-link.active {
+            font-weight: 700;
         }
 
         .btn-signin {
             border: 1px solid #e0e0e0;
-            color: #333;
-            padding: 8px 25px;
+            color: #0A0A0A;
+            padding: 7px 15px;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 400;
             margin-right: 12px;
-            background: white;
+            background: transparent;
+            transition: all 0.3s;
             font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signin:hover {
+            border-color: #e0e0e0;
         }
 
         .btn-signup {
             background-color: var(--primary-blue);
             color: white;
-            padding: 8px 30px;
+            padding: 8px 26px;
             border-radius: 8px;
             font-weight: 600;
+            transition: all 0.3s;
             border: none;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--dark-blue);
+            color: white;
         }
 
         /* ===== HERO ===== */
@@ -104,6 +147,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            z-index: 1;
         }
 
         .hero-content {
@@ -214,30 +258,35 @@
 
         /* ===== MAIN LAYOUT ===== */
         .section-label-header {
-            font-size: 0.85rem;
+            color: #101828;
+            font-size: 18px;
+            line-height: 27px;
             font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-            padding-left: 10px;
         }
 
         /* ===== SIDEBAR ===== */
         .sidebar-nav {
             background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 10px 0;
+            border-radius: 16px;
+            padding: 25px;
             position: sticky;
             top: 80px;
             box-shadow: 0 4px 20px rgba(0, 0, 100, 0.08);
             z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sidebar-nav ul {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .nav-item-side {
             list-style: none;
-            padding: 2px 10px;
+            padding: 0px;
         }
 
         .nav-link-side {
@@ -245,63 +294,57 @@
             align-items: center;
             gap: 12px;
             padding: 10px 15px;
-            color: var(--text-main);
+            color: #101828;
             text-decoration: none;
-            font-size: 0.88rem;
+            font-size: 16px;
+            line-height: 20px;
             font-weight: 600;
             border-radius: 8px;
             transition: all 0.2s;
+            border-radius: 8px;
         }
 
+        .nav-link-side.active,
         .nav-link-side:hover {
-            color: var(--primary-blue);
-            background: #F7FAFC;
-        }
-
-        .nav-link-side.active {
-            background: #0000CC;
+            background: #0504AA;
             color: white;
         }
 
         /* ===== TAB NAVIGATION ===== */
         .sub-nav-tabs {
             display: flex;
-            gap: 8px;
-            background: white;
-            padding: 6px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            display: inline-flex;
+            gap: 10px;
+            margin-bottom: 60px;
         }
 
         .sub-nav-tab {
-            padding: 8px 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
             font-weight: 600;
             text-decoration: none;
-            color: #718096;
             transition: all 0.2s;
+            color: #555555;
+            border-radius: 5px;
+            padding: 8px 24px;
+            font-size: 16px;
+            border: 1px solid #E5E7EB;
         }
 
-        .sub-nav-tab.active {
-            background: #0000CC;
-            color: white;
+        .sub-nav-tab.active,
+        .sub-nav-tab:hover {
+            background: #0504AA;
+            color: #FFF;
+            border-color: #0504AA;
         }
 
         /* ===== SECTION HEADER STYLING ===== */
         .content-section-wrapper {
-            margin-bottom: 50px;
             position: relative;
         }
 
         .section-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #1A202C;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
+            font-size: 48px;
+            font-weight: 700;
+            color: #0B1621;
+            margin-bottom: 24px;
         }
 
         /* Dark blue content blocks matching target screenshot */
@@ -428,132 +471,6 @@
             border: 1px solid rgba(0, 100, 255, 0.1);
         }
 
-        /* Animated bubbles background */
-        .bubbles-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(100, 180, 255, 0.5), rgba(0, 100, 255, 0.15));
-            animation: floatBubble linear infinite;
-        }
-
-        .bubble:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            left: 5%;
-            bottom: -80px;
-            animation-duration: 9s;
-            animation-delay: 0s;
-        }
-
-        .bubble:nth-child(2) {
-            width: 50px;
-            height: 50px;
-            left: 12%;
-            bottom: -50px;
-            animation-duration: 12s;
-            animation-delay: 2s;
-        }
-
-        .bubble:nth-child(3) {
-            width: 110px;
-            height: 110px;
-            left: 22%;
-            bottom: -110px;
-            animation-duration: 8s;
-            animation-delay: 1s;
-        }
-
-        .bubble:nth-child(4) {
-            width: 40px;
-            height: 40px;
-            left: 35%;
-            bottom: -40px;
-            animation-duration: 11s;
-            animation-delay: 3s;
-        }
-
-        .bubble:nth-child(5) {
-            width: 70px;
-            height: 70px;
-            left: 50%;
-            bottom: -70px;
-            animation-duration: 10s;
-            animation-delay: 0.5s;
-        }
-
-        .bubble:nth-child(6) {
-            width: 90px;
-            height: 90px;
-            left: 62%;
-            bottom: -90px;
-            animation-duration: 7s;
-            animation-delay: 2.5s;
-        }
-
-        .bubble:nth-child(7) {
-            width: 55px;
-            height: 55px;
-            left: 75%;
-            bottom: -55px;
-            animation-duration: 13s;
-            animation-delay: 1.5s;
-        }
-
-        .bubble:nth-child(8) {
-            width: 130px;
-            height: 130px;
-            left: 85%;
-            bottom: -130px;
-            animation-duration: 9s;
-            animation-delay: 0s;
-        }
-
-        .bubble:nth-child(9) {
-            width: 35px;
-            height: 35px;
-            left: 92%;
-            bottom: -35px;
-            animation-duration: 11s;
-            animation-delay: 3.5s;
-        }
-
-        .bubble:nth-child(10) {
-            width: 60px;
-            height: 60px;
-            left: 45%;
-            bottom: -60px;
-            animation-duration: 14s;
-            animation-delay: 1s;
-        }
-
-        @keyframes floatBubble {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 0.7;
-            }
-
-            100% {
-                transform: translateY(-600px) scale(1.1);
-                opacity: 0;
-            }
-        }
-
         /* Quick Info layout */
         .quick-info-inner {
             position: relative;
@@ -626,16 +543,16 @@
         .media-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 15px;
+            gap: 12px;
         }
 
         .media-item {
             position: relative;
-            border-radius: 10px;
             overflow: hidden;
             aspect-ratio: 1.5;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 273px;
+            width: 100%;
         }
 
         .media-item img {
@@ -651,21 +568,18 @@
 
         /* City Gallery Blue Background */
         .city-gallery-section {
-            background: linear-gradient(135deg, #0000CC 0%, #0a25d4 30%, #0540e8 70%, #0000AA 100%);
-            border-radius: 16px;
+            background: url('/assets/images/city-gallery-bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             padding: 35px;
-            margin-bottom: 50px;
             position: relative;
-            overflow: hidden;
         }
 
-        .city-gallery-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(0, 195, 255, 0.12) 0%, transparent 50%);
-            pointer-events: none;
+        .city-gallery-section-wrapper {
+            width: 100%;
+            max-width: calc(100% - 387px);
+            margin: 0 0 0 auto;
         }
 
         .city-gallery-section .section-title {
@@ -677,6 +591,87 @@
         .city-gallery-section .media-grid {
             position: relative;
             z-index: 2;
+        }
+
+        .key-indicator-section {
+            position: relative;
+            padding: 40px 0 60px;
+            overflow: hidden;
+        }
+
+        .key-indicator-section:before {
+            content: "";
+            background: url(/assets/images/key-indicator-bg.png);
+            background-repeat: no-repeat;
+            background-size: inherit;
+            background-position: top left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-2%);
+        }
+
+        .key-indicators-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #DFE1EC;
+        }
+
+        .key-indicator-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20.5px 0px;
+            border-bottom: 1px solid #06146A;
+        }
+
+        .key-indicator-key {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+            color: #111722;
+            font-weight: 500;
+        }
+
+        .key-indicator-key--small {
+            font-size: 12px;
+            line-height: 20px;
+            color: #364153;
+        }
+
+        .key-indicator-value {
+            font-size: 14px;
+            color: #06146A;
+            font-weight: 500;
+            text-align: right;
+            line-height: 16px;
+        }
+
+        .key-indicator-value--black {
+            color: #111722;
+        }
+
+        .key-indicator-value .univ-visit {
+            color: #155DFC;
+        }
+
+        .key-indicator-value--bigger-grey {
+            color: #6A7282;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .indicator-section-title {
+            font-size: 24px;
+            color: #0505A6;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 32px;
+            letter-spacing: -0.48px;
         }
 
         @media (max-width: 768px) {
@@ -792,20 +787,6 @@
         }
 
         /* Famous sites grid overlay style */
-        .site-card {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 1.4;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .site-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
 
         .site-card:hover img {
             transform: scale(1.05);
@@ -816,39 +797,32 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            background: rgba(0, 0, 0, 0.7);
             color: white;
             padding: 12px 15px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 24px;
         }
 
         /* ===== FOOTER ===== */
         .main-footer {
-            background-color: var(--footer-bg);
-            color: white;
+            background: #0504AA;
+            background: linear-gradient(90deg, rgba(5, 4, 170, 1) 0%, rgba(4, 18, 115, 1) 100%);
+            color: #fff;
             padding: 80px 0 30px;
-            margin-top: 80px;
         }
 
         .footer-logo {
-            background: white;
-            color: var(--primary-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
+            margin-bottom: 21px;
         }
 
         .footer-desc {
             color: #eee;
-            line-height: 1.8;
-            font-size: 1rem;
+            line-height: 32px;
             max-width: 400px;
+            font-size: 18px;
         }
 
         .footer-title {
@@ -868,6 +842,7 @@
         .footer-links a {
             color: #eee;
             text-decoration: none;
+            transition: color 0.3s;
             font-weight: 500;
         }
 
@@ -896,7 +871,7 @@
         }
 
         .social-icon:hover {
-            background: rgba(255, 255, 255, 0.35);
+            background: var(--primary-blue);
             color: white;
         }
 
@@ -916,7 +891,7 @@
         }
 
         .sections-sidebar-col {
-            width: 280px;
+            width: 387px;
             flex-shrink: 0;
         }
 
@@ -925,19 +900,11 @@
             min-width: 0;
         }
 
-        .quick-info-bubble-card {
-            position: relative;
-            background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 100, 255, 0.15);
-            box-shadow: 0 4px 20px rgba(0, 0, 100, 0.05);
-        }
-
         .quick-info-card-inner {
-            position: relative;
-            z-index: 2;
-            padding: 35px;
+            padding: 30px 24px;
+            border: 1px solid #DFE1EC;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, .80);
         }
 
         .rating-bar-list {
@@ -960,18 +927,23 @@
 
         .rating-bar-label {
             font-weight: 600;
-            color: #2D3748;
-            font-size: 0.95rem;
+            color: #12162B;
+            font-size: 16px;
         }
 
         .rating-bar-score {
-            font-size: 0.95rem;
-            color: #4A5568;
+            color: #626684;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 16px;
         }
 
         .rating-bar-score strong {
-            color: #1A202C;
+            color: #12162B;
             font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            margin-right: 2px;
         }
 
         .rating-max {
@@ -980,33 +952,51 @@
         }
 
         .rating-track {
-            height: 8px;
-            background: #E2E8F0;
+            height: 6px;
+            background: #F2F3F8;
             border-radius: 999px;
             overflow: hidden;
         }
 
         .rating-fill {
             height: 100%;
-            background: #805AD5;
+            background: #5048E5;
+            background: linear-gradient(90deg, rgba(80, 72, 229, 1) 0%, rgba(166, 94, 237, 1) 100%);
             border-radius: 999px;
             transition: width 1s ease-in-out;
         }
 
         /* ===== WEATHER CARD ===== */
         .weather-card {
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 12px;
-            padding: 24px 20px;
-            text-align: center;
+            background: #fff;
+            border-radius: 24px;
+            padding: 24px;
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            width: 100%;
         }
 
-        .weather-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.18);
+        .weather-card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .weather-card h6 {
+            color: #5048E5;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .weather-card .key-indicator-value .univ-visit {
+            color: #12162B;
+            font-size: 14px;
+            line-height: 20px;
         }
 
         .weather-season {
@@ -1034,6 +1024,91 @@
             opacity: 0.85;
         }
 
+
+        .city-quick-information {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-quick-information:before,
+        .city-quick-information:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+        }
+
+        .city-quick-information:before {
+            background-image: url('/assets/images/city-quick-shape.svg');
+            top: 0%;
+            left: 0;
+            transform: translateY(-25%);
+        }
+
+        .city-quick-information:after {
+            background-image: url('/assets/images/city-quick-shape-2.svg');
+            bottom: 0;
+            right: 0;
+            background-position: bottom right;
+            background-position: bottom right;
+            transform: translate(2%, 25%);
+        }
+
+        .accommodation-section {
+            padding: 40px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accommodation-section:before {
+            background-image: url('/assets/images/accomudation-shpape-bg.svg');
+            background-position: top left;
+            top: 0;
+            left: 0;
+        }
+
+        .accommodation-section:not(.accommodation-section--before-none)::before,
+        .accommodation-section:not(.accommodation-section--before-none)::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .accommodation-section:after {
+            background-image: url('/assets/images/accomudation-shpape-bg-2.svg');
+            background-position: bottom right;
+            bottom: 0;
+            right: 0;
+        }
+
+        .action-card {
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 234px;
+            background-color: #fff;
+            border-radius: 24px;
+            border: 1px solid #DFE1EC;
+        }
+
+        .country-title {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 2.64px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .country-text {
+            font-size: 14px;
+            line-height: 22.8px;
+            color: #0B121A;
+            margin-bottom: 0;
+        }
+
         @media (max-width: 1321px) {
             .container {
                 max-width: 90%;
@@ -1046,17 +1121,39 @@
                 font-size: 2.5rem;
             }
 
-            .sidebar-nav {
-                position: static;
-                margin-bottom: 30px;
-            }
-
             .media-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
             .connective-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .sections-sidebar-col {
+                width: 100%;
+            }
+
+            .sidebar-nav {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .key-indicator-row {
+                padding: 16px 0px;
+            }
+
+            .key-indicator-key,
+            .key-indicator-value--bigger-grey {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .key-indicator-value--bigger-grey {
+                font-size: 20px;
+            }
+
+            .indicator-section-title {
+                font-size: 20px;
             }
         }
 
@@ -1155,26 +1252,12 @@
     </section>
 
     <!-- Main Content Area -->
-    <section class="py-5">
+    <section class="py-5 city-quick-information">
         <div class="container">
-
-            <!-- Tab Navigation Row -->
-            <div class="mb-4">
-                <div class="sub-nav-tabs">
-                    <a href="course_details.html" class="sub-nav-tab">Course</a>
-                    <a href="university_details.html" class="sub-nav-tab">University</a>
-                    <a href="city_details.html" class="sub-nav-tab active">City</a>
-                    <a href="#" class="sub-nav-tab">Country</a>
-                </div>
-            </div>
-
-            <!-- ====== QUICK INFORMATION: Sidebar LEFT + Content RIGHT ====== -->
-            <div class="quick-info-row content-section-wrapper mb-5" id="overview">
-
-                <!-- LEFT: Sections Sidebar -->
+            <div class="quick-info-row content-section-wrapper">
                 <div class="sections-sidebar-col">
-                    <div class="section-label-header">Sections</div>
                     <div class="sidebar-nav">
+                        <div class="section-label-header">Sections</div>
                         <ul class="p-0 m-0">
                             <li class="nav-item-side">
                                 <a href="#overview" class="nav-link-side active">
@@ -1235,88 +1318,585 @@
                     </div>
                 </div>
 
-                <!-- RIGHT: Quick Information with Bubbles Background -->
                 <div class="quick-info-content-col">
-                    <div class="quick-info-bubble-card">
-                        <!-- Animated Light Blue Bubbles -->
-                        <div class="bubbles-bg">
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
-                            <div class="bubble"></div>
+                    <div class="sub-nav-tabs">
+                        <a href="course_details.html" class="sub-nav-tab">Course</a>
+                        <a href="university_details.html" class="sub-nav-tab">University</a>
+                        <a href="city_details.html" class="sub-nav-tab active">City</a>
+                        <a href="#" class="sub-nav-tab">Country</a>
+                    </div>
+
+                    <h2 class="section-title">Quick Information</h2>
+
+                    <!-- Content -->
+                    <div class="quick-info-card-inner">
+
+                        <!-- Rating Bars -->
+                        <div class="rating-bar-list">
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">Cost of Living</span>
+                                    <span class="rating-bar-score"><strong>7</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">Housing Availability</span>
+                                    <span class="rating-bar-score"><strong>5</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">International Friendliness</span>
+                                    <span class="rating-bar-score"><strong>9</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">Solo Female Student Safety</span>
+                                    <span class="rating-bar-score"><strong>7</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">Public Transport</span>
+                                    <span class="rating-bar-score"><strong>10</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="rating-bar-item">
+                                <div class="rating-bar-header">
+                                    <span class="rating-bar-label">Student Life</span>
+                                    <span class="rating-bar-score"><strong>9</strong><span
+                                            class="rating-max">/10</span></span>
+                                </div>
+                                <div class="rating-track">
+                                    <div class="rating-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </section>
 
-                        <!-- Content -->
-                        <div class="quick-info-card-inner">
-                            <h2 class="section-title" style="font-size:1.8rem; margin-bottom: 28px;">Quick Information
-                            </h2>
+    <section class="city-gallery-section">
+        <div class="container">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">City Gallery</h2>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <!-- Rating Bars -->
-                            <div class="rating-bar-list">
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">Cost of Living</span>
-                                        <span class="rating-bar-score"><strong>7</strong><span
-                                                class="rating-max">/10</span></span>
-                                    </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 70%"></div>
+    <section class="key-indicator-section">
+        <div class="container position-relative">
+            <div class="city-gallery-section-wrapper">
+                <div class="key-indicators-card">
+                    <h2 class="indicator-section-title">Key Indicators</h2>
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Part-Time Jobs</div>
+                        <div class="key-indicator-value">Limited</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Language Barrier</div>
+                        <div class="key-indicator-value">High</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Main language</div>
+                        <div class="key-indicator-value">English</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">English-speaking PT Jobs</div>
+                        <div class="key-indicator-value">High</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">English-speaking FT Jobs</div>
+                        <div class="key-indicator-value">High</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Crime Rate</div>
+                        <div class="key-indicator-value">High</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Nearby Major Cities</div>
+                        <div class="key-indicator-value">London / Brussels / Lyon</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">English Friendliness</div>
+                        <div class="key-indicator-value">High</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Local Language Required</div>
+                        <div class="key-indicator-value">Medium</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Halal / Vegetarian</div>
+                        <div class="key-indicator-value">Yes</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Paris Student Housing</div>
+                        <div class="key-indicator-value">Brussels / Amsterdam / London</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="city-gallery-section">
+        <div class="container">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Famous Sites</h2>
+                <div class="media-grid">
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                    <div class="site-card media-item">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
+                            alt="Paris Street">
+                        <div class="site-card-title">Eiffel Tower</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="accommodation-section">
+        <div class="container position-relative">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Accommodation & Essentials</h2>
+                <div class="key-indicators-card">
+                    <div class="key-indicator-row border-0 p-0">
+                        <div class="indicator-section-title">City Residencies</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Student Residence Central</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Campus Living Paris</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">International Student House</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Local Housing Agents</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Paris Student Housing</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">StudyStay Agency</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Campus Connect Realty</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Housing Apps</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Leboncoin</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">SeLoger</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">PAP</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">City Hotels</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Budget Student Hotel</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">City Center Inn</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Traveler's Rest</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row mt-4">
+                        <div class="indicator-section-title">Airbnb</div>
+                        <div class="key-indicator-value">Yes</div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Grocery Stores</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Budget Student Hotel</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">City Center Inn</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Traveler's Rest</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Shopping Centers</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Les Halles</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Galeries Lafayette</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Beaugrenelle</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Banks</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">BNP Paribas / Crédit Agricole / Société Générale</div>
+                        <div class="key-indicator-value"></div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Used Products Apps</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Vinted</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Leboncoin</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Facebook Marketplace</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row mt-4">
+                        <div class="indicator-section-title">Pharmacy</div>
+                        <div class="key-indicator-value">Yes</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Name</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Local SIM Cards</div>
+                    </div>
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Orange / SFR / Bouygues Telecom</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transport-section city-gallery-section">
+        <div class="container">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Transport & Accessibility</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6 col-6 d-flex">
+                        <div class="weather-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="/assets/images/icons/public-transport.svg" alt="Public Transport" />
+                                <h6>Public Transport</h6>
+                            </div>
+                            <div class="weather-card-content">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Metro</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">Housing Availability</span>
-                                        <span class="rating-bar-score"><strong>5</strong><span
-                                                class="rating-max">/10</span></span>
-                                    </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 50%"></div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Tran</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">International Friendliness</span>
-                                        <span class="rating-bar-score"><strong>9</strong><span
-                                                class="rating-max">/10</span></span>
-                                    </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 90%"></div>
-                                    </div>
-                                </div>
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">Solo Female Student Safety</span>
-                                        <span class="rating-bar-score"><strong>7</strong><span
-                                                class="rating-max">/10</span></span>
-                                    </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 d-flex">
+                        <div class="weather-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="/assets/images/icons/taxi.svg" alt="Taxi App" />
+                                <h6>Taxi App</h6>
+                            </div>
+                            <div class="weather-card-content">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">G7 Taxi</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">Public Transport</span>
-                                        <span class="rating-bar-score"><strong>10</strong><span
-                                                class="rating-max">/10</span></span>
-                                    </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 100%"></div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">G7 Taxi</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
-                                <div class="rating-bar-item">
-                                    <div class="rating-bar-header">
-                                        <span class="rating-bar-label">Student Life</span>
-                                        <span class="rating-bar-score"><strong>9</strong><span
-                                                class="rating-max">/10</span></span>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">G7 Taxi</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
-                                    <div class="rating-track">
-                                        <div class="rating-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 d-flex">
+                        <div class="weather-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="/assets/images/icons/train.svg" alt="Train Stations" />
+                                <h6>Train Stations</h6>
+                            </div>
+                            <div class="weather-card-content">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Gare du Nord</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Gare de Lyon</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Gare Montparnasse</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-6 d-flex">
+                        <div class="weather-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="/assets/images/icons/subway.svg" alt="Airports" />
+                                <h6>Airports</h6>
+                            </div>
+                            <div class="weather-card-content">
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Charles de Gaulle (CDG)</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="key-indicator-row p-0 border-0">
+                                    <div class="key-indicator-key">Orly (ORY)</div>
+                                    <div class="key-indicator-value">
+                                        <a href="#" class="univ-visit" target="_blank">Visit <i
+                                                class="bi bi-box-arrow-up-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -1324,392 +1904,333 @@
                     </div>
                 </div>
             </div>
-
-            <!-- ====== CITY GALLERY — FULL WIDTH, BLUE BACKGROUND ====== -->
-            <div class="city-gallery-section content-section-wrapper mb-5" id="media">
-                <h2 class="section-title" style="color:white; font-size:1.8rem; margin-bottom:25px;">City Gallery</h2>
-                <div class="media-grid">
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600"
-                            alt="Paris Street">
-                    </div>
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1499856871958-5b9647a6406a?q=80&w=600" alt="Louvre">
-                    </div>
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=600"
-                            alt="Eiffel Tower">
-                    </div>
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600"
-                            alt="Seine Night">
-                    </div>
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1549146473-306177e58e4e?q=80&w=600"
-                            alt="Cafe in Paris">
-                    </div>
-                    <div class="media-item">
-                        <img src="https://images.unsplash.com/photo-1488866081812-4aefb69f688e?q=80&w=600"
-                            alt="Arc de Triomphe">
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== FAMOUS SITES — FULL WIDTH ====== -->
-            <div class="content-section-wrapper" id="sites">
-                <div class="section-title" style="font-size:1.6rem;">Famous Sites</div>
-                <div class="row g-3">
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1549146473-306177e58e4e?q=80&w=500"
-                                alt="Eiffel Tower">
-                            <div class="site-card-title">Eiffel Tower</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1499856871958-5b9647a6406a?q=80&w=500"
-                                alt="Louvre Museum">
-                            <div class="site-card-title">Louvre Museum</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?q=80&w=500"
-                                alt="Arc de Triomphe">
-                            <div class="site-card-title">Arc de Triomphe</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1478866081812-4aefb69f688e?q=80&w=500"
-                                alt="Notre Dame">
-                            <div class="site-card-title">Notre Dame</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?q=80&w=500"
-                                alt="Sacré-Cœur">
-                            <div class="site-card-title">Sacré-Cœur</div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-6">
-                        <div class="site-card">
-                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=500"
-                                alt="Seine River">
-                            <div class="site-card-title">Seine River</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== WEATHER — FULL WIDTH ====== -->
-            <div class="dark-blue-section-block content-section-wrapper" id="weather">
-                <div class="section-title" style="color:white; font-size:1.6rem; margin-bottom:20px;">Weather</div>
-                <div class="row g-3">
-                    <div class="col-md-3 col-6">
-                        <div class="weather-card">
-                            <div class="weather-season">Spring</div>
-                            <i class="bi bi-cloud-sun weather-icon"></i>
-                            <div class="weather-temp">10°C – 20°C</div>
-                            <div class="weather-desc">Mild & rainy</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="weather-card">
-                            <div class="weather-season">Summer</div>
-                            <i class="bi bi-sun weather-icon" style="color:#FFD700;"></i>
-                            <div class="weather-temp">20°C – 30°C</div>
-                            <div class="weather-desc">Warm & sunny</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="weather-card">
-                            <div class="weather-season">Autumn</div>
-                            <i class="bi bi-cloud weather-icon" style="color:#FFA500;"></i>
-                            <div class="weather-temp">8°C – 18°C</div>
-                            <div class="weather-desc">Crisp & cloudy</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6">
-                        <div class="weather-card">
-                            <div class="weather-season">Winter</div>
-                            <i class="bi bi-snow weather-icon" style="color:#aad4f5;"></i>
-                            <div class="weather-temp">2°C – 8°C</div>
-                            <div class="weather-desc">Cold & damp</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== ACCOMMODATION & ESSENTIALS — FULL WIDTH ====== -->
-            <div class="content-section-wrapper" id="accommodation">
-                <div class="section-title" style="font-size:1.6rem;">Accommodation &amp; Essentials</div>
-                <div class="info-card-container">
-                    <div class="bg-light px-4 py-2 border-bottom fw-bold text-secondary text-uppercase"
-                        style="font-size: 0.8rem;">Accommodation Options</div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-building"></i><span>Student Residence (CROUS)</span>
-                        </div>
-                        <div class="info-row-right"><span>€250 – €600/mo</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-house-door"></i><span>Private Room / Studio</span>
-                        </div>
-                        <div class="info-row-right"><span>€800 – €1,500/mo</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-people"></i><span>Shared Apartment</span></div>
-                        <div class="info-row-right"><span>€500 – €900/mo</span></div>
-                    </div>
-                    <div class="bg-light px-4 py-2 border-bottom border-top fw-bold text-secondary text-uppercase"
-                        style="font-size: 0.8rem;">Monthly Essentials</div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-cart3"></i><span>Groceries</span></div>
-                        <div class="info-row-right"><span>€250 – €350/mo</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-lightning-charge"></i><span>Utilities (electricity,
-                                internet)</span></div>
-                        <div class="info-row-right"><span>€150 – €250/mo</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-heart-pulse"></i><span>Health Insurance (CPAM)</span>
-                        </div>
-                        <div class="info-row-right"><span style="color:#319795; font-weight:700;">Free for
-                                students</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== TRANSPORT & ACCESSIBILITY — FULL WIDTH ====== -->
-            <div class="dark-blue-section-block content-section-wrapper" id="transport">
-                <div class="section-title" style="color:white; font-size:1.6rem; margin-bottom:20px;">Transport &amp;
-                    Accessibility</div>
-                <div class="connective-grid">
-                    <div class="connective-card">
-                        <div class="connective-card-title"><i class="bi bi-train-front"
-                                style="color:var(--primary-blue);"></i> Metro system</div>
-                        <div class="connective-card-val">Paris Metro covers 16 lines with 300+ stations. Operating 5:30
-                            AM – 1:15 AM. Student pass: €84/mo.</div>
-                    </div>
-                    <div class="connective-card">
-                        <div class="connective-card-title"><i class="bi bi-train-lightrail"
-                                style="color:var(--primary-blue);"></i> RER &amp; Train</div>
-                        <div class="connective-card-val">RER connects suburbs, CDG airport, Versailles, Disneyland. TGV
-                            high-speed links reach other cities.</div>
-                    </div>
-                    <div class="connective-card">
-                        <div class="connective-card-title"><i class="bi bi-bicycle"
-                                style="color:var(--primary-blue);"></i> Bike sharing</div>
-                        <div class="connective-card-val">Vélib' Métropole has 20,000+ docks. Student discount
-                            subscriptions at just €3.10/mo.</div>
-                    </div>
-                    <div class="connective-card">
-                        <div class="connective-card-title"><i class="bi bi-airplane"
-                                style="color:var(--primary-blue);"></i> Airports</div>
-                        <div class="connective-card-val">CDG and Orly airports. Reached easily by RER B or shuttle from
-                            city center in ~30-45 mins.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== JOBS & OPPORTUNITIES — FULL WIDTH ====== -->
-            <div class="content-section-wrapper" id="jobs">
-                <div class="section-title" style="font-size:1.6rem;">Jobs &amp; Opportunities</div>
-                <div class="info-card-container">
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-cash-stack"></i><span>Average Part-Time Wage</span>
-                        </div>
-                        <div class="info-row-right"><span>€11.65/hr (SMIC minimum)</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-clock"></i><span>Work Hours Allowed</span></div>
-                        <div class="info-row-right"><span>964 hrs/year (~20 hrs/week)</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-building-gear"></i><span>Key Job Industries</span>
-                        </div>
-                        <div class="info-row-right"><span>Tourism, Tech, Fashion, Education, Services</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-file-earmark-check"></i><span>Post-Study Visa</span>
-                        </div>
-                        <div class="info-row-right"><span style="color:#319795; font-weight:700;">APS Visa – up to 2
-                                years</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== LEISURE & SOCIAL LIFE — FULL WIDTH ====== -->
-            <div class="dark-blue-section-block content-section-wrapper" id="leisure">
-                <div class="section-title" style="color:white; font-size:1.6rem; margin-bottom:20px;">Leisure &amp;
-                    Social Life</div>
-                <div class="info-card-container">
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-cup-hot"></i><span>Cafes</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Countless street
-                                cafes; perfect for reading &amp; socialising</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-tree"></i><span>Parks</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Jardin du Luxembourg,
-                                Tuileries, Parc des Buttes-Chaumont</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-camera"></i><span>Museums</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Louvre, Musée
-                                d'Orsay, Centre Pompidou (free &lt;26 EU)</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-music-note-beamed"></i><span>Nightlife</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Vibrant Bastille,
-                                Oberkampf &amp; Le Marais districts</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== HEALTH & SAFETY — FULL WIDTH ====== -->
-            <div class="content-section-wrapper" id="health">
-                <div class="section-title" style="font-size:1.6rem;">Health &amp; Safety</div>
-                <div class="info-card-container">
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-shield-check"></i><span>General Safety</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Safe overall; be
-                                cautious of pickpockets in tourist areas</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-telephone"></i><span>Emergency Numbers</span></div>
-                        <div class="info-row-right"><span>112 (General), 15 (Medical), 17 (Police)</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-hospital"></i><span>Healthcare System</span></div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>Student CPAM – free
-                                registration &amp; 70% reimbursement</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-building-cross"></i><span>Local Hospitals</span>
-                        </div>
-                        <div class="info-row-right" style="max-width:60%; text-align:right;"><span>AP-HP public
-                                hospitals; English-speaking services available</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== RELIGION & COMMUNITY — FULL WIDTH ====== -->
-            <div class="dark-blue-section-block content-section-wrapper" id="religion">
-                <div class="section-title" style="color:white; font-size:1.6rem; margin-bottom:20px;">Religion &amp;
-                    Community</div>
-                <div class="info-card-container">
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-people"></i><span>Main Religion</span></div>
-                        <div class="info-row-right"><span>Christianity (secular state)</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-globe-europe-africa"></i><span>Expat &amp;
-                                International Community</span></div>
-                        <div class="info-row-right"><span>Very large &amp; welcoming</span></div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-building"></i><span>Places of Worship</span></div>
-                        <div class="info-row-right"><span>Churches, Mosques, Synagogues, Temples widely available</span>
-                        </div>
-                    </div>
-                    <div class="info-row">
-                        <div class="info-row-left"><i class="bi bi-emoji-smile"></i><span>Student Clubs</span></div>
-                        <div class="info-row-right"><span>100s of international student associations</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== WHY / WHY NOT — FULL WIDTH ====== -->
-            <div class="content-section-wrapper" id="whynot">
-                <div class="section-title" style="font-size:1.6rem;">Why / Why Not</div>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="info-card-container p-4">
-                            <h5 style="color:#0000CC; font-weight:800; margin-bottom:16px;"><i
-                                    class="bi bi-check-circle-fill me-2"></i>Why Study in Paris?</h5>
-                            <ul style="color:#4A5568; line-height:2; padding-left:18px;">
-                                <li>World-class universities &amp; research institutions</li>
-                                <li>Rich culture, art, &amp; history</li>
-                                <li>Excellent public transport network</li>
-                                <li>Vibrant student life &amp; nightlife</li>
-                                <li>Gateway to all of Europe</li>
-                                <li>Affordable tuition (public unis from €170/yr)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="info-card-container p-4">
-                            <h5 style="color:#E53E3E; font-weight:800; margin-bottom:16px;"><i
-                                    class="bi bi-x-circle-fill me-2"></i>Why Not?</h5>
-                            <ul style="color:#4A5568; line-height:2; padding-left:18px;">
-                                <li>Very high cost of living &amp; rent</li>
-                                <li>French language required for many programs</li>
-                                <li>Crowded &amp; fast-paced city lifestyle</li>
-                                <li>Bureaucracy for visa &amp; admin processes</li>
-                                <li>Limited housing availability near universities</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ====== CITY FAMOUS FOR — FULL WIDTH ====== -->
-            <div class="dark-blue-section-block content-section-wrapper" id="famous">
-                <div class="section-title" style="color:white; font-size:1.6rem; margin-bottom:20px;">City Famous For
-                </div>
-                <div class="row g-3">
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-building" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Architecture</div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-palette" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Art &amp; Culture</div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-bag-heart" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Fashion</div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-egg-fried" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Cuisine</div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-mortarboard" style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Education</div>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-4" style="text-align:center;">
-                        <div
-                            style="background:rgba(255,255,255,0.1); border-radius:12px; padding:20px 10px; color:white;">
-                            <i class="bi bi-emoji-sunglasses"
-                                style="font-size:2rem; margin-bottom:8px; display:block;"></i>
-                            <div style="font-size:0.85rem; font-weight:600;">Romance</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- end container -->
+        </div>
     </section>
+
+    <section class="accommodation-section accommodation-section--before-none">
+        <div class="container position-relative">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Jobs & Opportunities</h2>
+                <div class="key-indicators-card">
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Popular Student Jobs</div>
+                        <div class="key-indicator-value key-indicator-value--bigger-grey">Restaurant Server / Retail
+                            Assistant / Barista / Tutor</div>
+                    </div>
+
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">Job Sites</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Indeed France</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">StudentJob</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">LinkedIn Jobs</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transport-section city-gallery-section">
+        <div class="container">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Leisure & Social Life</h2>
+                <div class="key-indicators-card">
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">City Gyms</div>
+                        <div class="key-indicator-value key-indicator-value--bigger-grey">Basic Fit / Keep Cool</div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">Bars</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Le Café Latin</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Harry's New York Bar</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Le Comptoir Général</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">Clubs</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Le Café Latin</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Harry's New York Bar</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Le Comptoir Général</div>
+                        <div class="key-indicator-value key-indicator-value--black">5 Rue de la Huchette, 75005
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="accommodation-section accommodation-section--before-none">
+        <div class="container position-relative">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Health & Safety</h2>
+                <div class="key-indicators-card">
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">City Hospitals</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Hôpital de la Pitié-Salpêtrière</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Hôpital de la Pitié-Salpêtrière</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Hôpital Saint-Louis</div>
+                    </div>
+
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">Emergency Contacts</div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Police -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">Police</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">17</div>
+                            </div>
+                        </div>
+
+                        <!-- Fire Brigade -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">Fire Brigade</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">18</div>
+                            </div>
+                        </div>
+
+                        <!-- Ambulance -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">Ambulance</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">15</div>
+                            </div>
+                        </div>
+
+                        <!-- European Emergency -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">European Emergency</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">112</div>
+                            </div>
+                        </div>
+
+                        <!-- Violence Against Women -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">Violence Against Women</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">3919
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lost Items -->
+                        <div class="col-md-4 col-sm-6 mb-4">
+                            <div class="key-indicator-row flex-column align-items-start p-3"
+                                style="border-color: #06146A;">
+                                <div class="d-flex align-items-center mb-2 text-primary">
+                                    <i class="bi bi-telephone me-2"></i>
+                                    <div class="key-indicator-key--small m-0">Lost Items</div>
+                                </div>
+                                <div class="key-indicator-value key-indicator-value--black">0821 00
+                                    25 25</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="accommodation-section accommodation-section--before-none pt-0">
+        <div class="container position-relative">
+            <div class="city-gallery-section-wrapper">
+                <h2 class="section-title">Religion & Community</h2>
+                <div class="key-indicators-card">
+                    <div class="key-indicator-row border-0 pb-0">
+                        <div class="indicator-section-title">Mosques</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Grande Mosquée de Paris</div>
+                        <div class="key-indicator-value key-indicator-value--black">2bis Place du Puits de l'Ermite,
+                            75005</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Mosquée Adda'wa</div>
+                        <div class="key-indicator-value key-indicator-value--black">2bis Place du Puits de l'Ermite,
+                            75005</div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Synagogues</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Grande Mosquée de Paris</div>
+                        <div class="key-indicator-value key-indicator-value--black">2bis Place du Puits de l'Ermite,
+                            75005</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Mosquée Adda'wa</div>
+                        <div class="key-indicator-value key-indicator-value--black">2bis Place du Puits de l'Ermite,
+                            75005</div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">Temples</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Buddhist Pagoda of Vincennes</div>
+                        <div class="key-indicator-value key-indicator-value--black">2bis Place du Puits de l'Ermite,
+                            75005</div>
+                    </div>
+
+
+                    <div class="key-indicator-row border-0 pb-0 mt-4">
+                        <div class="indicator-section-title">City Social Media Groups</div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Paris Students International</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Expats in Paris</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="key-indicator-row">
+                        <div class="key-indicator-key">Paris Student Housing Group</div>
+                        <div class="key-indicator-value">
+                            <a href="#" class="univ-visit" target="_blank">Visit <i
+                                    class="bi bi-box-arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title mt-5">Why / Why Not</h2>
+                <div class="row g-4">
+
+                    <!-- Why This Country -->
+                    <div class="col-lg-6">
+                        <div class="action-card country-card-success">
+                            <h4 class="country-title text-success">
+                                ✅ WHY THIS COUNTRY
+                            </h4>
+
+                            <p class="country-text">
+                                Add paragraph.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Why Not This Country -->
+                    <div class="col-lg-6">
+                        <div class="action-card country-card-danger">
+                            <h4 class="country-title text-danger">
+                                ❌ WHY NOT THIS COUNTRY
+                            </h4>
+
+                            <p class="country-text">
+                                Add paragraph.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer (Preserved) -->
     <footer class="main-footer">
