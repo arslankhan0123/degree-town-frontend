@@ -121,7 +121,7 @@
                 url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            height: 400px;
+            min-height: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -129,56 +129,143 @@
             text-align: center;
             color: white;
             position: relative;
+            padding: 40px 0;
         }
 
         .hero-title {
             font-size: 52px;
             font-weight: 700;
-            margin-bottom: 2rem;
             text-shadow: 1px 3px #000;
         }
 
-        .hero-search-container {
+        /* Glassmorphic Form Container */
+        .hero-form-container {
             width: 100%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.10);
-            backdrop-filter: blur(3px);
-            border-radius: 4px;
-            padding: 8px;
+            max-width: 1140px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 36px 24px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-form-title {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-align: center;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-search-bar {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 4px 16px 4px 4px;
             display: flex;
             align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            gap: 0;
         }
 
-        .hero-search-container i {
-            color: white;
-            font-size: 1.2rem;
-            margin: 0 15px;
+        .search-item {
+            display: flex;
+            align-items: center;
+            height: 48px;
         }
 
-        .hero-search-container input {
-            background: transparent;
+        .search-item select {
+            padding: 0 16px;
+        }
+
+        /* Vertical divider */
+        .search-item:not(:last-child):not(.button-item) {
+            border-right: 1px solid #E2E8F0;
+        }
+
+        .input-item {
+            flex: 2;
+            gap: 12px;
+            padding-left: 12px;
+        }
+
+        .input-item .search-icon {
+            color: #718096;
+            font-size: 1.25rem;
+        }
+
+        .input-item input {
             border: none;
             outline: none;
-            flex-grow: 1;
+            width: 100%;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .input-item input::placeholder,
+        .input-item input {
+            color: #718096;
+            font-size: 16px;
+        }
+
+        .select-item {
+            flex: 1;
+            position: relative;
+            padding-right: 8px;
+        }
+
+        .search-select {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            color: #718096;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%232D3748' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 2px center;
+            background-size: 10px;
+        }
+
+        .search-select:focus {
+            color: #2D3748;
+        }
+
+        .button-item {
+            flex: 0 0 auto;
+            padding: 0;
+            height: auto;
+        }
+
+        .btn-search {
+            background-color: #0504AA;
+            color: #ffffff;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            padding: 12px 32px;
             font-size: 16px;
             font-weight: 700;
-            color: white;
-            line-height: 26px;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
         }
 
-        .hero-search-container input::placeholder {
-            color: rgba(255, 255, 255, 0.8);
+        .btn-search:hover {
+            background-color: #041273;
         }
 
-        .btn-hero-search {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
+        .btn-search:active {
+            transform: scale(0.98);
         }
 
         /* Sidebar Styling Refined */
@@ -186,7 +273,7 @@
             background: white;
             border: 1px solid #B8C1FF;
             border-radius: 10px;
-            padding: 30px;
+            padding: 24px;
         }
 
         .sidebar-search-wrapper {
@@ -212,6 +299,11 @@
             font-size: 0.85rem;
             color: var(--text-main);
             transition: border-color 0.2s;
+        }
+
+        .sidebar-search,
+        .sidebar-search::placeholder {
+            font-size: 14px;
         }
 
         .sidebar-search:focus {
@@ -414,6 +506,7 @@
             align-items: center;
             padding: 6px 0;
             cursor: pointer;
+            gap: 3px;
         }
 
         .sub-discipline-name {
@@ -567,7 +660,7 @@
             background: white;
             border: 1px solid #B8C1FF;
             border-radius: 10px;
-            padding: 24px 32px;
+            padding: 24px;
             margin-bottom: 24px;
             position: relative;
         }
@@ -652,7 +745,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
-            margin-bottom: 16px;
         }
 
         .meta-item {
@@ -898,19 +990,78 @@
             .duration-text {
                 margin: 0;
             }
+        }
 
-            .hero-search-container {
-                flex-wrap: wrap;
-                gap: 16px;
+        /* Responsive styling for Hero Search Form */
+        @media (max-width: 1200px) {
+            .hero-form-container {
+                padding: 24px 20px;
             }
 
-            .hero-search-container .btn-hero-search {
+            .hero-form-title {
+                font-size: 22px;
+                margin-bottom: 16px;
+            }
+
+            .hero-search-bar {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 12px;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .search-item {
+                background: #ffffff;
+                border-radius: 8px;
+                border: 1px solid #E2E8F0 !important;
+                height: 52px;
+                padding: 0 16px !important;
+                border-right: none !important;
+            }
+
+            /* Row 1: input (4 cols) and select (2 cols) */
+            .search-item.input-item {
+                grid-column: span 4;
+            }
+
+            .search-item.select-item:nth-of-type(2) {
+                grid-column: span 2;
+            }
+
+            /* Row 2: next 3 selects (2 cols each) */
+            .search-item.select-item:nth-of-type(3),
+            .search-item.select-item:nth-of-type(4),
+            .search-item.select-item:nth-of-type(5) {
+                grid-column: span 2;
+            }
+
+            /* Bottom row: search button (6 cols) */
+            .search-item.button-item {
+                grid-column: span 6;
+                background: transparent;
+                border: none !important;
+                padding: 0 !important;
+                height: auto;
+            }
+
+            .btn-search {
                 width: 100%;
-                display: block;
+                padding: 14px;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .search-item.input-item,
+            .search-item.select-item {
+                grid-column: span 6 !important;
             }
 
-            .hero-search-container input {
-                padding: 10px 0;
+            .range-input-group {
+                flex-direction: column;
             }
         }
     </style>
@@ -969,12 +1120,63 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container d-flex flex-column align-items-center">
-            <div class="hero-search-container mb-4">
-                <i class="bi bi-search"></i>
-                <input type="text" placeholder="Type Course, country or discipline etc...">
-                <button class="btn btn-hero-search">Search for job</button>
+            <h1 class="hero-title">PHD/DOC</h1>
+            <div class="hero-form-container">
+                <h3 class="hero-form-title">Where you want start your phd/DOC?</h3>
+                <form class="hero-search-bar" action="#" method="GET">
+                    <!-- Search Input -->
+                    <div class="search-item input-item">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" name="query" placeholder="Search by city or country name">
+                    </div>
+                    <!-- Program Select -->
+                    <div class="search-item select-item">
+                        <select name="program" class="search-select">
+                            <option value="masters">Masters</option>
+                            <option value="bachelors">Bachelors</option>
+                            <option value="phd">PhD / Doctorate</option>
+                            <option value="diploma">Diploma</option>
+                        </select>
+                    </div>
+                    <!-- Country Select -->
+                    <div class="search-item select-item">
+                        <select name="country" class="search-select">
+                            <option value="">Select country</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="au">Australia</option>
+                            <option value="de">Germany</option>
+                        </select>
+                    </div>
+                    <!-- Discipline Select -->
+                    <div class="search-item select-item">
+                        <select name="discipline" class="search-select">
+                            <option value="">Select discipline</option>
+                            <option value="law">Law</option>
+                            <option value="engineering">Engineering & Tech</option>
+                            <option value="applied-sciences">Applied Sciences</option>
+                            <option value="social-sciences">Social Sciences</option>
+                            <option value="business">Business & Management</option>
+                            <option value="computer-science">Computer Science & IT</option>
+                        </select>
+                    </div>
+                    <!-- Fee Select -->
+                    <div class="search-item select-item">
+                        <select name="fee" class="search-select">
+                            <option value="">Fee min- max</option>
+                            <option value="0-5000">$0 - $5,000</option>
+                            <option value="5000-15000">$5,000 - $15,000</option>
+                            <option value="15000-30000">$15,000 - $30,000</option>
+                            <option value="30000+">$30,000+</option>
+                        </select>
+                    </div>
+                    <!-- Search Button -->
+                    <div class="search-item button-item">
+                        <button type="submit" class="btn-search">Search</button>
+                    </div>
+                </form>
             </div>
-            <h1 class="hero-title">Search, Choose, Study</h1>
         </div>
     </section>
 
@@ -1417,7 +1619,8 @@
                                         <div class="filter-option"><input type="checkbox" id="s1"><label for="s1">Full
                                                 Funding</label></div>
                                         <div class="filter-option"><input type="checkbox" id="s2"><label
-                                                for="s2">Partial Funding</label></div>
+                                                for="s2">Partial Funding</label>
+                                        </div>
                                         <div class="filter-option"><input type="checkbox" id="s3"><label for="s3">No
                                                 Scholarship</label></div>
                                     </div>
@@ -1434,9 +1637,11 @@
                                         <div class="filter-option"><input type="checkbox" id="b1"><label
                                                 for="b1">January</label></div>
                                         <div class="filter-option"><input type="checkbox" id="b2"><label
-                                                for="b2">September / October</label></div>
+                                                for="b2">September /
+                                                October</label></div>
                                         <div class="filter-option"><input type="checkbox" id="b3"><label
-                                                for="b3">Rolling Admissions</label></div>
+                                                for="b3">Rolling Admissions</label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1624,16 +1829,14 @@
                         <h4>Search Results</h4>
                         <span class="results-count">150 courses found</span>
                     </div>
+                    <h4 class="mb-3 mb-lg-4">150 Master's degrees </h4>
+
 
                     <!-- Repeatable Course Card -->
                     <div class="course-card">
                         <div class="card-header-flex">
                             <h3 class="course-title">Forestry Science</h3>
                             <div class="post-study-visa">
-                                <div class="d-flex align-items-center gap-3 justify-content-end">
-                                    <img src="/assets/country/icons/share.svg" alt="" />
-                                    <img src="/assets/country/icons/bookmark.svg" alt="" />
-                                </div>
                                 <div>Post Study Visa: Yes</div>
                             </div>
                         </div>
@@ -1646,6 +1849,7 @@
                             <span class="tag-pill">Online</span>
                             <span class="tag-pill">Full-time</span>
                         </div>
+
                         <div class="university-info">
                             <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=200&auto=format&fit=crop"
                                 alt="Uni Logo" class="uni-logo">
@@ -1660,24 +1864,26 @@
                             <p class="duration-text">3 Years</p>
                         </div>
 
-                        <div class="course-meta">
-                            <div class="meta-item">
-                                <i class="bi bi-calendar-event"></i>
-                                Starts: October 2026
+                        <div class="d-flex align-items-center justify-content-between gap-3">
+                            <div class="course-meta">
+                                <div class="meta-item">
+                                    <i class="bi bi-calendar-event"></i>
+                                    Starts: October 2026
+                                </div>
+                                <div class="meta-item">
+                                    <i class="bi bi-briefcase"></i>
+                                    Part-time Job: Yes
+                                </div>
+                                <div class="meta-item">
+                                    <i class="bi bi-translate"></i>
+                                    English / French
+                                </div>
                             </div>
-                            <div class="meta-item">
-                                <i class="bi bi-briefcase"></i>
-                                Part-time Job: Yes
-                            </div>
-                            <div class="meta-item">
-                                <i class="bi bi-translate"></i>
-                                English / French
-                            </div>
-                        </div>
 
-                        <div class="card-bottom-actions">
-                            <a href="/course_details.html" class="btn btn-view-details">View Details</a>
-                            <i class="bi bi-bookmark btn-bookmark-hollow"></i>
+                            <div class="card-bottom-actions">
+                                <a href="/course_details.html" class="btn btn-view-details">View Details</a>
+                                <i class="bi bi-bookmark btn-bookmark-hollow"></i>
+                            </div>
                         </div>
                     </div>
 
@@ -1736,10 +1942,6 @@
                         <div class="card-header-flex">
                             <h3 class="course-title">Forestry Science</h3>
                             <div class="post-study-visa">
-                                <div class="d-flex align-items-center gap-3 justify-content-end">
-                                    <img src="/assets/country/icons/share.svg" alt="" />
-                                    <img src="/assets/country/icons/bookmark.svg" alt="" />
-                                </div>
                                 <div>Post Study Visa: Yes</div>
                             </div>
                         </div>

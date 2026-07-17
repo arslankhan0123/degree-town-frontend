@@ -134,7 +134,7 @@
         }
 
         .hero-title {
-            font-size: 3.2rem;
+            font-size: 48px;
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.1;
@@ -283,6 +283,7 @@
         /* ===== TAB NAVIGATION ===== */
         .sub-nav-tabs {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 32px;
         }
@@ -309,6 +310,7 @@
         .content-section-wrapper {
             margin-bottom: 50px;
             position: relative;
+            overflow: hidden;
         }
 
         .section-title {
@@ -379,6 +381,8 @@
             transition: background-color 0.2s;
             text-decoration: none;
             color: inherit;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .info-row:last-child {
@@ -521,6 +525,7 @@
             background-size: 100% auto;
             background-position: top left;
             background-repeat: no-repeat;
+            overflow: hidden;
         }
 
         /* ===== FOOTER ===== */
@@ -602,10 +607,31 @@
             color: #ccc;
         }
 
+        @media (max-width: 1321px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sections-sidebar-col {
+                width: 300px;
+                flex-shrink: 0;
+            }
+
+            .content-section-wrapper {
+                margin-bottom: 20px;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 32px;
             }
 
             .media-grid {
@@ -618,11 +644,21 @@
 
             .quick-info-row {
                 flex-direction: column;
+                gap: 16px;
             }
 
             .sidebar-nav {
                 position: static;
                 margin-bottom: 20px;
+            }
+
+            .sub-nav-tabs {
+                margin-bottom: 20px;
+            }
+
+            .sidebar-nav,
+            .key-indicators-card {
+                padding: 24px 20px;
             }
         }
 

@@ -172,7 +172,7 @@
         }
 
         .hero-title {
-            font-size: 5.2rem;
+            font-size: 85px;
             font-weight: 900;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -313,6 +313,7 @@
         /* ===== TAB NAVIGATION ===== */
         .sub-nav-tabs {
             display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin-bottom: 60px;
         }
@@ -572,7 +573,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            padding: 35px;
+            padding: 35px 0;
             position: relative;
         }
 
@@ -663,6 +664,7 @@
             color: #6A7282;
             font-size: 24px;
             font-weight: 400;
+            line-height: 110%;
         }
 
         .indicator-section-title {
@@ -1037,6 +1039,7 @@
             width: 100%;
             height: 100%;
             background-repeat: no-repeat;
+            z-index: -1;
         }
 
         .city-quick-information:before {
@@ -1109,10 +1112,39 @@
             margin-bottom: 0;
         }
 
+        .pos-relative {
+            position: relative;
+            z-index: 1;
+        }
+
         @media (max-width: 1321px) {
             .container {
                 max-width: 90%;
             }
+        }
+
+        @media (max-width: 1200px) {
+            .sections-sidebar-col {
+                width: 300px;
+                flex-shrink: 0;
+            }
+
+            .city-gallery-section-wrapper {
+                max-width: calc(100% - 300px);
+            }
+
+            .sub-nav-tabs {
+                margin-bottom: 40px;
+            }
+
+            .hero-title {
+                font-size: 60px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
         }
 
         /* ===== RESPONSIVE ===== */
@@ -1155,15 +1187,80 @@
             .indicator-section-title {
                 font-size: 20px;
             }
+
+            .quick-info-content-col {
+                flex: unset;
+                min-width: 100%;
+            }
+
+            .quick-info-row {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .sub-nav-tabs,
+            .hero-title-box {
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+
+            .city-gallery-section-wrapper {
+                max-width: 100%;
+            }
+
+            .media-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .site-card-title {
+                font-size: 18px;
+            }
+
+            .hero-stats-grid {
+                gap: 16px;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sidebar-nav,
+            .key-indicators-card {
+                padding: 24px 20px;
+            }
         }
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 2rem;
+                font-size: 24px;
             }
 
             .media-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-title-box {
+                padding: 24px 20px;
+            }
+
+            .hero-stats-grid {
+                gap: 8px;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .hero-section {
+                padding: 50px 0;
+            }
+
+            .key-indicator-value--bigger-grey {
+                font-size: 16px;
             }
         }
     </style>
@@ -1205,7 +1302,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container hero-content">
+        <div class="container hero-content position-relative">
             <div class="hero-title-box">
                 <h1 class="hero-title">Discover Paris</h1>
             </div>
@@ -1253,7 +1350,7 @@
 
     <!-- Main Content Area -->
     <section class="py-5 city-quick-information">
-        <div class="container">
+        <div class="container pos-relative">
             <div class="quick-info-row content-section-wrapper">
                 <div class="sections-sidebar-col">
                     <div class="sidebar-nav">
@@ -1788,8 +1885,8 @@
         <div class="container">
             <div class="city-gallery-section-wrapper">
                 <h2 class="section-title">Transport & Accessibility</h2>
-                <div class="row g-4">
-                    <div class="col-lg-6 col-6 d-flex">
+                <div class="row g-2 g-lg-4">
+                    <div class="col-lg-6 col-md-6 d-flex">
                         <div class="weather-card">
                             <div class="d-flex justify-content-between align-items-center">
                                 <img src="/assets/images/icons/public-transport.svg" alt="Public Transport" />
@@ -1814,7 +1911,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-6 d-flex">
+                    <div class="col-lg-6 col-md-6 d-flex">
                         <div class="weather-card">
                             <div class="d-flex justify-content-between align-items-center">
                                 <img src="/assets/images/icons/taxi.svg" alt="Taxi App" />
@@ -1846,7 +1943,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-6 d-flex">
+                    <div class="col-lg-6 col-md-6 d-flex">
                         <div class="weather-card">
                             <div class="d-flex justify-content-between align-items-center">
                                 <img src="/assets/images/icons/train.svg" alt="Train Stations" />
@@ -1878,7 +1975,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-6 d-flex">
+                    <div class="col-lg-6 col-md-6 d-flex">
                         <div class="weather-card">
                             <div class="d-flex justify-content-between align-items-center">
                                 <img src="/assets/images/icons/subway.svg" alt="Airports" />
@@ -2038,9 +2135,9 @@
                         <div class="indicator-section-title">Emergency Contacts</div>
                     </div>
 
-                    <div class="row">
+                    <div class="row g-2 g-lg-4">
                         <!-- Police -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2052,7 +2149,7 @@
                         </div>
 
                         <!-- Fire Brigade -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2064,7 +2161,7 @@
                         </div>
 
                         <!-- Ambulance -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2076,7 +2173,7 @@
                         </div>
 
                         <!-- European Emergency -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2088,7 +2185,7 @@
                         </div>
 
                         <!-- Violence Against Women -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2101,7 +2198,7 @@
                         </div>
 
                         <!-- Lost Items -->
-                        <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-4 col-lg-6">
                             <div class="key-indicator-row flex-column align-items-start p-3"
                                 style="border-color: #06146A;">
                                 <div class="d-flex align-items-center mb-2 text-primary">
@@ -2197,8 +2294,8 @@
                     </div>
                 </div>
 
-                <h2 class="section-title mt-5">Why / Why Not</h2>
-                <div class="row g-4">
+                <h2 class="section-title mt-3 mt-lg-5">Why / Why Not</h2>
+                <div class="row g-3 g-lg-4">
 
                     <!-- Why This Country -->
                     <div class="col-lg-6">
